@@ -1,0 +1,1956 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About-Me — Galería de propuestas (Playground)</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap');
+*{box-sizing:border-box}
+body{margin:0;background:#EDEAE3;color:#221D2E;font-family:'Inter',system-ui,sans-serif}
+.wrap{max-width:840px;margin:0 auto;padding:42px 24px 70px}
+.head .over{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#8B7CFF}
+.head h1{font-family:'Bricolage Grotesque',sans-serif;font-size:31px;font-weight:700;letter-spacing:-.02em;margin:8px 0 8px}
+.head p{margin:0;font-size:14.5px;line-height:1.65;color:#574E63;max-width:62ch}
+.proposal{margin-top:42px}
+.p-head{display:flex;align-items:baseline;gap:11px;flex-wrap:wrap;margin-bottom:11px}
+.k{font-family:'JetBrains Mono',monospace;font-size:12px;color:#FF5C7A;letter-spacing:.08em}
+.p-head h2{font-family:'Bricolage Grotesque',sans-serif;font-size:20px;font-weight:650;margin:0;letter-spacing:-.01em}
+.dim{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#8b8797}
+iframe.shot{width:100%;border:0;display:block;border-radius:14px;background:#FFF6EC}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="head">
+    <div class="over">W1.5 · W3 · Dirección B · Playground</div>
+    <h1>10 propuestas, un solo lenguaje</h1>
+    <p>Variaciones originales (V1–V5) y mezclas V1+V2+V3 en una página scrollable (MIX 1–5). Todas con animaciones vivas: pasa el cursor por comandos, controles y notas.</p>
+  </header>
+  
+  <section class="proposal">
+    <div class="p-head">
+      <span class="k">MIX 1</span>
+      <h2>Together</h2>
+      <span class="dim">mix1-together</span>
+    </div>
+    <iframe class="shot" height="820" scrolling="no" title="Together" srcdoc="<!doctype html>
+<html lang=&quot;en&quot;>
+<head>
+<meta charset=&quot;utf-8&quot;>
+<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+<title>MIX 1 · Everything together — About-Me</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Inter:wght@300..700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+
+*{box-sizing:border-box}
+body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#221D2E;background:#FFF6EC}
+
+/* ONE continuous paper sheet that scrolls */
+.page{
+  position:relative;width:100%;
+  background:
+    radial-gradient(circle at 1px 1px, rgba(34,29,46,.07) 1px, transparent 1.6px),
+    #FFF6EC;
+  background-size:9px 9px,auto;
+}
+/* continuous left washi bus — the spine that unifies all three sections */
+.spine{position:absolute;left:0;top:0;bottom:0;width:26px;background:#FFC95C;opacity:.5;border-right:1.5px solid rgba(34,29,46,.3)}
+.spine::after{content:&quot;&quot;;position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.3) 0 5px,transparent 5px 10px)}
+
+section{position:relative;padding:0 34px 0 62px}
+.idx{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:#574E63;padding:26px 0 10px;display:flex;align-items:center;gap:12px}
+.idx i{display:block;width:34px;height:1px;background:rgba(34,29,46,.3)}
+
+/* ============ HERO ============ */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:center;min-height:620px}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.22em;color:#574E63;margin-bottom:16px}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(38px,5.2vw,56px);line-height:1.02;font-weight:750;letter-spacing:-.03em;margin:0 0 18px}
+.hl{position:relative;display:inline-block;white-space:nowrap}
+.hl::before{content:&quot;&quot;;position:absolute;left:-6px;right:-6px;bottom:6%;height:44%;background:#FFC95C;z-index:-1;transform:rotate(-1.2deg)}
+.sub{font-size:15px;line-height:1.62;color:#574E63;max-width:46ch;margin:0 0 26px}
+.cta{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.btn{background:#FF5C7A;color:#FFF6EC;padding:12px 22px;border-radius:999px;font-family:'Bricolage Grotesque',sans-serif;font-weight:650;font-size:14px;border:1.5px solid #221D2E;box-shadow:5px 5px 0 #221D2E;transition:transform .18s cubic-bezier(.22,1,.36,1)}
+.btn:hover{transform:translate(-1px,-1px);box-shadow:6px 6px 0 #221D2E}
+.ghost{font-size:14px;border-bottom:1.5px solid #221D2E;padding-bottom:2px}
+
+.artwrap{position:relative;display:flex;align-items:center;justify-content:center;min-height:520px}
+.bolt{position:absolute;top:22px;left:20%;width:26px;height:40px;animation:bob 5s ease-in-out infinite}
+.bolt path{fill:#FFC95C;stroke:#221D2E;stroke-width:2}
+
+.note{position:absolute;width:152px;padding:11px 12px 13px;font-size:11.5px;line-height:1.42;border:1.5px solid #221D2E;box-shadow:3px 3px 0 #221D2E;border-radius:3px}
+.note b{display:block;font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px;opacity:.85}
+.n1{background:#FFC95C;top:26px;left:0;transform:rotate(-5deg);animation:bob 6s ease-in-out infinite}
+.n2{background:#FF5C7A;color:#FFF6EC;bottom:70px;left:-6px;transform:rotate(4deg);animation:bob 7s ease-in-out .8s infinite}
+.n3{background:#3FC7A9;top:44%;right:-4px;transform:rotate(5deg);width:142px;animation:bob 6.5s ease-in-out 1.5s infinite}
+.n4{background:#8B7CFF;color:#FFF6EC;bottom:16px;right:12%;transform:rotate(-4deg);width:146px;animation:bob 7.5s ease-in-out .4s infinite}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -7px}}
+
+.tape{position:absolute;width:64px;height:17px;background:#FFC95C;opacity:.85;border:1.5px solid rgba(34,29,46,.45);z-index:6}
+.tape::after{content:&quot;&quot;;position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.35) 0 4px,transparent 4px 8px)}
+.t1{top:-6px;left:44%;transform:rotate(-38deg)}
+.t2{top:14px;right:8%;background:#3FC7A9;transform:rotate(22deg)}
+
+/* ============ TERMINAL — DOODLE-ANNOTATED ============ */
+.term-sec{display:grid;grid-template-columns:.92fr 1.08fr;gap:30px;align-items:center;min-height:560px}
+.annot{position:relative;padding-left:26px;border-left:1px dashed rgba(34,29,46,.3)}
+.annot::before{content:&quot;&quot;;position:absolute;left:0;top:-6px;bottom:-6px;width:0;border-left:1px dashed rgba(34,29,46,.3)}
+.squig{width:100%;height:26px;overflow:visible;margin-bottom:10px}
+.squig path{fill:none;stroke:#FF5C7A;stroke-width:3.4;stroke-linecap:round;stroke-dasharray:220;stroke-dashoffset:0;animation:draw 2.8s ease-in-out infinite alternate}
+@keyframes draw{from{stroke-dashoffset:0}to{stroke-dashoffset:40}}
+.hand{font-family:'Bricolage Grotesque',sans-serif;font-size:19px;font-weight:600;line-height:1.35;max-width:26ch;margin:0 0 14px}
+.hand em{font-style:normal;background:#FFC95C;padding:1px 5px;border-radius:4px}
+.mnote{font-family:'Inter',sans-serif;font-size:13px;line-height:1.55;color:#574E63;max-width:34ch;margin:0}
+.arrowd{width:88px;height:44px;overflow:visible;margin-top:8px}
+.arrowd path{fill:none;stroke:#574E63;stroke-width:2.2;stroke-linecap:round;stroke-dasharray:5 7;animation:march 6s linear infinite}
+@keyframes march{to{stroke-dashoffset:-48}}
+
+.term-wrap{position:relative}
+.term{background:#221D2E;border-radius:14px;overflow:hidden;border:1.5px solid #221D2E;box-shadow:6px 6px 0 #221D2E;transform:rotate(-1.2deg)}
+.bar{display:flex;gap:6px;padding:11px 14px;border-bottom:1px solid rgba(255,246,236,.09)}
+.bar i{width:10px;height:10px;border-radius:50%;display:block}
+.bar i:nth-child(1){background:#FF5C7A}.bar i:nth-child(2){background:#FFC95C}.bar i:nth-child(3){background:#3FC7A9}
+.term-body{padding:16px 18px 18px;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.9;color:#F4EDE4}
+.term-body p{margin:0}
+.p{color:#3FC7A9}
+.o{color:#B9AFC7}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin:8px 0}
+.chip{font-size:10.5px;padding:4px 9px;border-radius:999px;font-family:'JetBrains Mono',monospace}
+.c1{background:#3FC7A9;color:#221D2E}.c2{background:#FFC95C;color:#221D2E}.c3{background:#8B7CFF;color:#FFF6EC}
+.caret{display:inline-block;color:#FFC95C;margin-left:2px;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.tagpin{position:absolute;font-family:'JetBrains Mono',monospace;font-size:10px;padding:5px 9px;border-radius:8px;border:1.5px solid #221D2E;background:#FFF;box-shadow:3px 3px 0 #221D2E;animation:bob 5s ease-in-out infinite}
+.pin1{top:-14px;right:10%;transform:rotate(-4deg);background:#FFC95C}
+.pin2{bottom:-14px;left:8%;transform:rotate(3deg);background:#3FC7A9;animation-delay:1s}
+
+/* ============ SCRAPBOOK / PROOF ============ */
+.proof-sec{display:grid;grid-template-columns:1.08fr .92fr;gap:30px;align-items:center;min-height:560px}
+.manifesto{position:relative}
+.manifesto h2{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(30px,3.8vw,42px);line-height:1.06;font-weight:750;letter-spacing:-.025em;margin:0 0 18px}
+.manifesto p{font-size:14.5px;line-height:1.65;color:#574E63;max-width:44ch;margin:0 0 26px}
+.stack{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px}
+.st{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;padding:7px 12px;border-radius:10px;border:1.5px solid #221D2E;box-shadow:3px 3px 0 #221D2E;background:#FFF;animation:bob 6s ease-in-out infinite}
+.st:nth-child(2n){background:#FFC95C}.st:nth-child(3n){background:#8B7CFF;color:#FFF6EC}
+.st:nth-child(4n){background:#3FC7A9}
+.washirow{display:flex;gap:14px;margin-bottom:24px}
+.w{height:15px;flex:1;border:1.5px solid rgba(34,29,46,.45);opacity:.85;position:relative}
+.w::after{content:&quot;&quot;;position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.35) 0 4px,transparent 4px 8px)}
+.w1{background:#FFC95C}.w2{background:#FF5C7A}.w3{background:#3FC7A9}
+
+.tapes{position:relative;display:grid;gap:22px}
+.print{position:relative;background:#FFF;border:1.5px solid #221D2E;box-shadow:5px 5px 0 #221D2E;border-radius:4px;padding:9px 9px 0;transition:transform .2s cubic-bezier(.22,1,.36,1)}
+.print:hover{transform:translateY(-3px) rotate(0deg)!important}
+.ph{height:120px;border:1.5px solid #221D2E;border-radius:3px;position:relative;overflow:hidden}
+.pa{background:linear-gradient(135deg,#FFC95C,#FF5C7A 55%,#8B7CFF)}
+.pb{background:linear-gradient(135deg,#3FC7A9,#221D2E)}
+.pc{background:linear-gradient(135deg,#8B7CFF,#FFC95C)}
+.ph .g{position:absolute;inset:0;background:radial-gradient(60% 55% at 26% 20%,rgba(255,255,255,.28),transparent 70%)}
+.ph .mono{position:absolute;left:12px;bottom:10px;font-family:'JetBrains Mono',monospace;font-size:10px;color:#FFF6EC;text-shadow:0 1px 6px rgba(0,0,0,.45)}
+.print figcaption{font-family:'JetBrains Mono',monospace;font-size:10px;text-align:center;padding:8px 4px 9px;color:#574E63}
+.pA{transform:rotate(-2.4deg)}.pB{transform:rotate(1.8deg);margin-left:26px}.pC{transform:rotate(-1.4deg);margin-right:14px}
+.ptape{position:absolute;width:54px;height:16px;background:#FFC95C;opacity:.85;border:1.5px solid rgba(34,29,46,.45);z-index:5}
+.pA .ptape{top:-8px;left:-14px;transform:rotate(-32deg)}
+.pB .ptape{top:-8px;right:-12px;background:#3FC7A9;transform:rotate(28deg)}
+.pC .ptape{bottom:38px;left:-16px;background:#FF5C7A;transform:rotate(8deg)}
+
+/* meta strip */
+.meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px;padding:26px 34px 30px 62px;font-size:12.5px;line-height:1.55}
+.meta b{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(34,29,46,.55);margin-bottom:5px;font-weight:500}
+.muted{color:rgba(34,29,46,.7)}
+.dots{display:flex;gap:7px}.dotc{width:16px;height:16px;border-radius:50%;border:1px solid rgba(34,29,46,.25)}
+
+@media (max-width:640px){
+  section{padding:0 20px 0 46px}
+  .hero{grid-template-columns:1fr;min-height:0;padding-bottom:30px}
+  .artwrap{min-height:380px}
+  .term-sec,.proof-sec{grid-template-columns:1fr;gap:26px;min-height:0}
+  .annot{padding-left:16px}
+  .n3{display:none}
+  .pB{margin-left:0}.pC{margin-right:0}
+  .meta{grid-template-columns:1fr;padding:24px 20px 28px 46px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div class=&quot;page&quot;>
+  <span class=&quot;spine&quot; aria-hidden=&quot;true&quot;></span>
+
+  <!-- ============ 01 HERO ============ -->
+  <section class=&quot;hero&quot;>
+    <div>
+      <div class=&quot;idx&quot;><i></i>01 — HELLO, WORLD</div>
+      <div class=&quot;eyebrow&quot;>// HELLO, WORLD</div>
+      <h1>I build software that feels <span class=&quot;hl&quot;>alive</span>.</h1>
+      <p class=&quot;sub&quot;>Fullstack &amp;amp; IA engineer. I repaired TVs as a kid, spent three years wiring industrial systems, and now I ship for the web. Hardware habits, software day job.</p>
+      <div class=&quot;cta&quot;>
+        <a class=&quot;btn&quot; href=&quot;#work&quot;>See my work</a>
+        <a class=&quot;ghost&quot; href=&quot;#contact&quot;>or just say hi →</a>
+      </div>
+    </div>
+
+    <div class=&quot;artwrap&quot;>
+      <span class=&quot;tape t1&quot; aria-hidden=&quot;true&quot;></span>
+      <span class=&quot;tape t2&quot; aria-hidden=&quot;true&quot;></span>
+      <svg class=&quot;bolt&quot; viewBox=&quot;0 0 26 40&quot; aria-hidden=&quot;true&quot;><path d=&quot;M15 2 4 22h7l-2 16 14-22h-8l3-14z&quot;/></svg>
+
+      <!-- THE CHARACTER: bold / rudo / varonil, still cute -->
+      <svg viewBox=&quot;0 0 260 300&quot; width=&quot;270&quot; role=&quot;img&quot; aria-label=&quot;Illustration of Luis: a bold, tough-looking engineer with a square jaw and a smirk&quot;>
+        <ellipse cx=&quot;130&quot; cy=&quot;272&quot; rx=&quot;96&quot; ry=&quot;17&quot; fill=&quot;#221D2E&quot; opacity=&quot;.13&quot;/>
+        <!-- shoulders: jacket, broad -->
+        <path d=&quot;M28 300c6-52 40-76 102-76s96 24 102 76z&quot; fill=&quot;#221D2E&quot;/>
+        <path d=&quot;M104 226h52l-26 74z&quot; fill=&quot;#FFF6EC&quot;/>
+        <path d=&quot;M120 232l10 44 10-44z&quot; fill=&quot;#FF5C7A&quot;/>
+        <!-- neck -->
+        <path d=&quot;M108 196h44v34h-44z&quot; fill=&quot;#E8A87C&quot;/>
+        <!-- head: angular, square jaw -->
+        <path d=&quot;M130 40c40 0 62 24 62 62 0 18-6 30-6 44 0 30-24 56-56 56s-56-26-56-56c0-14-6-26-6-44 0-38 22-62 62-62z&quot; fill=&quot;#E8A87C&quot;/>
+        <!-- stubble / jaw shading -->
+        <path d=&quot;M78 140c6 32 26 52 52 52s46-20 52-52c2 44-18 74-52 74s-54-30-52-74z&quot; fill=&quot;#221D2E&quot; opacity=&quot;.13&quot;/>
+        <!-- thick eyebrows -->
+        <path d=&quot;M92 128c10-8 22-9 30-3-10 0-22 3-30 9z&quot; fill=&quot;#221D2E&quot;/>
+        <path d=&quot;M168 128c-10-8-22-9-30-3 10 0 22 3 30 9z&quot; fill=&quot;#221D2E&quot;/>
+        <!-- eyes: big + expressive -->
+        <ellipse cx=&quot;107&quot; cy=&quot;146&quot; rx=&quot;11&quot; ry=&quot;12.5&quot; fill=&quot;#FFF6EC&quot;/>
+        <ellipse cx=&quot;153&quot; cy=&quot;146&quot; rx=&quot;11&quot; ry=&quot;12.5&quot; fill=&quot;#FFF6EC&quot;/>
+        <circle cx=&quot;109&quot; cy=&quot;148&quot; r=&quot;5.4&quot; fill=&quot;#221D2E&quot;/>
+        <circle cx=&quot;151&quot; cy=&quot;148&quot; r=&quot;5.4&quot; fill=&quot;#221D2E&quot;/>
+        <circle cx=&quot;111&quot; cy=&quot;145&quot; r=&quot;2&quot; fill=&quot;#FFF&quot;/>
+        <circle cx=&quot;153&quot; cy=&quot;145&quot; r=&quot;2&quot; fill=&quot;#FFF&quot;/>
+        <!-- nose: strong -->
+        <path d=&quot;M130 152l-9 20h18z&quot; fill=&quot;#D98F63&quot;/>
+        <!-- smirk: confident, one-sided -->
+        <path d=&quot;M108 190c14 10 30 11 44 2&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;5&quot; stroke-linecap=&quot;round&quot; fill=&quot;none&quot;/>
+        <!-- hair: short crop -->
+        <path d=&quot;M68 96c2-34 28-58 62-58s60 24 62 58c-8-22-30-34-62-34s-54 12-62 34z&quot; fill=&quot;#3B2B20&quot;/>
+        <!-- tiny lightning earring -->
+        <path d=&quot;M192 160l6 10-4 1 6 11h-10l2-8 4 1-5-10z&quot; fill=&quot;#FFC95C&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.6&quot;/>
+      </svg>
+
+      <div class=&quot;note n1&quot;><b>background</b>Ex-industrial electrician. 3 years on real systems.</div>
+      <div class=&quot;note n2&quot;><b>superpower</b>I speak both volts and TypeScript.</div>
+      <div class=&quot;note n3&quot;><b>hardware</b>ESP32 · PIC · Arduino</div>
+      <div class=&quot;note n4&quot;><b>currently</b>Next.js, Prisma, too many side quests</div>
+    </div>
+  </section>
+
+  <!-- ============ 02 TERMINAL, ANNOTATED ============ -->
+  <section class=&quot;term-sec&quot;>
+    <div class=&quot;annot&quot;>
+      <div class=&quot;idx&quot;><i></i>02 — WHOAMI</div>
+      <svg class=&quot;squig&quot; viewBox=&quot;0 0 240 14&quot; aria-hidden=&quot;true&quot;><path d=&quot;M3 9 C 34 2, 66 13, 112 6 S 190 2, 237 8&quot;/></svg>
+      <p class=&quot;hand&quot;>This is the part I never got tired of: making a machine answer back, correctly, <em>fast</em>.</p>
+      <p class=&quot;mnote&quot;>Six semesters of mechatronics taught me to love a good oscilloscope trace. Now my traces are in the console — same patience, better refresh rate.</p>
+      <svg class=&quot;arrowd&quot; viewBox=&quot;0 0 88 44&quot; aria-hidden=&quot;true&quot;><path d=&quot;M4 10 C 26 4, 34 34, 62 30 C 74 28, 78 33, 84 30&quot;/></svg>
+      <span class=&quot;tagpin pin1&quot;>still my favourite part</span>
+    </div>
+
+    <div class=&quot;term-wrap&quot;>
+      <div class=&quot;term&quot;>
+        <div class=&quot;bar&quot;><i></i><i></i><i></i></div>
+        <div class=&quot;term-body&quot;>
+          <p><span class=&quot;p&quot;>➜</span> luis.dev whoami</p>
+          <p class=&quot;o&quot;>Luis — fullstack &amp;amp; IA engineer. I make interfaces with personality.</p>
+          <p><span class=&quot;p&quot;>➜</span> luis.dev ls skills/</p>
+          <div class=&quot;chips&quot;><span class=&quot;chip c1&quot;>TypeScript</span><span class=&quot;chip c2&quot;>React</span><span class=&quot;chip c1&quot;>Node</span><span class=&quot;chip c3&quot;>Prisma</span><span class=&quot;chip c2&quot;>ESP32</span></div>
+          <p><span class=&quot;p&quot;>➜</span> luis.dev cat about.md</p>
+          <p class=&quot;o&quot;>&quot;Ship small, ship often, make it feel alive.&quot;<span class=&quot;caret&quot;>▍</span></p>
+        </div>
+      </div>
+      <span class=&quot;tagpin pin2&quot;>3 yrs of industrial electricity said: it must actually work</span>
+    </div>
+  </section>
+
+  <!-- ============ 03 SCRAPBOOK / PROOF ============ -->
+  <section class=&quot;proof-sec&quot;>
+    <div class=&quot;manifesto&quot;>
+      <div class=&quot;idx&quot;><i></i>03 — WORK</div>
+      <h2>Things I have shipped, with my name on them.</h2>
+      <p>Every project here solved a problem I actually had. That's the rule.</p>
+      <div class=&quot;stack&quot;>
+        <span class=&quot;st&quot;>File-Up-loader</span><span class=&quot;st&quot;>blogr-nextjs-prisma</span><span class=&quot;st&quot;>canals-orders</span><span class=&quot;st&quot;>Members-Only</span><span class=&quot;st&quot;>Inventory-App</span>
+      </div>
+      <div class=&quot;washirow&quot; aria-hidden=&quot;true&quot;><span class=&quot;w w1&quot;></span><span class=&quot;w w2&quot;></span><span class=&quot;w w3&quot;></span></div>
+      <div class=&quot;cta&quot;>
+        <a class=&quot;btn&quot; href=&quot;#work&quot;>See my work</a>
+        <a class=&quot;ghost&quot; href=&quot;#contact&quot;>or just say hi →</a>
+      </div>
+    </div>
+
+    <div class=&quot;tapes&quot;>
+      <figure class=&quot;print pA&quot;><span class=&quot;ptape&quot;></span><div class=&quot;ph pa&quot;><span class=&quot;g&quot;></span><span class=&quot;mono&quot;>01 — uploads that behave</span></div><figcaption>File-Up-loader</figcaption></figure>
+      <figure class=&quot;print pB&quot;><span class=&quot;ptape&quot;></span><div class=&quot;ph pb&quot;><span class=&quot;g&quot;></span><span class=&quot;mono&quot;>02 — Next.js + Prisma</span></div><figcaption>blogr-nextjs-prisma</figcaption></figure>
+      <figure class=&quot;print pC&quot;><span class=&quot;ptape&quot;></span><div class=&quot;ph pc&quot;><span class=&quot;g&quot;></span><span class=&quot;mono&quot;>03 — auth that costs nothing</span></div><figcaption>Members-Only</figcaption></figure>
+    </div>
+  </section>
+
+  <div class=&quot;meta&quot;>
+    <div><b>Title</b>MIX 1 — Everything together (Doodle + Scrapbook + Terminal)</div>
+    <div><b>The character</b>Angular square jaw, thick brows, confident smirk, stubble, short crop and a tiny lightning earring — tough and masculine, kept cute by oversized expressive eyes and a small body.</div>
+    <div><b>Idea</b>One continuous paper sheet with a washi &quot;spine&quot; running its full height so all three sections read as one page that scrolls.</div>
+    <div><b>Palette</b><div class=&quot;dots&quot;><span class=&quot;dotc&quot; style=&quot;background:#FFF6EC&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#221D2E&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#FF5C7A&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#FFC95C&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#8B7CFF&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#3FC7A9&quot;></span></div></div>
+    <div><b>Fonts</b>Bricolage Grotesque (display) · Inter (body) · JetBrains Mono (labels/code)</div>
+    <div><b>Motion</b>Reduced-motion safe — CSS-only, disabled under prefers-reduced-motion</div>
+  </div>
+</div>
+</body>
+</html>
+"></iframe>
+  </section>
+
+  <section class="proposal">
+    <div class="p-head">
+      <span class="k">MIX 2</span>
+      <h2>Scrapbook + terminal</h2>
+      <span class="dim">mix2-scrapbook-terminal</span>
+    </div>
+    <iframe class="shot" height="820" scrolling="no" title="Scrapbook + terminal" srcdoc="<!doctype html>
+<html lang=&quot;en&quot;>
+<head>
+<meta charset=&quot;utf-8&quot;>
+<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+<title>MIX 2 · Scrapbook Terminal — About-Me</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Inter:wght@300..700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+*{box-sizing:border-box}
+body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#221D2E;background:#FFF6EC}
+.page{position:relative;width:100%;background:radial-gradient(circle at 1px 1px,rgba(34,29,46,.07) 1px,transparent 1.6px),#FFF6EC;background-size:9px 9px,auto}
+.spine{position:absolute;left:0;top:0;bottom:0;width:26px;background:#FFC95C;opacity:.5;border-right:1.5px solid rgba(34,29,46,.3)}
+.spine::after{content:&quot;&quot;;position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.3) 0 5px,transparent 5px 10px)}
+section{position:relative;padding:0 34px 0 62px}
+.idx{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:#574E63;padding:26px 0 10px;display:flex;align-items:center;gap:12px}
+.idx i{display:block;width:34px;height:1px;background:rgba(34,29,46,.3)}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(38px,5.2vw,54px);line-height:1.02;font-weight:750;letter-spacing:-.03em;margin:0 0 18px}
+.hl{position:relative;display:inline-block;white-space:nowrap}
+.hl::before{content:&quot;&quot;;position:absolute;left:-6px;right:-6px;bottom:6%;height:44%;background:#FFC95C;z-index:-1;transform:rotate(-1.2deg)}
+.sub{font-size:15px;line-height:1.62;color:#574E63;max-width:44ch;margin:0 0 24px}
+.cta{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.btn{background:#FF5C7A;color:#FFF6EC;padding:12px 22px;border-radius:999px;font-family:'Bricolage Grotesque',sans-serif;font-weight:650;font-size:14px;border:1.5px solid #221D2E;box-shadow:5px 5px 0 #221D2E;transition:transform .18s cubic-bezier(.22,1,.36,1);text-decoration:none}
+.btn:hover{transform:translate(-1px,-1px)}
+.ghost{font-size:14px;border-bottom:1.5px solid #221D2E;padding-bottom:2px;text-decoration:none;color:#221D2E}
+.note{position:absolute;width:150px;padding:11px 12px 13px;font-size:11.5px;line-height:1.42;border:1.5px solid #221D2E;box-shadow:3px 3px 0 #221D2E;border-radius:3px}
+.note b{display:block;font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px;opacity:.85}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -7px}}
+.st{font-family:'JetBrains Mono',monospace;font-size:11px;padding:7px 12px;border-radius:10px;border:1.5px solid #221D2E;box-shadow:3px 3px 0 #221D2E;background:#FFF;animation:bob 6s ease-in-out infinite}
+/* hero */
+.hero{display:grid;grid-template-columns:1.02fr .98fr;gap:26px;align-items:center;min-height:640px}
+.artwrap{position:relative;min-height:560px}
+.polaro{position:absolute;top:44px;right:22px;width:240px;background:#FFF;border:1.5px solid #221D2E;box-shadow:5px 5px 0 #221D2E;border-radius:4px;padding:10px 10px 0;transform:rotate(-2.6deg)}
+.ph{position:relative;height:188px;border:1.5px solid #221D2E;border-radius:3px;overflow:hidden;background:linear-gradient(140deg,#FFC95C,#FF5C7A 52%,#8B7CFF)}
+.ph .sun{position:absolute;top:20px;left:26px;width:42px;height:42px;border-radius:50%;background:#FFF6EC;opacity:.9}
+.ph .hill{position:absolute;left:-20%;width:140%;height:60%;bottom:-30%;border-radius:50% 50% 0 0}
+.ph .h1{background:#221D2E;opacity:.3}.ph .h2{background:#221D2E;opacity:.55;left:30%;width:110%}
+.ph .ini{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',sans-serif;font-style:italic;font-weight:700;font-size:74px;color:#FFF6EC;text-shadow:0 4px 18px rgba(34,29,46,.45)}
+.polaro figcaption{font-family:'JetBrains Mono',monospace;font-size:9.5px;text-align:center;padding:8px 4px 9px;color:#574E63}
+.mascot{position:absolute;left:6px;bottom:34px;width:212px;animation:bob 7s ease-in-out infinite}
+.ptape{position:absolute;width:62px;height:16px;background:#FFC95C;opacity:.85;border:1.5px solid rgba(34,29,46,.45);z-index:5;top:-8px;left:-16px;transform:rotate(-34deg)}
+.ptape2{position:absolute;width:56px;height:15px;background:#3FC7A9;opacity:.85;border:1.5px solid rgba(34,29,46,.45);z-index:5;bottom:22px;right:-10px;transform:rotate(26deg)}
+.n1{background:#FFC95C;top:20px;left:-6px;transform:rotate(-5deg);animation:bob 6s ease-in-out infinite}
+.n2{background:#FF5C7A;color:#FFF6EC;bottom:96px;right:-4px;transform:rotate(4deg);animation:bob 7s ease-in-out .8s infinite}
+.n3{background:#8B7CFF;color:#FFF6EC;bottom:2px;left:36%;transform:rotate(-3deg);width:146px;animation:bob 6.5s ease-in-out 1.5s infinite}
+/* work gallery */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;padding:10px 0 40px}
+.print{position:relative;background:#FFF;border:1.5px solid #221D2E;box-shadow:5px 5px 0 #221D2E;border-radius:4px;padding:9px 9px 0;transition:transform .2s cubic-bezier(.22,1,.36,1)}
+.print:hover{transform:translateY(-3px)!important}
+.pg{height:118px;border:1.5px solid #221D2E;border-radius:3px;position:relative;overflow:hidden}
+.pg .g{position:absolute;inset:0;background:radial-gradient(60% 55% at 26% 20%,rgba(255,255,255,.28),transparent 70%)}
+.pg .m{position:absolute;left:10px;bottom:8px;font-family:'JetBrains Mono',monospace;font-size:9.5px;color:#FFF6EC;text-shadow:0 1px 6px rgba(0,0,0,.45)}
+.pA{background:linear-gradient(135deg,#FFC95C,#FF5C7A 55%,#8B7CFF);transform:rotate(-2.2deg)}
+.pB{background:linear-gradient(135deg,#3FC7A9,#221D2E);transform:rotate(1.6deg)}.pC{background:linear-gradient(135deg,#8B7CFF,#FFC95C);transform:rotate(-1.2deg)}
+.print figcaption{font-family:'JetBrains Mono',monospace;font-size:10px;text-align:center;padding:8px 4px 9px;color:#574E63}
+.arrowd{width:96px;height:46px;overflow:visible;margin:6px 0 18px}
+.arrowd path{fill:none;stroke:#574E63;stroke-width:2.2;stroke-linecap:round;stroke-dasharray:5 7;animation:march 6s linear infinite}
+@keyframes march{to{stroke-dashoffset:-48}}
+/* notebook */
+.secc{display:grid;grid-template-columns:1.06fr .94fr;gap:30px;align-items:center;min-height:560px}
+.ruled{position:relative;background:#FFF;border:1.5px solid #221D2E;box-shadow:5px 5px 0 #221D2E;border-radius:6px;padding:26px 28px}
+.ruled::after{content:&quot;&quot;;position:absolute;inset:26px 28px;background:repeating-linear-gradient(to bottom,transparent 0 27px,rgba(34,29,46,.16) 27px 28px);pointer-events:none}
+.ruled p{position:relative;z-index:2;font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(21px,2.5vw,27px);line-height:2.1;font-weight:600;letter-spacing:-.015em;margin:0}
+.meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px;padding:26px 34px 30px 62px;font-size:12.5px;line-height:1.55}
+.meta b{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(34,29,46,.55);margin-bottom:5px;font-weight:500}
+.muted{color:rgba(34,29,46,.7)}
+.dots{display:flex;gap:7px}.dotc{width:16px;height:16px;border-radius:50%;border:1px solid rgba(34,29,46,.25)}
+@media (max-width:640px){section{padding:0 18px 0 44px}.hero{grid-template-columns:1fr;min-height:0}.artwrap{min-height:400px}.gal{grid-template-columns:1fr;gap:30px}.secc{grid-template-columns:1fr;gap:24px;min-height:0}.n3{display:none}.meta{grid-template-columns:1fr;padding:24px 18px 28px 44px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div class=&quot;page&quot;>
+<span class=&quot;spine&quot; aria-hidden=&quot;true&quot;></span>
+
+<section class=&quot;hero&quot;>
+  <div>
+    <div class=&quot;idx&quot;><i></i>01 — HELLO, WORLD</div>
+    <h1>I build software that feels <span class=&quot;hl&quot;>alive</span>.</h1>
+    <p class=&quot;sub&quot;>Fullstack &amp;amp; IA engineer. I repaired TVs as a kid, spent three years wiring industrial systems, and now I ship for the web. Hardware habits, software day job.</p>
+    <div class=&quot;cta&quot;><a class=&quot;btn&quot; href=&quot;#work&quot;>See my work</a><a class=&quot;ghost&quot; href=&quot;#contact&quot;>or just say hi →</a></div>
+  </div>
+  <div class=&quot;artwrap&quot;>
+    <figure class=&quot;polaro&quot;>
+      <span class=&quot;ptape&quot;></span><span class=&quot;ptape2&quot;></span>
+      <div class=&quot;ph&quot;><span class=&quot;sun&quot;></span><span class=&quot;hill h1&quot;></span><span class=&quot;hill h2&quot;></span><span class=&quot;ini&quot;>L</span></div>
+      <figcaption>luis, probably shipping something</figcaption>
+    </figure>
+    <svg class=&quot;mascot&quot; viewBox=&quot;0 0 260 300&quot; role=&quot;img&quot; aria-label=&quot;Luis: a tough, masculine-looking engineer with a square jaw and a smirk&quot;>
+      <ellipse cx=&quot;130&quot; cy=&quot;272&quot; rx=&quot;96&quot; ry=&quot;17&quot; fill=&quot;#221D2E&quot; opacity=&quot;.13&quot;/>
+      <path d=&quot;M28 300c6-52 40-76 102-76s96 24 102 76z&quot; fill=&quot;#221D2E&quot;/>
+      <path d=&quot;M104 226h52l-26 74z&quot; fill=&quot;#FFF6EC&quot;/><path d=&quot;M120 232l10 44 10-44z&quot; fill=&quot;#FF5C7A&quot;/>
+      <path d=&quot;M108 196h44v34h-44z&quot; fill=&quot;#E8A87C&quot;/>
+      <path d=&quot;M130 40c40 0 62 24 62 62 0 18-6 30-6 44 0 30-24 56-56 56s-56-26-56-56c0-14-6-26-6-44 0-38 22-62 62-62z&quot; fill=&quot;#E8A87C&quot;/>
+      <path d=&quot;M78 140c6 32 26 52 52 52s46-20 52-52c2 44-18 74-52 74s-54-30-52-74z&quot; fill=&quot;#221D2E&quot; opacity=&quot;.13&quot;/>
+      <path d=&quot;M92 128c10-8 22-9 30-3-10 0-22 3-30 9z&quot; fill=&quot;#221D2E&quot;/>
+      <path d=&quot;M168 128c-10-8-22-9-30-3 10 0 22 3 30 9z&quot; fill=&quot;#221D2E&quot;/>
+      <ellipse cx=&quot;107&quot; cy=&quot;146&quot; rx=&quot;11&quot; ry=&quot;12.5&quot; fill=&quot;#FFF6EC&quot;/><ellipse cx=&quot;153&quot; cy=&quot;146&quot; rx=&quot;11&quot; ry=&quot;12.5&quot; fill=&quot;#FFF6EC&quot;/>
+      <circle cx=&quot;109&quot; cy=&quot;148&quot; r=&quot;5.4&quot; fill=&quot;#221D2E&quot;/><circle cx=&quot;151&quot; cy=&quot;148&quot; r=&quot;5.4&quot; fill=&quot;#221D2E&quot;/>
+      <circle cx=&quot;111&quot; cy=&quot;145&quot; r=&quot;2&quot; fill=&quot;#FFF&quot;/><circle cx=&quot;153&quot; cy=&quot;145&quot; r=&quot;2&quot; fill=&quot;#FFF&quot;/>
+      <path d=&quot;M130 152l-9 20h18z&quot; fill=&quot;#D98F63&quot;/>
+      <path d=&quot;M108 190c14 10 30 11 44 2&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;5&quot; stroke-linecap=&quot;round&quot; fill=&quot;none&quot;/>
+      <path d=&quot;M68 96c2-34 28-58 62-58s60 24 62 58c-8-22-30-34-62-34s-54 12-62 34z&quot; fill=&quot;#3B2B20&quot;/>
+      <path d=&quot;M192 160l6 10-4 1 6 11h-10l2-8 4 1-5-10z&quot; fill=&quot;#FFC95C&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.6&quot;/>
+    </svg>
+    <div class=&quot;note n1&quot;><b>background</b>Ex-industrial electrician. 3 years on real systems.</div>
+    <div class=&quot;note n2&quot;><b>superpower</b>I speak both volts and TypeScript.</div>
+    <div class=&quot;note n3&quot;><b>currently</b>Next.js, Prisma, too many side quests</div>
+  </div>
+</section>
+
+<section>
+  <div class=&quot;idx&quot;><i></i>02 — WORK</div>
+  <div class=&quot;gal&quot;>
+    <figure class=&quot;print&quot;><div class=&quot;pg pA&quot;><span class=&quot;g&quot;></span><span class=&quot;m&quot;>01 — uploads that behave</span></div><figcaption>File-Up-loader</figcaption></figure>
+    <figure class=&quot;print&quot;><div class=&quot;pg pB&quot;><span class=&quot;g&quot;></span><span class=&quot;m&quot;>02 — Next.js + Prisma</span></div><figcaption>blogr-nextjs-prisma</figcaption></figure>
+    <figure class=&quot;print&quot;><div class=&quot;pg pC&quot;><span class=&quot;g&quot;></span><span class=&quot;m&quot;>03 — auth for private groups</span></div><figcaption>Members-Only</figcaption></figure>
+  </div>
+  <svg class=&quot;arrowd&quot; viewBox=&quot;0 0 96 46&quot; aria-hidden=&quot;true&quot;><path d=&quot;M4 10 C 26 4, 34 34, 62 30 C 74 28, 78 33, 84 30&quot;/></svg>
+  <div class=&quot;cta&quot;><a class=&quot;btn&quot; href=&quot;#work&quot;>See my work</a><a class=&quot;ghost&quot; href=&quot;#contact&quot;>or just say hi →</a></div>
+</section>
+
+<section class=&quot;secc&quot;>
+  <div class=&quot;ruled&quot;>
+    <div class=&quot;idx&quot; style=&quot;padding:0 0 14px&quot;><i></i>03 — MANIFESTO</div>
+    <p>Ship small. Ship often.<br>Make it feel alive.<br>Three years of industrial electricity taught me one thing: it has to <em>actually</em> work.</p>
+  </div>
+  <div style=&quot;display:flex;flex-direction:column;gap:20px&quot;>
+    <div style=&quot;display:flex;gap:9px;flex-wrap:wrap&quot;>
+      <span class=&quot;st&quot;>TypeScript</span><span class=&quot;st&quot; style=&quot;background:#FFC95C&quot;>React</span><span class=&quot;st&quot; style=&quot;background:#8B7CFF;color:#FFF6EC&quot;>Node</span><span class=&quot;st&quot; style=&quot;background:#3FC7A9&quot;>Prisma</span><span class=&quot;st&quot; style=&quot;animation-delay:1s&quot;>PostgreSQL</span><span class=&quot;st&quot; style=&quot;background:#FFC95C;animation-delay:.5s&quot;>ESP32</span>
+    </div>
+    <div class=&quot;cta&quot;><a class=&quot;btn&quot; href=&quot;#work&quot;>See my work</a><a class=&quot;ghost&quot; href=&quot;#contact&quot;>or just say hi →</a></div>
+  </div>
+</section>
+
+<div class=&quot;meta&quot;>
+  <div><b>Title</b>MIX 2 — Scrapbook Terminal (the collage dominates)</div>
+  <div><b>The character</b>Same bold square-jaw mascot, peeking from behind the taped polaroid so the collage leads and the character supports.</div>
+  <div><b>Idea</b>A desk surface: one washi strip down the page, taped prints for work, ruled notebook for the manifesto.</div>
+  <div><b>Palette</b><div class=&quot;dots&quot;><span class=&quot;dotc&quot; style=&quot;background:#FFF6EC&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#221D2E&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#FF5C7A&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#FFC95C&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#8B7CFF&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#3FC7A9&quot;></span></div></div>
+  <div><b>Fonts</b>Bricolage Grotesque · Inter · JetBrains Mono</div>
+  <div><b>Motion</b>Reduced-motion safe — CSS-only, disabled under prefers-reduced-motion</div>
+</div>
+</div>
+</body>
+</html>
+"></iframe>
+  </section>
+
+  <section class="proposal">
+    <div class="p-head">
+      <span class="k">MIX 3</span>
+      <h2>Analog-digital</h2>
+      <span class="dim">mix3-analog-digital</span>
+    </div>
+    <iframe class="shot" height="820" scrolling="no" title="Analog-digital" srcdoc="<!doctype html>
+<html lang=&quot;en&quot;>
+<head>
+<meta charset=&quot;utf-8&quot;>
+<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+<title>MIX 3 · Analog-Digital — About-Me</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Inter:wght@300..700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+*{box-sizing:border-box}
+body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#221D2E;background:#FFF6EC}
+.page{position:relative;width:100%;background:radial-gradient(circle at 1px 1px,rgba(34,29,46,.07) 1px,transparent 1.6px),#FFF6EC;background-size:9px 9px,auto}
+/* circuit bus: the spine that connects all three sections */
+.bus{position:absolute;left:0;top:0;bottom:0;width:40px;border-right:1.5px solid rgba(34,29,46,.35);background:transparent}
+.bus::before{content:&quot;&quot;;position:absolute;left:19px;top:0;bottom:0;width:1.5px;background:rgba(34,29,46,.35)}
+.bus span{position:absolute;left:12px;width:16px;height:16px;border-radius:50%;border:1.5px solid #221D2E;background:#FFF6EC}
+.bus .b1{top:14%}.bus .b2{top:50%;background:#FFC95C}.bus .b3{top:86%;background:#3FC7A9}
+.trace{position:absolute;left:0;right:0;height:1px;background:repeating-linear-gradient(90deg,#221D2E 0 14px,transparent 14px 24px);opacity:.3}
+section{position:relative;padding:0 34px 0 70px}
+.idx{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:#574E63;padding:26px 0 10px;display:flex;align-items:center;gap:12px}
+.idx i{display:block;width:34px;height:1px;background:rgba(34,29,46,.3)}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(38px,5.2vw,54px);line-height:1.02;font-weight:750;letter-spacing:-.03em;margin:0 0 18px}
+.hl{position:relative;display:inline-block;white-space:nowrap}
+.hl::before{content:&quot;&quot;;position:absolute;left:-6px;right:-6px;bottom:6%;height:44%;background:#FFC95C;z-index:-1;transform:rotate(-1.2deg)}
+.sub{font-size:15px;line-height:1.62;color:#574E63;max-width:44ch;margin:0 0 24px}
+.cta{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.btn{background:#FF5C7A;color:#FFF6EC;padding:12px 22px;border-radius:999px;font-family:'Bricolage Grotesque',sans-serif;font-weight:650;font-size:14px;border:1.5px solid #221D2E;box-shadow:5px 5px 0 #221D2E;text-decoration:none;transition:transform .18s cubic-bezier(.22,1,.36,1)}
+.btn:hover{transform:translate(-1px,-1px)}
+.ghost{font-size:14px;border-bottom:1.5px solid #221D2E;padding-bottom:2px;text-decoration:none;color:#221D2E}
+.note{position:absolute;width:150px;padding:11px 12px 13px;font-size:11.5px;line-height:1.42;border:1.5px solid #221D2E;box-shadow:3px 3px 0 #221D2E;border-radius:3px}
+.note b{display:block;font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px;opacity:.85}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -7px}}
+.panel{background:#FFF;border:1.5px solid #221D2E;box-shadow:5px 5px 0 #221D2E;border-radius:10px}
+.mono{font-family:'JetBrains Mono',monospace}
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;min-height:640px}
+.scope{position:relative;padding:12px;background:#1A2E22;border-radius:8px;margin-bottom:14px}
+.scope svg{display:block;width:100%;height:112px}
+.scope .lbl{display:flex;justify-content:space-between;font-size:9.5px;color:#8FE3B0;letter-spacing:.1em;margin-top:8px;padding:0 4px}
+.wave{stroke:#3FC7A9;stroke-width:2.6;fill:none;stroke-linecap:round;stroke-dasharray:600;stroke-dashoffset:600;animation:trace 4s ease-in-out infinite}
+@keyframes trace{to{stroke-dashoffset:0}}
+.meter{display:flex;gap:10px;align-items:center;padding:10px 12px;margin-bottom:12px}
+.meter .v{font-size:19px;font-weight:500;color:#221D2E}
+.meter .u{font-size:10px;color:#574E63;letter-spacing:.1em}
+.meter .bar{flex:1;height:10px;border:1.5px solid #221D2E;border-radius:999px;overflow:hidden;background:#FFF6EC}
+.meter .bar i{display:block;height:100%;width:78%;background:repeating-linear-gradient(90deg,#FF5C7A 0 8px,#221D2E 8px 12px)}
+.artwrap{position:relative;min-height:560px}
+.mascot{position:absolute;left:4%;bottom:8px;width:222px;animation:bob 7s ease-in-out infinite}
+.n1{background:#FFC95C;top:16px;left:0;transform:rotate(-5deg);animation:bob 6s ease-in-out infinite}
+.n2{background:#FF5C7A;color:#FFF6EC;top:26px;right:-6px;transform:rotate(4deg);animation:bob 7s ease-in-out .8s infinite}
+.n3{background:#3FC7A9;bottom:112px;right:2%;transform:rotate(-3deg);width:150px;animation:bob 6.5s ease-in-out 1.5s infinite}
+.weld{position:absolute;top:-4px;left:30%;width:64px;height:24px;z-index:3}
+.weld path{fill:#FFC95C;stroke:#221D2E;stroke-width:2}
+/* schematic */
+.schem{display:grid;grid-template-columns:.9fr 1.1fr;gap:30px;align-items:center;min-height:560px}
+.sch{position:relative;padding:22px 18px}
+.sch svg{display:block;width:100%;height:190px}
+.node{position:absolute;font-family:'JetBrains Mono',monospace;font-size:9.5px;padding:4px 8px;border-radius:999px;border:1.5px solid #221D2E;background:#FFF;box-shadow:2px 2px 0 #221D2E;white-space:nowrap}
+.legend{display:grid;gap:12px}
+.leg{display:flex;align-items:flex-start;gap:12px}
+.leg .k{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#574E63;min-width:78px;padding-top:5px}
+.leg .v{display:flex;gap:7px;flex-wrap:wrap}
+.chip{font-family:'JetBrains Mono',monospace;font-size:10.5px;padding:5px 10px;border-radius:8px;border:1.5px solid #221D2E;box-shadow:2.5px 2.5px 0 #221D2E}
+/* gauges */
+.gauges{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:8px 0 36px}
+.gauge{text-align:center}
+.dial{position:relative;width:118px;height:60px;margin:0 auto 10px;border:1.5px solid #221D2E;border-radius:118px 118px 0 0;background:#FFF;box-shadow:4px 4px 0 #221D2E;overflow:hidden}
+.dial::before{content:&quot;&quot;;position:absolute;left:14px;right:14px;top:14px;height:30px;border-radius:100px 100px 0 0;background:repeating-linear-gradient(90deg,rgba(34,29,46,.14) 0 1px,transparent 1px 18px)}
+.needle{position:absolute;left:50%;bottom:6px;width:2px;height:46px;background:#FF5C7A;transform-origin:bottom center;border-radius:2px}
+.nA{transform:rotate(-42deg)}.nB{transform:rotate(6deg)}.nC{transform:rotate(40deg)}
+.pin{position:absolute;left:50%;bottom:0;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#221D2E}
+.gauge .t{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#574E63}
+.gauge .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;margin-top:3px}
+.meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px;padding:26px 34px 30px 70px;font-size:12.5px;line-height:1.55}
+.meta b{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(34,29,46,.55);margin-bottom:5px;font-weight:500}
+.dots{display:flex;gap:7px}.dotc{width:16px;height:16px;border-radius:50%;border:1px solid rgba(34,29,46,.25)}
+@media (max-width:640px){section{padding:0 18px 0 56px}.hero{grid-template-columns:1fr;min-height:0}.artwrap{min-height:400px}.schem{grid-template-columns:1fr;gap:24px;min-height:0}.gauges{grid-template-columns:1fr;gap:30px}.n3{display:none}.meta{grid-template-columns:1fr;padding:24px 18px 28px 56px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}.wave{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<div class=&quot;page&quot;>
+  <div class=&quot;bus&quot; aria-hidden=&quot;true&quot;><span class=&quot;b1&quot;></span><span class=&quot;b2&quot;></span><span class=&quot;b3&quot;></span></div>
+
+  <!-- 01 -->
+  <section class=&quot;hero&quot;>
+    <div>
+      <div class=&quot;idx&quot;><i></i>01 — HELLO, WORLD</div>
+      <h1>I build software that feels <span class=&quot;hl&quot;>alive</span>.</h1>
+      <p class=&quot;sub&quot;>Fullstack &amp;amp; IA engineer. Six semesters of mechatronics and three years of industrial electricity taught me how things actually behave. Now I build for the web.</p>
+      <div class=&quot;cta&quot;><a class=&quot;btn&quot; href=&quot;#work&quot;>See my work</a><a class=&quot;ghost&quot; href=&quot;#contact&quot;>or just say hi →</a></div>
+      <div class=&quot;scope&quot;>
+        <svg viewBox=&quot;0 0 300 112&quot; aria-hidden=&quot;true&quot;>
+          <path class=&quot;wave&quot; d=&quot;M6 62 H60 L70 20 L84 104 L98 46 H150 L160 30 L172 76 L184 62 H294&quot;/>
+        </svg>
+        <div class=&quot;lbl&quot;><span>CH1 — SIGNAL: GOOD</span><span>2.4 DIV</span></div>
+      </div>
+      <div class=&quot;meter panel&quot;>
+        <span class=&quot;mono v&quot;>87</span><span class=&quot;u&quot;>% COFFEE</span>
+        <span class=&quot;bar&quot;><i></i></span>
+      </div>
+    </div>
+    <div class=&quot;artwrap&quot;>
+      <svg class=&quot;mascot&quot; viewBox=&quot;0 0 260 300&quot; role=&quot;img&quot; aria-label=&quot;Luis: a tough engineer character with a welding mask pushed up on his forehead, square jaw and a smirk&quot;>
+        <ellipse cx=&quot;130&quot; cy=&quot;272&quot; rx=&quot;96&quot; ry=&quot;17&quot; fill=&quot;#221D2E&quot; opacity=&quot;.13&quot;/>
+        <path d=&quot;M28 300c6-52 40-76 102-76s96 24 102 76z&quot; fill=&quot;#221D2E&quot;/>
+        <path d=&quot;M104 226h52l-26 74z&quot; fill=&quot;#FFF6EC&quot;/><path d=&quot;M120 232l10 44 10-44z&quot; fill=&quot;#FF5C7A&quot;/>
+        <path d=&quot;M108 196h44v34h-44z&quot; fill=&quot;#E8A87C&quot;/>
+        <!-- welding mask pushed up -->
+        <svg class=&quot;weld&quot; viewBox=&quot;0 0 64 24&quot;><path d=&quot;M4 12c0-6 12-10 28-10s28 4 28 10-12 10-28 10S4 18 4 12z&quot;/><rect x=&quot;26&quot; y=&quot;4&quot; width=&quot;12&quot; height=&quot;16&quot; rx=&quot;3&quot; fill=&quot;#221D2E&quot;/></svg>
+        <path d=&quot;M130 40c40 0 62 24 62 62 0 18-6 30-6 44 0 30-24 56-56 56s-56-26-56-56c0-14-6-26-6-44 0-38 22-62 62-62z&quot; fill=&quot;#E8A87C&quot;/>
+        <path d=&quot;M78 140c6 32 26 52 52 52s46-20 52-52c2 44-18 74-52 74s-54-30-52-74z&quot; fill=&quot;#221D2E&quot; opacity=&quot;.13&quot;/>
+        <path d=&quot;M92 128c10-8 22-9 30-3-10 0-22 3-30 9z&quot; fill=&quot;#221D2E&quot;/>
+        <path d=&quot;M168 128c-10-8-22-9-30-3 10 0 22 3 30 9z&quot; fill=&quot;#221D2E&quot;/>
+        <ellipse cx=&quot;107&quot; cy=&quot;146&quot; rx=&quot;11&quot; ry=&quot;12.5&quot; fill=&quot;#FFF6EC&quot;/><ellipse cx=&quot;153&quot; cy=&quot;146&quot; rx=&quot;11&quot; ry=&quot;12.5&quot; fill=&quot;#FFF6EC&quot;/>
+        <circle cx=&quot;109&quot; cy=&quot;148&quot; r=&quot;5.4&quot; fill=&quot;#221D2E&quot;/><circle cx=&quot;151&quot; cy=&quot;148&quot; r=&quot;5.4&quot; fill=&quot;#221D2E&quot;/>
+        <circle cx=&quot;111&quot; cy=&quot;145&quot; r=&quot;2&quot; fill=&quot;#FFF&quot;/><circle cx=&quot;153&quot; cy=&quot;145&quot; r=&quot;2&quot; fill=&quot;#FFF&quot;/>
+        <path d=&quot;M130 152l-9 20h18z&quot; fill=&quot;#D98F63&quot;/>
+        <path d=&quot;M108 190c14 10 30 11 44 2&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;5&quot; stroke-linecap=&quot;round&quot; fill=&quot;none&quot;/>
+        <path d=&quot;M192 160l6 10-4 1 6 11h-10l2-8 4 1-5-10z&quot; fill=&quot;#FFC95C&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.6&quot;/>
+      </svg>
+      <div class=&quot;note n1&quot;><b>background</b>Ex-industrial electrician. 3 years on real systems.</div>
+      <div class=&quot;note n2&quot;><b>hardware</b>PIC · Arduino · ESP32</div>
+      <div class=&quot;note n3&quot;><b>superpower</b>I speak both volts and TypeScript.</div>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section class=&quot;schem&quot;>
+    <div class=&quot;idx&quot; style=&quot;position:absolute;top:0;left:70px&quot;><i></i>02 — SCHEMATIC</div>
+    <div class=&quot;panel sch&quot;>
+      <svg viewBox=&quot;0 0 220 190&quot; aria-hidden=&quot;true&quot;>
+        <path d=&quot;M110 26v30M60 100h100M110 56v74&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.6&quot; fill=&quot;none&quot;/>
+        <path d=&quot;M110 26 60 100M110 26 160 100&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.6&quot; fill=&quot;none&quot;/>
+        <path d=&quot;M110 130v24M60 100 30 150M160 100 190 150&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.6&quot; fill=&quot;none&quot;/>
+        <circle cx=&quot;110&quot; cy=&quot;22&quot; r=&quot;7&quot; fill=&quot;#FF5C7A&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.6&quot;/>
+        <circle cx=&quot;60&quot; cy=&quot;100&quot; r=&quot;5.5&quot; fill=&quot;#FFC95C&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.6&quot;/>
+        <circle cx=&quot;110&quot; cy=&quot;56&quot; r=&quot;0&quot; />
+        <circle cx=&quot;160&quot; cy=&quot;100&quot; r=&quot;5.5&quot; fill=&quot;#3FC7A9&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.6&quot;/>
+        <circle cx=&quot;110&quot; cy=&quot;154&quot; r=&quot;6&quot; fill=&quot;#8B7CFF&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.6&quot;/>
+        <circle cx=&quot;30&quot; cy=&quot;150&quot; r=&quot;5&quot; fill=&quot;#FFF&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.6&quot;/>
+        <circle cx=&quot;190&quot; cy=&quot;150&quot; r=&quot;5&quot; fill=&quot;#FFF&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.6&quot;/>
+        <path d=&quot;M198 96l10-8v16z&quot; fill=&quot;#221D2E&quot;/><path d=&quot;M12 96l10-8v16z&quot; fill=&quot;#221D2E&quot;/>
+        <path d=&quot;M84 176h14v-10h10v10h14v-8h10v8h14&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.6&quot; fill=&quot;none&quot;/>
+      </svg>
+    </div>
+    <div class=&quot;legend&quot;>
+      <div class=&quot;leg&quot;><span class=&quot;k&quot;>Frontend</span><span class=&quot;v&quot;><span class=&quot;chip&quot; style=&quot;background:#3FC7A9&quot;>TypeScript</span><span class=&quot;chip&quot; style=&quot;background:#FFC95C&quot;>React</span><span class=&quot;chip&quot;>Next.js</span><span class=&quot;chip&quot;>Tailwind</span></span></div>
+      <div class=&quot;leg&quot;><span class=&quot;k&quot;>Backend</span><span class=&quot;v&quot;><span class=&quot;chip&quot; style=&quot;background:#8B7CFF;color:#FFF6EC&quot;>Node.js</span><span class=&quot;chip&quot;>Express</span><span class=&quot;chip&quot;>Prisma</span><span class=&quot;chip&quot;>Passport</span></span></div>
+      <div class=&quot;leg&quot;><span class=&quot;k&quot;>Data</span><span class=&quot;v&quot;><span class=&quot;chip&quot; style=&quot;background:#FFF&quot;>PostgreSQL</span><span class=&quot;chip&quot; style=&quot;background:#FFC95C&quot;>SQL</span></span></div>
+      <div class=&quot;leg&quot;><span class=&quot;k&quot;>Hardware</span><span class=&quot;v&quot;><span class=&quot;chip&quot; style=&quot;background:#3FC7A9&quot;>ESP32</span><span class=&quot;chip&quot;>Arduino</span><span class=&quot;chip&quot;>PIC</span><span class=&quot;chip&quot; style=&quot;background:#FFF&quot;>Oscilloscope</span></span></div>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section>
+    <div class=&quot;idx&quot;><i></i>03 — MEASUREMENTS</div>
+    <div class=&quot;gauges&quot;>
+      <div class=&quot;gauge&quot;><div class=&quot;dial&quot;><span class=&quot;needle nA&quot;></span><span class=&quot;pin&quot;></span></div><div class=&quot;t&quot;>CURIOSITY</div><div class=&quot;n&quot;>MAX</div></div>
+      <div class=&quot;gauge&quot;><div class=&quot;dial&quot;><span class=&quot;needle nB&quot;></span><span class=&quot;pin&quot;></span></div><div class=&quot;t&quot;>SHIP FREQUENCY</div><div class=&quot;n&quot;>DAILY</div></div>
+      <div class=&quot;gauge&quot;><div class=&quot;dial&quot;><span class=&quot;needle nC&quot;></span><span class=&quot;pin&quot;></span></div><div class=&quot;t&quot;>BUGS TOLERATED</div><div class=&quot;n&quot;>ZERO</div></div>
+    </div>
+    <div class=&quot;cta&quot;><a class=&quot;btn&quot; href=&quot;#work&quot;>See my work</a><a class=&quot;ghost&quot; href=&quot;#contact&quot;>or just say hi →</a></div>
+  </section>
+
+  <div class=&quot;meta&quot;>
+    <div><b>Title</b>MIX 3 — Analog-Digital (workshop bench)</div>
+    <div><b>The character</b>Same tough square-jaw mascot with a welding mask pushed up on his forehead — an engineer at the bench, not an office worker.</div>
+    <div><b>Idea</b>A circuit bus runs down the whole page and connects the three sections: oscilloscope, labeled skills schematic, and measurement gauges.</div>
+    <div><b>Palette</b><div class=&quot;dots&quot;><span class=&quot;dotc&quot; style=&quot;background:#FFF6EC&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#221D2E&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#FF5C7A&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#FFC95C&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#8B7CFF&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#3FC7A9&quot;></span></div></div>
+    <div><b>Fonts</b>Bricolage Grotesque · Inter · JetBrains Mono</div>
+    <div><b>Motion</b>Reduced-motion safe — CSS-only, disabled under prefers-reduced-motion</div>
+  </div>
+</div>
+</body>
+</html>
+"></iframe>
+  </section>
+
+  <section class="proposal">
+    <div class="p-head">
+      <span class="k">MIX 4</span>
+      <h2>Cuaderno de ingeniero</h2>
+      <span class="dim">mix4-notebook</span>
+    </div>
+    <iframe class="shot" height="820" scrolling="no" title="Cuaderno de ingeniero" srcdoc="<!doctype html>
+<html lang=&quot;en&quot;>
+<head>
+<meta charset=&quot;utf-8&quot;>
+<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+<title>MIX 4 · Engineer's Notebook — About-Me</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Inter:wght@300..700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+*{box-sizing:border-box}
+body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#221D2E;background:#FFF6EC}
+.page{position:relative;width:100%;background:#FFF;background-image:linear-gradient(rgba(34,29,46,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(34,29,46,.07) 1px,transparent 1px);background-size:22px 22px}
+/* left margin rule + spiral rings */
+.margin{position:absolute;left:46px;top:0;bottom:0;width:1.5px;background:#FF5C7A;opacity:.45}
+.rings{position:absolute;left:16px;top:0;bottom:0;width:22px;display:flex;flex-direction:column;justify-content:space-around;align-items:center}
+.rings i{display:block;width:14px;height:14px;border-radius:50%;border:1.5px solid rgba(34,29,46,.4);background:#FFF}
+section{position:relative;padding:0 32px 0 78px}
+.pg{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:#574E63;padding:28px 0 8px;display:flex;align-items:center;gap:12px}
+.pg i{display:block;width:30px;height:1px;background:rgba(34,29,46,.35)}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(38px,5.2vw,54px);line-height:1.02;font-weight:750;letter-spacing:-.03em;margin:0 0 18px}
+.hl{position:relative;display:inline-block;white-space:nowrap}
+.hl::before{content:&quot;&quot;;position:absolute;left:-6px;right:-6px;bottom:6%;height:46%;background:#FFC95C;z-index:-1;transform:rotate(-1.2deg)}
+.sub{font-size:15px;line-height:1.62;color:#574E63;max-width:44ch;margin:0 0 24px}
+.cta{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.btn{background:#FF5C7A;color:#FFF6EC;padding:12px 22px;border-radius:999px;font-family:'Bricolage Grotesque',sans-serif;font-weight:650;font-size:14px;border:1.5px solid #221D2E;box-shadow:5px 5px 0 #221D2E;text-decoration:none;transition:transform .18s cubic-bezier(.22,1,.36,1)}
+.btn:hover{transform:translate(-1px,-1px)}
+.ghost{font-size:14px;border-bottom:1.5px solid #221D2E;padding-bottom:2px;text-decoration:none;color:#221D2E}
+.note{position:absolute;width:152px;padding:11px 12px 13px;font-size:11.5px;line-height:1.42;border:1.5px solid #221D2E;box-shadow:3px 3px 0 #221D2E;border-radius:3px;background:#FFF}
+.note b{display:block;font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px;opacity:.85}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -7px}}
+.tape{position:absolute;width:58px;height:16px;background:#FFC95C;opacity:.9;border:1.5px solid rgba(34,29,46,.45);z-index:5}
+.spread1{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;min-height:620px}
+.artwrap{position:relative;min-height:540px}
+.n1{background:#FFC95C;top:18px;left:2%;transform:rotate(-5deg);animation:bob 6s ease-in-out infinite}
+.n2{background:#3FC7A9;top:34px;right:2%;transform:rotate(4deg);animation:bob 7s ease-in-out .8s infinite}
+.n3{background:#FF5C7A;color:#FFF6EC;bottom:26px;left:6%;transform:rotate(-3deg);animation:bob 6.5s ease-in-out 1.5s infinite}
+.sketch{position:absolute;right:6%;bottom:24px;width:220px;animation:bob 7s ease-in-out infinite}
+.bubble{position:absolute;top:34%;left:2%;background:#FFF;border:1.5px solid #221D2E;box-shadow:3px 3px 0 #221D2E;padding:8px 11px;font-size:11.5px;border-radius:12px;transform:rotate(-2deg);max-width:170px;line-height:1.4}
+.bubble::after{content:&quot;&quot;;position:absolute;left:18px;bottom:-9px;width:12px;height:12px;background:#FFF;border-right:1.5px solid #221D2E;border-bottom:1.5px solid #221D2E;transform:rotate(35deg)}
+/* annotated code */
+.codeblock{position:relative;background:#221D2E;border-radius:12px;overflow:visible;box-shadow:6px 6px 0 #221D2E;margin:8px 0 26px;transform:rotate(-.6deg)}
+.codeblock .bar{display:flex;gap:6px;padding:10px 13px;border-bottom:1px solid rgba(255,246,236,.09)}
+.codeblock .bar i{width:9px;height:9px;border-radius:50%;display:block}
+.codeblock .bar i:nth-child(1){background:#FF5C7A}.codeblock .bar i:nth-child(2){background:#FFC95C}.codeblock .bar i:nth-child(3){background:#3FC7A9}
+.codeblock pre{margin:0;padding:15px 17px;font-family:'JetBrains Mono',monospace;font-size:11.5px;line-height:1.85;color:#F4EDE4;white-space:pre-wrap}
+.p{color:#3FC7A9}.o{color:#B9AFC7}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin:7px 0}
+.chip{font-size:10px;padding:4px 9px;border-radius:999px;font-family:'JetBrains Mono',monospace}
+.c1{background:#3FC7A9;color:#221D2E}.c2{background:#FFC95C;color:#221D2E}.c3{background:#8B7CFF;color:#FFF6EC}
+.caret{display:inline-block;color:#FFC95C;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.handnote{position:absolute;font-family:'Inter',sans-serif;font-size:11.5px;color:#574E63;max-width:150px;line-height:1.4}
+.h1n{top:-30px;right:6%;transform:rotate(2deg)}
+.h2n{bottom:-34px;left:8%;transform:rotate(-2deg)}
+.arrowd{width:86px;height:42px;overflow:visible;margin:4px 0 14px}
+.arrowd path{fill:none;stroke:#574E63;stroke-width:2.2;stroke-linecap:round;stroke-dasharray:5 7;animation:march 6s linear infinite}
+@keyframes march{to{stroke-dashoffset:-48}}
+/* spec sheet */
+.spread2{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;min-height:560px}
+.spec{position:relative;background:#FFF;border:1.5px solid #221D2E;box-shadow:5px 5px 0 #221D2E;border-radius:8px;padding:24px 26px}
+.spec h3{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#574E63;margin:0 0 16px}
+.row{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:12px 0;border-bottom:1px dashed rgba(34,29,46,.3);align-items:baseline}
+.row:last-of-type{border-bottom:none}
+.row dt{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#574E63}
+.row dd{margin:0;font-family:'Bricolage Grotesque',sans-serif;font-size:15px;font-weight:600;letter-spacing:-.01em}
+.manifesto{position:relative}
+.manifesto h2{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(28px,3.4vw,38px);line-height:1.08;font-weight:750;letter-spacing:-.025em;margin:0 0 16px}
+.manifesto p{font-size:14.5px;line-height:1.65;color:#574E63;max-width:42ch;margin:0 0 24px}
+.meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px;padding:24px 32px 30px 78px;font-size:12.5px;line-height:1.55}
+.meta b{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(34,29,46,.55);margin-bottom:5px;font-weight:500}
+.dots{display:flex;gap:7px}.dotc{width:16px;height:16px;border-radius:50%;border:1px solid rgba(34,29,46,.25)}
+@media (max-width:640px){section{padding:0 16px 0 62px}.spread1,.spread2{grid-template-columns:1fr;gap:24px;min-height:0}.artwrap{min-height:380px}.n2,.n3{display:none}.sketch{position:relative;right:auto;bottom:auto;margin-top:10px}.meta{grid-template-columns:1fr;padding:22px 16px 28px 62px}.row{grid-template-columns:82px 1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div class=&quot;page&quot;>
+  <div class=&quot;margin&quot; aria-hidden=&quot;true&quot;></div>
+  <div class=&quot;rings&quot; aria-hidden=&quot;true&quot;><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+  <!-- p.01 -->
+  <section class=&quot;spread1&quot;>
+    <div>
+      <div class=&quot;pg&quot;><i></i>p.01 — HELLO, WORLD</div>
+      <h1>I build software that feels <span class=&quot;hl&quot;>alive</span>.</h1>
+      <p class=&quot;sub&quot;>Fullstack &amp;amp; IA engineer. This page is my notebook, not a brochure: TV repairs as a kid, six semesters of mechatronics, three years of industrial electricity, then software for good.</p>
+      <div class=&quot;cta&quot;><a class=&quot;btn&quot; href=&quot;#work&quot;>See my work</a><a class=&quot;ghost&quot; href=&quot;#contact&quot;>or just say hi →</a></div>
+    </div>
+    <div class=&quot;artwrap&quot;>
+      <span class=&quot;tape&quot; style=&quot;top:-8px;left:32%;transform:rotate(-36deg)&quot;></span>
+      <svg class=&quot;sketch&quot; viewBox=&quot;0 0 240 260&quot; role=&quot;img&quot; aria-label=&quot;A hand-sketched doodle of Luis: square jaw, thick brows, a smirk and a tiny hard hat&quot;>
+        <ellipse cx=&quot;120&quot; cy=&quot;240&quot; rx=&quot;86&quot; ry=&quot;13&quot; fill=&quot;none&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;2&quot; opacity=&quot;.5&quot;/>
+        <path d=&quot;M26 258c6-46 36-66 94-66s88 20 94 66&quot; fill=&quot;none&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;3&quot; stroke-linecap=&quot;round&quot;/>
+        <path d=&quot;M120 40c36 0 56 22 56 56 0 16-5 27-5 40 0 27-22 50-51 50s-51-23-51-50c0-13-5-24-5-40 0-34 20-56 56-56z&quot; fill=&quot;none&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;3&quot; stroke-linejoin=&quot;round&quot;/>
+        <path d=&quot;M92 124c9-7 20-8 27-3M148 124c-9-7-20-8-27-3&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;4&quot; stroke-linecap=&quot;round&quot;/>
+        <ellipse cx=&quot;102&quot; cy=&quot;141&quot; rx=&quot;10&quot; ry=&quot;11.5&quot; fill=&quot;#FFF6EC&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;2.4&quot;/>
+        <ellipse cx=&quot;138&quot; cy=&quot;141&quot; rx=&quot;10&quot; ry=&quot;11.5&quot; fill=&quot;#FFF6EC&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;2.4&quot;/>
+        <circle cx=&quot;104&quot; cy=&quot;143&quot; r=&quot;5&quot; fill=&quot;#221D2E&quot;/><circle cx=&quot;136&quot; cy=&quot;143&quot; r=&quot;5&quot; fill=&quot;#221D2E&quot;/>
+        <path d=&quot;M120 147l-8 18h16&quot; fill=&quot;none&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;2.6&quot; stroke-linejoin=&quot;round&quot;/>
+        <path d=&quot;M100 182c13 9 27 10 40 2&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;4&quot; stroke-linecap=&quot;round&quot; fill=&quot;none&quot;/>
+        <path d=&quot;M68 86c2-30 26-50 52-50s50 20 52 50&quot; fill=&quot;none&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;3&quot;/>
+        <path d=&quot;M62 74h116M74 62h92&quot; stroke=&quot;#FF5C7A&quot; stroke-width=&quot;4&quot; stroke-linecap=&quot;round&quot;/>
+        <path d=&quot;M120 20c8-6 20-6 28 0&quot; fill=&quot;none&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;2.6&quot; stroke-linecap=&quot;round&quot;/>
+      </svg>
+      <div class=&quot;bubble&quot;>&quot;I speak volts and TypeScript.&quot;</div>
+      <div class=&quot;note n1&quot; style=&quot;top:auto;bottom:26%;left:0&quot;><b>background</b>Ex-industrial electrician. 3 years of real systems.</div>
+      <div class=&quot;note n2&quot;><b>hardware</b>ESP32 · PIC · Arduino</div>
+      <div class=&quot;note n3&quot;><b>as a kid</b>I repaired televisions for fun</div>
+    </div>
+  </section>
+
+  <!-- p.02 -->
+  <section>
+    <div class=&quot;pg&quot;><i></i>p.02 — ANNOTATED CODE</div>
+    <div style=&quot;position:relative;padding-right:180px&quot;>
+      <div class=&quot;codeblock&quot;>
+        <div class=&quot;bar&quot;><i></i><i></i><i></i></div>
+        <pre><span class=&quot;p&quot;>➜</span> luis.dev whoami
+<span class=&quot;o&quot;>Luis — fullstack &amp;amp; IA engineer.</span>
+<span class=&quot;p&quot;>➜</span> luis.dev ls skills/
+<div class=&quot;chips&quot;><span class=&quot;chip c1&quot;>TypeScript</span><span class=&quot;chip c2&quot;>React</span><span class=&quot;chip c1&quot;>Node</span><span class=&quot;chip c3&quot;>Prisma</span><span class=&quot;chip c2&quot;>ESP32</span></div><span class=&quot;p&quot;>➜</span> luis.dev cat about.md
+<span class=&quot;o&quot;>&quot;Ship small, ship often, make it feel alive.&quot;</span><span class=&quot;caret&quot;>▍</span></pre>
+      </div>
+      <span class=&quot;handnote h1n&quot;>✎ this is where the magic is</span>
+      <span class=&quot;handnote h2n&quot; style=&quot;bottom:-30px;left:14%&quot;>✎ still my favourite part, six semesters later</span>
+      <svg class=&quot;arrowd&quot; viewBox=&quot;0 0 86 42&quot; aria-hidden=&quot;true&quot;><path d=&quot;M4 10 C 24 4, 30 32, 54 28 C 66 26, 70 31, 78 28&quot;/></svg>
+    </div>
+  </section>
+
+  <!-- p.03 -->
+  <section class=&quot;spread2&quot;>
+    <div class=&quot;spec&quot;>
+      <h3>spec sheet — luis hernández castillo</h3>
+      <dl style=&quot;margin:0&quot;>
+        <div class=&quot;row&quot;><dt>Role</dt><dd>Fullstack Engineer · IA Engineer</dd></div>
+        <div class=&quot;row&quot;><dt>Background</dt><dd>Mechatronics → industrial electricity → software</dd></div>
+        <div class=&quot;row&quot;><dt>Stack</dt><dd>TypeScript · React · Next.js · Node · Prisma · PostgreSQL</dd></div>
+        <div class=&quot;row&quot;><dt>Also</dt><dd>PIC · Arduino · ESP32 · oscilloscopes · real wiring</dd></div>
+        <div class=&quot;row&quot;><dt>Featured</dt><dd>File-Up-loader</dd></div>
+      </dl>
+    </div>
+    <div class=&quot;manifesto&quot;>
+      <div class=&quot;pg&quot; style=&quot;padding:0 0 10px&quot;><i></i>p.03 — MANIFESTO</div>
+      <h2>It has to actually work.</h2>
+      <p>Three years in industrial electricity taught me that &quot;almost&quot; is not a shipping standard. I bring that habit to software: small, tested, honest increments that survive real users.</p>
+      <div class=&quot;cta&quot;><a class=&quot;btn&quot; href=&quot;#work&quot;>See my work</a><a class=&quot;ghost&quot; href=&quot;#contact&quot;>or just say hi →</a></div>
+    </div>
+  </section>
+
+  <div class=&quot;meta&quot;>
+    <div><b>Title</b>MIX 4 — Engineer's Notebook (graph paper + margins)</div>
+    <div><b>The character</b>A hand-sketched doodle in the notebook margin — square jaw, thick brows, confident smirk, a tiny hard hat, oversized eyes. Rought stroke, still cute.</div>
+    <div><b>Idea</b>Graph paper, a red margin rule and spiral rings; three spreads with page numbers, hand-annotated code and a ruled spec sheet.</div>
+    <div><b>Palette</b><div class=&quot;dots&quot;><span class=&quot;dotc&quot; style=&quot;background:#FFF6EC&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#221D2E&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#FF5C7A&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#FFC95C&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#8B7CFF&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#3FC7A9&quot;></span></div></div>
+    <div><b>Fonts</b>Bricolage Grotesque · Inter · JetBrains Mono</div>
+    <div><b>Motion</b>Reduced-motion safe — CSS-only, disabled under prefers-reduced-motion</div>
+  </div>
+</div>
+</body>
+</html>
+"></iframe>
+  </section>
+
+  <section class="proposal">
+    <div class="p-head">
+      <span class="k">MIX 5</span>
+      <h2>Terminal + doodle + panel</h2>
+      <span class="dim">mix5-terminal-doodle-panel</span>
+    </div>
+    <iframe class="shot" height="820" scrolling="no" title="Terminal + doodle + panel" srcdoc="<!doctype html>
+<html lang=&quot;en&quot;>
+<head>
+<meta charset=&quot;utf-8&quot;>
+<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+<title>MIX · Terminal + Doodle + Control Panel (V1+V3+V5) — v2</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Inter:wght@300..700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+
+*{box-sizing:border-box}
+body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#221D2E;background:#FFF6EC}
+
+.page{position:relative;width:100%;background:radial-gradient(circle at 1px 1px,rgba(34,29,46,.07) 1px,transparent 1.6px),#FFF6EC;background-size:9px 9px,auto}
+
+.spine{position:absolute;left:0;top:0;bottom:0;width:28px;background:#FFC95C;opacity:.45;border-right:1.5px solid rgba(34,29,46,.3)}
+.spine::after{content:&quot;&quot;;position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.3) 0 5px,transparent 5px 10px)}
+
+section{position:relative;padding:0 34px 0 66px}
+.idx{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:#574E63;padding:26px 0 12px;display:flex;align-items:center;gap:12px}
+.idx i{display:block;width:34px;height:1px;background:rgba(34,29,46,.3)}
+
+h1{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(36px,5vw,52px);line-height:1.04;font-weight:750;letter-spacing:-.03em;margin:0 0 16px}
+.hl{position:relative;display:inline-block;white-space:nowrap}
+.hl::before{content:&quot;&quot;;position:absolute;left:-6px;right:-6px;bottom:6%;height:46%;background:#FFC95C;z-index:-1;transform:rotate(-1.2deg)}
+.sub{font-size:15px;line-height:1.62;color:#574E63;max-width:44ch;margin:0 0 24px}
+.cta{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.btn{background:#FF5C7A;color:#FFF6EC;padding:12px 22px;border-radius:999px;font-family:'Bricolage Grotesque',sans-serif;font-weight:650;font-size:14px;border:1.5px solid #221D2E;box-shadow:5px 5px 0 #221D2E;text-decoration:none;transition:transform .18s cubic-bezier(.22,1,.36,1)}
+.btn:hover{transform:translate(-1px,-1px)}
+.ghost{font-size:14px;border-bottom:1.5px solid #221D2E;padding-bottom:2px;text-decoration:none;color:#221D2E}
+.mono{font-family:'JetBrains Mono',monospace}
+
+/* doodle annotations */
+.squig{width:100%;height:24px;overflow:visible;margin-bottom:8px}
+.squig path{fill:none;stroke:#FF5C7A;stroke-width:3.4;stroke-linecap:round;stroke-dasharray:220;stroke-dashoffset:0;animation:draw 2.8s ease-in-out infinite alternate}
+@keyframes draw{from{stroke-dashoffset:0}to{stroke-dashoffset:40}}
+.arrowd{width:88px;height:42px;overflow:visible}
+.arrowd path{fill:none;stroke:#574E63;stroke-width:2.2;stroke-linecap:round;stroke-dasharray:5 7;animation:march 6s linear infinite}
+@keyframes march{to{stroke-dashoffset:-48}}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -8px}}
+.star{position:absolute;color:#8B7CFF;font-size:16px;animation:bob 5s ease-in-out infinite;font-family:'Bricolage Grotesque',sans-serif}
+.s1{top:12%;left:4%}.s2{top:24%;right:6%;animation-delay:1.2s;font-size:13px;color:#3FC7A9}
+.s3{bottom:14%;left:2%;animation-delay:.6s;font-size:11px;color:#FFC95C;text-shadow:0 0 0 #221D2E}
+
+/* ============ 01 HERO — V3 doodle character + V5 control panel ============ */
+.hero{display:grid;grid-template-columns:.95fr 1.05fr;gap:26px;align-items:center;min-height:680px}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.22em;color:#574E63;margin-bottom:14px}
+.artwrap{position:relative;min-height:580px;display:flex;align-items:center;justify-content:center}
+.bubble{position:absolute;top:4%;right:0;z-index:5;background:#FFF;border:1.5px solid #221D2E;box-shadow:3px 3px 0 #221D2E;padding:9px 12px;font-size:11.5px;line-height:1.45;border-radius:12px;transform:rotate(2deg);max-width:186px}
+.bubble em{font-style:normal;background:#FFC95C;padding:0 4px;border-radius:3px}
+.bubble::after{content:&quot;&quot;;position:absolute;left:26px;bottom:-9px;width:12px;height:12px;background:#FFF;border-right:1.5px solid #221D2E;border-bottom:1.5px solid #221D2E;transform:rotate(35deg)}
+.cup{position:absolute;bottom:14%;left:2%;width:38px;height:34px;animation:bob 6s ease-in-out infinite}
+.mascot{width:290px;animation:bob 6.5s ease-in-out infinite}
+
+/* control panel (V5) */
+.panel{background:#FFF;border:1.5px solid #221D2E;box-shadow:6px 6px 0 #221D2E;border-radius:12px;padding:14px}
+.ptitle{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#574E63;margin-bottom:12px;display:flex;justify-content:space-between}
+.readout{background:#221D2E;border-radius:8px;padding:11px 12px;font-family:'JetBrains Mono',monospace;font-size:10.5px;line-height:1.7;color:#F4EDE4;margin-bottom:14px}
+.readout .g{color:#3FC7A9}.readout .r{color:#FF5C7A}.readout .y{color:#FFC95C}
+.ctrls{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:end;margin-bottom:18px}
+.knob{position:relative;width:50px;height:50px;margin:0 auto 16px;border-radius:50%;border:1.5px solid #221D2E;background:repeating-conic-gradient(from 0deg,rgba(34,29,46,.16) 0deg 6deg,transparent 6deg 18deg),#FFF6EC;box-shadow:3px 3px 0 #221D2E}
+.knob::after{content:&quot;&quot;;position:absolute;left:50%;top:5px;width:3px;height:18px;margin-left:-1.5px;border-radius:2px;background:#FF5C7A;transform-origin:50% 20px}
+.k1::after{transform:rotate(-40deg)}.k2::after{transform:rotate(10deg)}.k3::after{transform:rotate(48deg)}
+.knob span{position:absolute;left:0;right:0;bottom:-15px;font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.1em;text-align:center;color:#574E63}
+.switches{display:flex;gap:10px;flex-wrap:wrap}
+.sw{display:flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.08em;color:#574E63}
+.sw i{position:relative;display:block;width:34px;height:18px;border-radius:999px;border:1.5px solid #221D2E;background:#3FC7A9}
+.sw i::after{content:&quot;&quot;;position:absolute;top:1.5px;right:1.5px;width:12px;height:12px;border-radius:50%;background:#FFF}
+.sw.off i{background:#FFF6EC}.sw.off i::after{right:auto;left:1.5px}
+.leads{display:flex;gap:16px;justify-content:center;margin-top:8px}
+.lead{display:flex;flex-direction:column;align-items:center;gap:5px}
+.lead .plug{width:20px;height:32px;border-radius:6px;border:1.5px solid #221D2E;position:relative;box-shadow:2px 2px 0 #221D2E}
+.lead .plug::before,.lead .plug::after{content:&quot;&quot;;position:absolute;top:-6px;width:3px;height:8px;background:#221D2E;border-radius:2px}
+.lead .plug::before{left:5px}.lead .plug::after{right:5px}
+.lead .lg{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.1em;color:#574E63}
+.pg{background:#FFC95C}.pm{background:#FF5C7A}.pp{background:#8B7CFF}
+
+/* ============ 02 TERMINAL ============ */
+.term-sec{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:center;min-height:540px}
+.annot{padding-left:24px;border-left:1px dashed rgba(34,29,46,.3)}
+.hand{font-family:'Bricolage Grotesque',sans-serif;font-size:19px;font-weight:600;line-height:1.35;max-width:26ch;margin:0 0 12px}
+.hand em{font-style:normal;background:#FFC95C;padding:1px 5px;border-radius:4px}
+.mnote{font-size:13px;line-height:1.55;color:#574E63;max-width:32ch;margin:0}
+.tagpin{position:absolute;font-family:'JetBrains Mono',monospace;font-size:10px;padding:5px 9px;border-radius:8px;border:1.5px solid #221D2E;background:#FFF;box-shadow:3px 3px 0 #221D2E;animation:bob 5s ease-in-out infinite}
+.term-wrap{position:relative}
+.term{background:#221D2E;border-radius:14px;overflow:hidden;border:1.5px solid #221D2E;box-shadow:6px 6px 0 #221D2E;transform:rotate(-1.2deg)}
+.bar{display:flex;gap:6px;padding:11px 14px;border-bottom:1px solid rgba(255,246,236,.09)}
+.bar i{width:10px;height:10px;border-radius:50%;display:block}
+.bar i:nth-child(1){background:#FF5C7A}.bar i:nth-child(2){background:#FFC95C}.bar i:nth-child(3){background:#3FC7A9}
+.term-body{padding:16px 18px 18px;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.9;color:#F4EDE4}
+.term-body p{margin:0}
+.p{color:#3FC7A9}.o{color:#B9AFC7}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin:8px 0}
+.chip{font-size:10.5px;padding:4px 9px;border-radius:999px;font-family:'JetBrains Mono',monospace}
+.c1{background:#3FC7A9;color:#221D2E}.c2{background:#FFC95C;color:#221D2E}.c3{background:#8B7CFF;color:#FFF6EC}
+.caret{display:inline-block;color:#FFC95C;margin-left:2px;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* ============ 03 MEASUREMENTS ============ */
+.gauge-sec{display:grid;grid-template-columns:1.06fr .94fr;gap:30px;align-items:center;min-height:540px}
+.gauges{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:24px}
+.gauge{text-align:center}
+.dial{position:relative;width:94px;height:49px;margin:0 auto 9px;border:1.5px solid #221D2E;border-radius:94px 94px 0 0;background:#FFF;box-shadow:4px 4px 0 #221D2E;overflow:hidden}
+.dial::before{content:&quot;&quot;;position:absolute;left:12px;right:12px;top:11px;height:26px;border-radius:100px 100px 0 0;background:repeating-linear-gradient(90deg,rgba(34,29,46,.14) 0 1px,transparent 1px 16px)}
+.needle{position:absolute;left:50%;bottom:5px;width:2px;height:37px;background:#FF5C7A;transform-origin:bottom center;border-radius:2px}
+.nA{transform:rotate(-42deg)}.nB{transform:rotate(6deg)}.nC{transform:rotate(40deg)}
+.pin{position:absolute;left:50%;bottom:0;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;background:#221D2E}
+.gauge .t{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:#574E63}
+.gauge .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:15px;margin-top:2px}
+.workbox{background:#FFF;border:1.5px solid #221D2E;box-shadow:5px 5px 0 #221D2E;border-radius:12px;padding:18px 20px}
+.workbox h3{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#574E63;margin:0 0 14px}
+.wrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px dashed rgba(34,29,46,.28)}
+.wrow:last-of-type{border-bottom:none}
+.wrow .led{width:12px;height:12px;border-radius:50%;border:1.5px solid #221D2E;flex:none;animation:blink 2.4s steps(1) infinite}
+.wrow:nth-child(3) .led{background:#FF5C7A}
+.wrow:nth-child(4) .led{background:#FFC95C;animation-delay:.6s}
+.wrow:nth-child(5) .led{background:#3FC7A9;animation-delay:1.2s}
+.wrow .nm{font-family:'Bricolage Grotesque',sans-serif;font-weight:650;font-size:14.5px;letter-spacing:-.01em}
+.wrow .tagm{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#574E63}
+
+.meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px;padding:26px 34px 30px 66px;font-size:12.5px;line-height:1.55}
+.meta b{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(34,29,46,.55);margin-bottom:5px;font-weight:500}
+.dots{display:flex;gap:7px}.dotc{width:16px;height:16px;border-radius:50%;border:1px solid rgba(34,29,46,.25)}
+
+@media (max-width:640px){
+  section{padding:0 18px 0 52px}
+  .hero,.term-sec,.gauge-sec{grid-template-columns:1fr;gap:24px;min-height:0}
+  .artwrap{min-height:400px}
+  .mascot{width:220px}
+  .gauges{grid-template-columns:1fr;gap:26px}
+  .meta{grid-template-columns:1fr;padding:24px 18px 28px 52px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div class=&quot;page&quot;>
+  <span class=&quot;spine&quot; aria-hidden=&quot;true&quot;></span>
+
+  <!-- ============ 01 HERO ============ -->
+  <section class=&quot;hero&quot;>
+    <div>
+      <div class=&quot;idx&quot;><i></i>01 — HELLO, WORLD</div>
+      <div class=&quot;eyebrow&quot;>// PLAYGROUND — HELLO, WORLD</div>
+      <h1>I <span class=&quot;hl&quot;>sketch ideas</span>, then I ship them.</h1>
+      <p class=&quot;sub&quot;>Hey, I'm Luis — a fullstack &amp;amp; IA engineer who believes clean code should feel as friendly as a doodle in the margin. I build fast, accessible web things.</p>
+      <div class=&quot;cta&quot;>
+        <a class=&quot;btn&quot; href=&quot;#work&quot;>See my work</a>
+        <a class=&quot;ghost&quot; href=&quot;#about&quot;>More about me →</a>
+      </div>
+    </div>
+
+    <div class=&quot;artwrap&quot;>
+      <span class=&quot;star s1&quot; aria-hidden=&quot;true&quot;>✦</span>
+      <span class=&quot;star s2&quot; aria-hidden=&quot;true&quot;>✦</span>
+      <span class=&quot;star s3&quot; aria-hidden=&quot;true&quot;>✦</span>
+
+      <!-- THE CHARACTER: the V3 round doodle — cute, marker-drawn, with antenna -->
+      <svg class=&quot;mascot&quot; viewBox=&quot;0 0 300 310&quot; role=&quot;img&quot; aria-label=&quot;Illustration of Luis: a friendly round doodle character with big eyes, a small smile and an antenna&quot;>
+        <ellipse cx=&quot;150&quot; cy=&quot;284&quot; rx=&quot;100&quot; ry=&quot;16&quot; fill=&quot;#221D2E&quot; opacity=&quot;.12&quot;/>
+        <!-- antenna -->
+        <path d=&quot;M150 48 V24&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;4.5&quot; stroke-linecap=&quot;round&quot;/>
+        <circle cx=&quot;150&quot; cy=&quot;15&quot; r=&quot;10&quot; fill=&quot;#FFC95C&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;3.2&quot;/>
+        <!-- big round body -->
+        <path d=&quot;M150 56c54 0 96 42 96 96s-42 96-96 96-96-42-96-96 42-96 96-96z&quot; fill=&quot;#8B7CFF&quot;/>
+        <!-- marker highlight -->
+        <path d=&quot;M112 92c14-16 34-24 52-24&quot; stroke=&quot;rgba(255,255,255,.5)&quot; stroke-width=&quot;11&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot;/>
+        <!-- cheeks -->
+        <ellipse cx=&quot;96&quot; cy=&quot;170&quot; rx=&quot;17&quot; ry=&quot;10&quot; fill=&quot;#FF5C7A&quot; opacity=&quot;.5&quot;/>
+        <ellipse cx=&quot;204&quot; cy=&quot;170&quot; rx=&quot;17&quot; ry=&quot;10&quot; fill=&quot;#FF5C7A&quot; opacity=&quot;.5&quot;/>
+        <!-- eyes -->
+        <ellipse cx=&quot;118&quot; cy=&quot;142&quot; rx=&quot;15&quot; ry=&quot;17&quot; fill=&quot;#FFF6EC&quot;/>
+        <ellipse cx=&quot;182&quot; cy=&quot;142&quot; rx=&quot;15&quot; ry=&quot;17&quot; fill=&quot;#FFF6EC&quot;/>
+        <circle cx=&quot;120&quot; cy=&quot;145&quot; r=&quot;7.6&quot; fill=&quot;#221D2E&quot;/>
+        <circle cx=&quot;180&quot; cy=&quot;145&quot; r=&quot;7.6&quot; fill=&quot;#221D2E&quot;/>
+        <circle cx=&quot;123&quot; cy=&quot;140&quot; r=&quot;2.7&quot; fill=&quot;#FFF&quot;/>
+        <circle cx=&quot;183&quot; cy=&quot;140&quot; r=&quot;2.7&quot; fill=&quot;#FFF&quot;/>
+        <!-- smile -->
+        <path d=&quot;M133 178c11 10 23 10 34 0&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;4.6&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot;/>
+        <!-- little arm waving -->
+        <path d=&quot;M243 176c14-10 24-24 26-38&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;7&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot;/>
+      </svg>
+
+      <div class=&quot;bubble&quot;>&quot;I turn <em>caffeine</em> into clean, fast software — and bugs into stories.&quot;</div>
+
+      <svg class=&quot;cup&quot; viewBox=&quot;0 0 38 34&quot; aria-hidden=&quot;true&quot;>
+        <path d=&quot;M4 9h22v13a9 9 0 0 1-9 9h-4a9 9 0 0 1-9-9z&quot; fill=&quot;#FFF&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;2.2&quot;/>
+        <path d=&quot;M26 12h5a5 5 0 0 1 0 10h-5&quot; fill=&quot;none&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;2.2&quot;/>
+        <path d=&quot;M11 3c0 2-2 2-2 4M19 2c0 2-2 2-2 4&quot; stroke=&quot;#8B7CFF&quot; stroke-width=&quot;2.2&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot;/>
+      </svg>
+
+      <!-- CONTROL PANEL (V5) -->
+      <div class=&quot;panel&quot; style=&quot;position:absolute;right:0;bottom:0;width:264px&quot;>
+        <div class=&quot;ptitle&quot;><span>control_panel</span><span>v2.6</span></div>
+        <div class=&quot;readout&quot;>
+          <span class=&quot;g&quot;>●</span> status: <span class=&quot;y&quot;>shipping</span><br>
+          coffee_level: <span class=&quot;r&quot;>87%</span><br>
+          bugs_after_3yrs_industrial: <span class=&quot;g&quot;>0</span>
+        </div>
+        <div class=&quot;ctrls&quot;>
+          <div class=&quot;knob k1&quot;><span>curiosity</span></div>
+          <div class=&quot;knob k2&quot;><span>focus</span></div>
+          <div class=&quot;knob k3&quot;><span>ship it</span></div>
+        </div>
+        <div class=&quot;switches&quot;>
+          <span class=&quot;sw&quot;><i></i>dark mode</span>
+          <span class=&quot;sw off&quot;><i></i>sound</span>
+        </div>
+        <div class=&quot;leads&quot;>
+          <span class=&quot;lead&quot;><span class=&quot;plug pg&quot;></span><span class=&quot;lg&quot;>+5V</span></span>
+          <span class=&quot;lead&quot;><span class=&quot;plug pm&quot;></span><span class=&quot;lg&quot;>GND</span></span>
+          <span class=&quot;lead&quot;><span class=&quot;plug pp&quot;></span><span class=&quot;lg&quot;>SIG</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 TERMINAL ============ -->
+  <section class=&quot;term-sec&quot;>
+    <div class=&quot;annot&quot;>
+      <div class=&quot;idx&quot; style=&quot;padding:0 0 12px&quot;><i></i>02 — WHOAMI</div>
+      <svg class=&quot;squig&quot; viewBox=&quot;0 0 240 14&quot; aria-hidden=&quot;true&quot;><path d=&quot;M3 9 C 34 2, 66 13, 112 6 S 190 2, 237 8&quot;/></svg>
+      <p class=&quot;hand&quot;>This is the part I never got tired of: making a machine answer back, correctly, <em>fast</em>.</p>
+      <p class=&quot;mnote&quot;>Six semesters of mechatronics taught me to love an oscilloscope trace. Now my traces are in the console — same patience, better refresh rate.</p>
+      <div style=&quot;position:relative;margin-top:10px&quot;>
+        <svg class=&quot;arrowd&quot; viewBox=&quot;0 0 88 44&quot; aria-hidden=&quot;true&quot;><path d=&quot;M4 10 C 26 4, 34 34, 62 30 C 74 28, 78 33, 84 30&quot;/></svg>
+        <span class=&quot;tagpin&quot; style=&quot;bottom:-14px;left:6%;background:#FFC95C&quot;>still my favourite part</span>
+      </div>
+    </div>
+
+    <div class=&quot;term-wrap&quot;>
+      <div class=&quot;term&quot;>
+        <div class=&quot;bar&quot;><i></i><i></i><i></i></div>
+        <div class=&quot;term-body&quot;>
+          <p><span class=&quot;p&quot;>➜</span> luis.dev whoami</p>
+          <p class=&quot;o&quot;>Luis — fullstack &amp;amp; IA engineer. I make interfaces with personality.</p>
+          <p><span class=&quot;p&quot;>➜</span> luis.dev ls skills/</p>
+          <div class=&quot;chips&quot;><span class=&quot;chip c1&quot;>TypeScript</span><span class=&quot;chip c2&quot;>React</span><span class=&quot;chip c1&quot;>Node</span><span class=&quot;chip c3&quot;>Prisma</span><span class=&quot;chip c2&quot;>ESP32</span></div>
+          <p><span class=&quot;p&quot;>➜</span> luis.dev cat about.md</p>
+          <p class=&quot;o&quot;>&quot;Ship small, ship often, make it feel alive.&quot;<span class=&quot;caret&quot;>▍</span></p>
+        </div>
+      </div>
+      <span class=&quot;tagpin&quot; style=&quot;top:-14px;right:8%;background:#3FC7A9&quot;>it compiles ✓</span>
+      <span class=&quot;star s2&quot; style=&quot;top:auto;bottom:-16px;left:14%;font-size:12px&quot;>✦</span>
+    </div>
+  </section>
+
+  <!-- ============ 03 MEASUREMENTS ============ -->
+  <section class=&quot;gauge-sec&quot;>
+    <div>
+      <div class=&quot;idx&quot; style=&quot;padding:0 0 14px&quot;><i></i>03 — MEASUREMENTS</div>
+      <div class=&quot;gauges&quot;>
+        <div class=&quot;gauge&quot;><div class=&quot;dial&quot;><span class=&quot;needle nA&quot;></span><span class=&quot;pin&quot;></span></div><div class=&quot;t&quot;>curiosity</div><div class=&quot;n&quot;>MAX</div></div>
+        <div class=&quot;gauge&quot;><div class=&quot;dial&quot;><span class=&quot;needle nB&quot;></span><span class=&quot;pin&quot;></span></div><div class=&quot;t&quot;>ship frequency</div><div class=&quot;n&quot;>DAILY</div></div>
+        <div class=&quot;gauge&quot;><div class=&quot;dial&quot;><span class=&quot;needle nC&quot;></span><span class=&quot;pin&quot;></span></div><div class=&quot;t&quot;>bugs tolerated</div><div class=&quot;n&quot;>ZERO</div></div>
+      </div>
+      <svg class=&quot;squig&quot; viewBox=&quot;0 0 240 14&quot; aria-hidden=&quot;true&quot; style=&quot;width:200px;height:20px&quot;><path d=&quot;M3 9 C 34 2, 66 13, 112 6 S 190 2, 237 8&quot;/></svg>
+      <div class=&quot;cta&quot;><a class=&quot;btn&quot; href=&quot;#work&quot;>See my work</a><a class=&quot;ghost&quot; href=&quot;#contact&quot;>or just say hi →</a></div>
+    </div>
+
+    <div class=&quot;workbox&quot;>
+      <h3>// selected work</h3>
+      <div class=&quot;wrow&quot;><span class=&quot;led&quot;></span><span class=&quot;nm&quot;>File-Up-loader</span><span class=&quot;tagm&quot;>uploads</span></div>
+      <div class=&quot;wrow&quot;><span class=&quot;led&quot;></span><span class=&quot;nm&quot;>blogr-nextjs-prisma</span><span class=&quot;tagm&quot;>next + prisma</span></div>
+      <div class=&quot;wrow&quot;><span class=&quot;led&quot;></span><span class=&quot;nm&quot;>canals-orders</span><span class=&quot;tagm&quot;>fullstack</span></div>
+      <div class=&quot;wrow&quot;><span class=&quot;led&quot;></span><span class=&quot;nm&quot;>Members-Only</span><span class=&quot;tagm&quot;>auth</span></div>
+    </div>
+  </section>
+
+  <div class=&quot;meta&quot;>
+    <div><b>Title</b>Terminal + Doodle + Control Panel (V1 + V3 + V5) — v2</div>
+    <div><b>The character</b>Back to the V3 doodle: a big round violet blob with an antenna, oversized eyes, pink cheeks and a small smile. Marker-drawn, friendly, unmistakably yours.</div>
+    <div><b>Idea</b>One page that scrolls in three movements: the doodle character + a working control panel, an annotated terminal, then measurement gauges and a work readout.</div>
+    <div><b>Palette</b><div class=&quot;dots&quot;><span class=&quot;dotc&quot; style=&quot;background:#FFF6EC&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#221D2E&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#FF5C7A&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#FFC95C&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#8B7CFF&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#3FC7A9&quot;></span></div></div>
+    <div><b>Fonts</b>Bricolage Grotesque · Inter · JetBrains Mono</div>
+    <div><b>Motion</b>Reduced-motion safe — CSS-only, disabled under prefers-reduced-motion</div>
+  </div>
+</div>
+</body>
+</html>
+"></iframe>
+  </section>
+
+  <section class="proposal">
+    <div class="p-head">
+      <span class="k">V1</span>
+      <h2>Terminal-first</h2>
+      <span class="dim">v1-terminal</span>
+    </div>
+    <iframe class="shot" height="820" scrolling="no" title="Terminal-first" srcdoc="<!doctype html>
+<html lang=&quot;en&quot;>
+<head>
+<meta charset=&quot;utf-8&quot;>
+<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+<title>V1 — Terminal-first · luis.dev playground</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap');
+
+*{box-sizing:border-box;margin:0}
+:root{
+  --paper:#FFF6EC;--ink:#221D2E;--coral:#FF5C7A;--sun:#FFC95C;
+  --violet:#8B7CFF;--mint:#3FC7A9;--muted:#574E63;--line:rgba(34,29,46,.16);
+}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.wrap{display:flex;flex-direction:column;gap:14px}
+
+/* ================= 580px screen ================= */
+.screen{position:relative;height:580px;background:var(--paper);border-radius:14px;overflow:hidden}
+.screen::before{content:&quot;&quot;;position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(34,29,46,.055) 1px,transparent 1px);background-size:9px 9px}
+
+nav{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;padding:20px 44px}
+.logo{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:16px;color:var(--ink);text-decoration:none}
+.logo em{font-style:normal;color:var(--coral)}
+.links{display:flex;gap:22px;font-size:13px;font-weight:500}
+.links a{color:var(--ink);opacity:.7;text-decoration:none}
+.links a:hover{opacity:1;text-decoration:underline wavy var(--coral) 1.5px;text-underline-offset:4px}
+.toggle{width:46px;height:24px;border-radius:999px;border:1.5px solid var(--ink);background:var(--paper);
+  box-shadow:3px 3px 0 var(--ink);position:relative}
+.toggle i{position:absolute;top:2.5px;left:3px;width:15px;height:15px;border-radius:50%;background:var(--sun);border:1.5px solid var(--ink)}
+
+.hero{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+  gap:40px;align-items:center;padding:2px 48px}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:12px}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:45px;line-height:1.04;
+  letter-spacing:-.02em;margin-bottom:16px}
+.u{position:relative;display:inline-block;color:var(--coral)}
+.u svg{position:absolute;left:-3%;bottom:-.3em;width:106%;height:.36em}
+.copy{font-size:14.5px;line-height:1.65;color:var(--muted);max-width:36ch;margin-bottom:24px}
+.cta-row{display:flex;align-items:center;gap:20px;margin-bottom:20px}
+.cta{display:inline-block;font-weight:600;font-size:14px;color:#fff;background:var(--coral);
+  border:1.5px solid var(--ink);border-radius:999px;padding:11px 22px;text-decoration:none;
+  box-shadow:3px 3px 0 var(--ink);transition:transform .15s ease,box-shadow .15s ease}
+.cta:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.ghost{font-size:13.5px;font-weight:500;color:var(--ink);text-decoration:none;
+  border-bottom:1.5px solid var(--line);padding-bottom:2px}
+.ghost:hover{border-color:var(--ink)}
+.hint{display:inline-flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:11px;
+  color:var(--muted);background:#fff;border:1.5px solid var(--line);border-radius:999px;
+  padding:6px 12px;transform:rotate(-2deg)}
+.hint b{color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:6px;padding:1px 6px}
+
+/* ---- terminal centerpiece ---- */
+.tcol{position:relative}
+.term{position:relative;background:var(--ink);color:#FFF6EC;border:1.5px solid var(--ink);border-radius:14px;
+  box-shadow:3px 3px 0 var(--ink),12px 12px 0 rgba(34,29,46,.10);transform:rotate(-1.2deg);
+  font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.8;overflow:hidden}
+.tbar{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid rgba(255,246,236,.12)}
+.d{width:11px;height:11px;border-radius:50%}
+.d.c{background:var(--coral)}.d.s{background:var(--sun)}.d.m{background:var(--mint)}
+.tbar span{margin-left:8px;font-size:11px;color:rgba(255,246,236,.5)}
+.tbody{padding:15px 18px 14px}
+.tbody p{margin:0}
+.ps{color:var(--mint);font-weight:700}
+.host{color:var(--sun)}
+.cmd{color:var(--violet);font-weight:500}
+.out{color:rgba(255,246,236,.85);margin:1px 0 9px 16px}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin:3px 0 9px 16px}
+.chip{font-style:normal;font-size:10.5px;font-weight:700;color:var(--ink);
+  border:1.5px solid var(--ink);border-radius:999px;padding:3px 10px}
+.chip.v{background:var(--violet)}.chip.m{background:var(--mint)}.chip.s{background:var(--sun)}
+.chip.c{background:var(--coral)}.chip.w{background:var(--paper)}
+.motto{color:var(--sun)}
+.typed{display:inline-block;overflow:hidden;white-space:nowrap;vertical-align:bottom;width:0;
+  animation:typing 1.5s steps(12) .9s forwards}
+@keyframes typing{to{width:12ch}}
+.caret{display:inline-block;width:8px;height:15px;background:var(--sun);margin-left:4px;vertical-align:-2px;
+  animation:blink 1.05s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.suggest{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin-top:13px;padding-top:11px;
+  border-top:1px dashed rgba(255,246,236,.18);font-size:11px}
+.suggest span{color:rgba(255,246,236,.5)}
+.suggest b{font-weight:500;color:var(--paper);border:1.5px solid rgba(255,246,236,.4);border-radius:999px;
+  padding:3px 11px;cursor:pointer;transition:transform .15s ease,background .15s ease,color .15s ease}
+.suggest b:hover{background:var(--sun);color:var(--ink);border-color:var(--sun);transform:translateY(-1px)}
+
+/* sticker + confetti */
+.sticker{position:absolute;top:-15px;right:-8px;z-index:3;background:var(--sun);color:var(--ink);
+  font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;padding:7px 13px;
+  border:1.5px solid var(--ink);border-radius:999px;box-shadow:3px 3px 0 var(--ink);transform:rotate(4deg)}
+.confetti i{position:absolute;border-radius:50%;animation:float 5.5s ease-in-out infinite}
+.cf1{width:11px;height:11px;background:var(--coral);top:96px;right:40px;animation-delay:.4s}
+.cf2{width:8px;height:8px;background:var(--violet);bottom:56px;right:24px}
+.cf3{width:9px;height:9px;background:var(--mint);bottom:40px;left:34px;animation-delay:1.2s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+
+/* ================= metadata strip ================= */
+.meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 28px;font-size:12.5px;line-height:1.55}
+.meta b{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.dots{display:flex;flex-wrap:wrap;gap:5px 7px;align-items:center}
+.dot{width:14px;height:14px;border-radius:50%;border:1.5px solid var(--ink);flex:none}
+.dots code{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted)}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .typed{width:auto!important}
+}
+</style>
+</head>
+<body>
+<div class=&quot;wrap&quot;>
+
+  <!-- ============ 1 · the screen (580px) ============ -->
+  <section class=&quot;screen&quot;>
+    <nav>
+      <a class=&quot;logo&quot; href=&quot;#&quot;>luis<em>.</em>dev</a>
+      <div class=&quot;links&quot;>
+        <a href=&quot;#about&quot;>About</a><a href=&quot;#work&quot;>Work</a>
+        <a href=&quot;#skills&quot;>Skills</a><a href=&quot;#contact&quot;>Contact</a>
+      </div>
+      <span class=&quot;toggle&quot; aria-hidden=&quot;true&quot;><i></i></span>
+    </nav>
+
+    <div class=&quot;hero&quot;>
+      <div>
+        <p class=&quot;kick&quot;>~/playground — hello, world</p>
+        <h1>I build <span class=&quot;u&quot;>playful<svg viewBox=&quot;0 0 120 12&quot; preserveAspectRatio=&quot;none&quot; aria-hidden=&quot;true&quot;><path d=&quot;M3 8 Q 14 2 27 7 T 51 7 T 75 7 T 99 7 T 118 5&quot; fill=&quot;none&quot; stroke=&quot;#FFC95C&quot; stroke-width=&quot;4.5&quot; stroke-linecap=&quot;round&quot;/></svg></span> software.</h1>
+        <p class=&quot;copy&quot;>I’m Luis — a developer who likes clean terminals, warm colors, and shipping things people actually enjoy using. This page is my playground: poke around, run a command, stay a while.</p>
+        <div class=&quot;cta-row&quot;>
+          <a class=&quot;cta&quot; href=&quot;#work&quot;>See my work</a>
+          <a class=&quot;ghost&quot; href=&quot;#about&quot;>More about me →</a>
+        </div>
+        <span class=&quot;hint&quot;>press <b>⌘K</b> to roam</span>
+      </div>
+
+      <div class=&quot;tcol&quot;>
+        <span class=&quot;sticker&quot;>it compiles ✓</span>
+        <div class=&quot;term&quot;>
+          <div class=&quot;tbar&quot;><i class=&quot;d c&quot;></i><i class=&quot;d s&quot;></i><i class=&quot;d m&quot;></i><span>luis@playground — zsh</span></div>
+          <div class=&quot;tbody&quot;>
+            <p><span class=&quot;ps&quot;>➜</span> <span class=&quot;host&quot;>luis.dev</span> <span class=&quot;cmd&quot;>whoami</span></p>
+            <p class=&quot;out&quot;>Luis — front-end-leaning full-stack dev. I make interfaces with personality and decent test coverage.</p>
+            <p><span class=&quot;ps&quot;>➜</span> <span class=&quot;host&quot;>luis.dev</span> <span class=&quot;cmd&quot;>ls skills/</span></p>
+            <p class=&quot;stack&quot;><i class=&quot;chip v&quot;>TypeScript</i><i class=&quot;chip m&quot;>React</i><i class=&quot;chip s&quot;>Node</i><i class=&quot;chip c&quot;>CSS</i><i class=&quot;chip w&quot;>Go</i></p>
+            <p><span class=&quot;ps&quot;>➜</span> <span class=&quot;host&quot;>luis.dev</span> <span class=&quot;cmd&quot;>cat about.md</span></p>
+            <p class=&quot;out motto&quot;>“Ship small, ship often, make it feel alive.”</p>
+            <p><span class=&quot;ps&quot;>➜</span> <span class=&quot;host&quot;>luis.dev</span> <span class=&quot;cmd typed&quot;>open contact</span><span class=&quot;caret&quot;></span></p>
+            <p class=&quot;suggest&quot;><span>try:</span><b>whoami</b><b>ls skills/</b><b>cat about.md</b><b>open contact</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class=&quot;confetti&quot; aria-hidden=&quot;true&quot;><i class=&quot;cf1&quot;></i><i class=&quot;cf2&quot;></i><i class=&quot;cf3&quot;></i></div>
+  </section>
+
+  <!-- ============ 2 · metadata strip ============ -->
+  <section class=&quot;meta&quot;>
+    <div><b>Title</b>V1 — “Terminal-first” · Playground direction</div>
+    <div><b>The idea</b>The hero is a working-looking terminal: my intro lives inside a prompt session, and the manifesto beside it is just the commentary track.</div>
+    <div><b>Signature interaction</b>Clickable-looking suggested command chips plus a typing line and blinking block caret invite you to “run” the portfolio.</div>
+    <div><b>Palette</b>
+      <span class=&quot;dots&quot;>
+        <i class=&quot;dot&quot; style=&quot;background:#FFF6EC&quot;></i><code>#FFF6EC</code>
+        <i class=&quot;dot&quot; style=&quot;background:#221D2E&quot;></i><code>#221D2E</code>
+        <i class=&quot;dot&quot; style=&quot;background:#FF5C7A&quot;></i><code>#FF5C7A</code>
+        <i class=&quot;dot&quot; style=&quot;background:#FFC95C&quot;></i><code>#FFC95C</code>
+        <i class=&quot;dot&quot; style=&quot;background:#8B7CFF&quot;></i><code>#8B7CFF</code>
+        <i class=&quot;dot&quot; style=&quot;background:#3FC7A9&quot;></i><code>#3FC7A9</code>
+        <i class=&quot;dot&quot; style=&quot;background:#574E63&quot;></i><code>#574E63</code>
+      </span>
+    </div>
+    <div><b>Fonts</b>Bricolage Grotesque (display) · Inter (body) · JetBrains Mono (code &amp;amp; labels)</div>
+    <div><b>Motion</b>Reduced-motion safe — CSS-only, fully disabled under prefers-reduced-motion.</div>
+  </section>
+
+</div>
+</body>
+</html>
+"></iframe>
+  </section>
+
+  <section class="proposal">
+    <div class="p-head">
+      <span class="k">V2</span>
+      <h2>Scrapbook</h2>
+      <span class="dim">v2-scrapbook</span>
+    </div>
+    <iframe class="shot" height="820" scrolling="no" title="Scrapbook" srcdoc="<!doctype html>
+<html lang=&quot;en&quot;>
+<head>
+<meta charset=&quot;utf-8&quot;>
+<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+<title>V2 · Scrapbook — About-Me</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Inter:wght@300..700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+
+*{box-sizing:border-box}
+body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#221D2E;background:transparent}
+
+/* ---------- 580px mock ---------- */
+.screen{
+  position:relative;width:100%;height:580px;border-radius:14px;overflow:hidden;
+  background:
+    radial-gradient(circle at 1px 1px, rgba(34,29,46,.07) 1px, transparent 1.6px),
+    #FFF6EC;
+  background-size:9px 9px,auto;
+  border:1.5px solid #221D2E;
+  box-shadow:6px 6px 0 #221D2E;
+}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 26px;font-size:13px}
+.logo{font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:500;font-size:14px}
+.logo span{color:#FF5C7A}
+.links{display:flex;gap:18px;color:#574E63}
+.pill{border:1.5px solid #221D2E;border-radius:999px;padding:5px 12px;font-family:'JetBrains Mono',monospace;font-size:10.5px}
+
+.collage{position:relative;height:calc(100% - 56px)}
+
+/* tape */
+.washi{position:absolute;width:74px;height:18px;border:1.5px solid rgba(34,29,46,.5);opacity:.85;z-index:5}
+.washi::after{content:&quot;&quot;;position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.35) 0 4px,transparent 4px 8px)}
+.w1{background:#FFC95C;top:-6px;left:44px;transform:rotate(-38deg)}
+.w2{background:#3FC7A9;top:8px;right:20px;transform:rotate(24deg)}
+
+/* polaroid */
+.polaroid{
+  position:absolute;top:44px;right:44px;width:214px;padding:10px 10px 0;border-radius:6px;
+  background:#FFF;border:1.5px solid #221D2E;box-shadow:4px 4px 0 #221D2E;
+  transform:rotate(-3.2deg);z-index:4;
+}
+.photo{position:relative;height:186px;border:1.5px solid #221D2E;overflow:hidden;
+  background:linear-gradient(150deg,#FFC95C 0%,#FF5C7A 52%,#8B7CFF 100%)}
+.photo .sun{position:absolute;top:22px;left:30px;width:44px;height:44px;border-radius:50%;background:#FFF6EC;opacity:.9}
+.photo .hill{position:absolute;left:-20%;width:140%;height:60%;bottom:-30%;border-radius:50% 50% 0 0}
+.photo .h1{background:#221D2E;opacity:.35}
+.photo .h2{background:#221D2E;opacity:.55;left:30%;width:110%}
+.photo .initial{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:'Bricolage Grotesque',sans-serif;font-style:italic;font-weight:700;font-size:76px;color:#FFF6EC;
+  text-shadow:0 4px 18px rgba(34,29,46,.45)}
+.polaroid figcaption{font-family:'JetBrains Mono',monospace;font-size:9.5px;text-align:center;padding:8px 4px 9px;color:#574E63}
+
+/* sticky notes */
+.note{position:absolute;width:152px;padding:12px 12px 14px;font-size:11.5px;line-height:1.45;border:1.5px solid #221D2E;box-shadow:3px 3px 0 #221D2E;z-index:3}
+.note b{display:block;font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px;opacity:.8}
+.n1{background:#FFC95C;top:74px;left:322px;transform:rotate(-5deg);animation:bob 6s ease-in-out infinite}
+.n2{background:#FF5C7A;color:#FFF6EC;top:196px;left:344px;width:162px;transform:rotate(4deg);animation:bob 7s ease-in-out .8s infinite}
+.n3{background:#3FC7A9;top:308px;left:326px;width:140px;transform:rotate(-3deg);animation:bob 6.5s ease-in-out 1.6s infinite}
+.n4{background:#8B7CFF;color:#FFF6EC;top:400px;left:352px;width:150px;transform:rotate(6deg);animation:bob 7.5s ease-in-out .4s infinite}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -7px}}
+
+/* headline + cta */
+h1{position:absolute;top:46px;left:36px;width:300px;margin:0;
+  font-family:'Bricolage Grotesque',sans-serif;font-weight:640;font-size:38px;line-height:1.06;letter-spacing:-.02em}
+.hl{position:relative;white-space:nowrap}
+.hl::before{content:&quot;&quot;;position:absolute;left:-4px;right:-4px;bottom:2px;height:56%;background:#FFC95C;z-index:-1;transform:rotate(-1.2deg)}
+.eyebrow{position:absolute;top:22px;left:38px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;color:#574E63}
+.cta{position:absolute;left:36px;bottom:52px;display:flex;align-items:center;gap:14px}
+.btn{background:#FF5C7A;color:#FFF6EC;padding:11px 20px;border-radius:999px;font-size:12.5px;font-weight:600;border:1.5px solid #221D2E;box-shadow:4px 4px 0 #221D2E}
+.ghost{font-size:12.5px;color:#221D2E;border-bottom:1.5px solid #221D2E;padding-bottom:2px}
+.bubble{position:absolute;left:250px;bottom:120px;background:#FFF;border:1.5px solid #221D2E;box-shadow:3px 3px 0 #221D2E;padding:8px 11px;font-size:11px;border-radius:12px;transform:rotate(-2deg)}
+.bubble::after{content:&quot;&quot;;position:absolute;left:16px;bottom:-9px;width:12px;height:12px;background:#FFF;border-right:1.5px solid #221D2E;border-bottom:1.5px solid #221D2E;transform:rotate(35deg)}
+
+/* stickers + doodle */
+.stickers{position:absolute;right:36px;bottom:44px;display:flex;gap:9px;align-items:flex-end}
+.sticker{font-family:'JetBrains Mono',monospace;font-size:10.5px;padding:7px 11px;border-radius:10px;border:1.5px solid #221D2E;box-shadow:3px 3px 0 #221D2E;white-space:nowrap;animation:bob 6s ease-in-out infinite}
+.s1{background:#FFC95C;transform:rotate(-5deg)}
+.s2{background:#8B7CFF;color:#FFF6EC;transform:rotate(3deg);animation-delay:.7s}
+.s3{background:#FFF;transform:rotate(-2deg);animation-delay:1.4s}
+.arrow{position:absolute;left:40px;bottom:112px;width:120px;height:44px;overflow:visible}
+.arrow path{fill:none;stroke:#574E63;stroke-width:2.2;stroke-linecap:round;strokes-dasharray:5 7;stroke-dasharray:5 7;animation:dash 6s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-48}}
+.dot{position:absolute;border-radius:50%;animation:bob 5s ease-in-out infinite}
+.d1{width:8px;height:8px;background:#8B7CFF;top:120px;left:250px}
+.d2{width:7px;height:7px;background:#3FC7A9;top:70px;left:296px;animation-delay:1s}
+.d3{width:6px;height:6px;background:#FF5C7A;bottom:150px;left:232px;animation-delay:.5s}
+
+/* ---------- meta strip ---------- */
+.meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px;margin-top:16px;font-size:12.5px;line-height:1.55}
+.meta b{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(34,29,46,.55);margin-bottom:5px;font-weight:500}
+.muted{color:rgba(34,29,46,.7)}
+.dots{display:flex;gap:7px}
+.dotc{width:16px;height:16px;border-radius:50%;border:1px solid rgba(34,29,46,.25)}
+
+@media (max-width:640px){
+  .screen{height:500px}
+  .collage h1{width:230px;font-size:28px}
+  .polaroid{width:150px;top:26px;right:20px}
+  .photo{height:120px}
+  .note{width:120px}
+  .n1{top:60px;left:auto;right:190px}.n2{top:170px;right:200px;left:auto}
+  .n3{top:270px;right:180px;left:auto}.n4{display:none}
+  .bubble{display:none}
+  .stickers{display:none}
+  .arrow{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class=&quot;screen&quot;>
+  <nav>
+    <div class=&quot;logo&quot;>luis<span>.dev</span></div>
+    <div class=&quot;links&quot;><span>About</span><span>Work</span><span>Skills</span><span>Contact</span></div>
+    <div class=&quot;pill&quot;>dark / light</div>
+  </nav>
+
+  <div class=&quot;collage&quot;>
+    <span class=&quot;washi w1&quot;></span>
+    <span class=&quot;washi w2&quot;></span>
+
+    <div class=&quot;eyebrow&quot;>// HELLO, WORLD</div>
+    <h1>I make the web feel <span class=&quot;hl&quot;>human</span>.</h1>
+
+    <figure class=&quot;polaroid&quot;>
+      <div class=&quot;photo&quot;>
+        <span class=&quot;sun&quot;></span><span class=&quot;hill h1&quot;></span><span class=&quot;hill h2&quot;></span>
+        <span class=&quot;initial&quot;>L</span>
+      </div>
+      <figcaption>luis, probably shipping something</figcaption>
+    </figure>
+
+    <div class=&quot;note n1&quot;><b>experience</b>5+ years building things for the browser</div>
+    <div class=&quot;note n2&quot;><b>currently</b>Next.js, Prisma and too many side quests</div>
+    <div class=&quot;note n3&quot;><b>fuel</b>coffee → code → ship → repeat</div>
+    <div class=&quot;note n4&quot;><b>ask me about</b>auth, forms that behave, ugly code refactors</div>
+
+    <div class=&quot;bubble&quot;>hi, I'm luis — I build small, fast, friendly software.</div>
+
+    <svg class=&quot;arrow&quot; viewBox=&quot;0 0 120 44&quot; aria-hidden=&quot;true&quot;><path d=&quot;M4 8 C 30 2, 44 34, 84 28 C 100 25, 106 30, 112 26 M104 18 L112 26 L102 32&quot;/></svg>
+
+    <div class=&quot;cta&quot;>
+      <span class=&quot;btn&quot;>See my work</span>
+      <span class=&quot;ghost&quot;>or just say hi →</span>
+    </div>
+
+    <div class=&quot;stickers&quot;>
+      <span class=&quot;sticker s1&quot;>TypeScript</span>
+      <span class=&quot;sticker s2&quot;>React</span>
+      <span class=&quot;sticker s3&quot;>Node</span>
+    </div>
+
+    <i class=&quot;dot d1&quot;></i><i class=&quot;dot d2&quot;></i><i class=&quot;dot d3&quot;></i>
+  </div>
+</div>
+
+<div class=&quot;meta&quot;>
+  <div><b>Title</b>V2 · Scrapbook — the desk where the work happens</div>
+  <div><b>The idea</b>The hero is a real collage: taped polaroid, sticky notes and washi tape, so the page feels handmade before you read a word.</div>
+  <div><b>Signature interaction</b>Notes and stickers bob gently and can be &quot;pinned&quot; (hover lifts, shadow deepens) — later: draggable stickers you can rearrange.</div>
+  <div><b>Palette</b><div class=&quot;dots&quot;><span class=&quot;dotc&quot; style=&quot;background:#FFF6EC&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#221D2E&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#FF5C7A&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#FFC95C&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#8B7CFF&quot;></span><span class=&quot;dotc&quot; style=&quot;background:#3FC7A9&quot;></span></div></div>
+  <div><b>Fonts</b>Bricolage Grotesque (display) · Inter (body) · JetBrains Mono (labels)</div>
+  <div><b>Motion</b>Reduced-motion safe — CSS-only, disabled under prefers-reduced-motion</div>
+</div>
+
+</body>
+</html>
+"></iframe>
+  </section>
+
+  <section class="proposal">
+    <div class="p-head">
+      <span class="k">V3</span>
+      <h2>Doodle</h2>
+      <span class="dim">v3-doodle</span>
+    </div>
+    <iframe class="shot" height="820" scrolling="no" title="Doodle" srcdoc="<!doctype html>
+<html lang=&quot;en&quot;>
+<head>
+<meta charset=&quot;utf-8&quot;>
+<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+<title>V3 — Doodle / Marker · luis.dev</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap');
+:root{
+  --paper:#FFF6EC;--ink:#221D2E;--coral:#FF5C7A;--sun:#FFC95C;
+  --violet:#8B7CFF;--mint:#3FC7A9;--muted:#574E63;--line:rgba(34,29,46,.16);
+}
+*{margin:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;padding:28px 20px 48px;display:flex;flex-direction:column;align-items:center;gap:22px}
+
+/* ---------- screen ---------- */
+.screen{width:100%;max-width:960px;height:580px;background:var(--paper);border:1.5px solid var(--ink);border-radius:14px;box-shadow:3px 3px 0 var(--ink);overflow:hidden;position:relative;display:flex;flex-direction:column}
+nav{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;border-bottom:1.5px solid var(--line)}
+.logo{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:15px;letter-spacing:-.5px}
+.logo span{color:var(--coral)}
+.navlinks{display:flex;gap:20px;font-size:13.5px;font-weight:500;color:var(--muted)}
+.navlinks a{color:inherit;text-decoration:none}
+.navlinks a:hover{color:var(--ink)}
+.toggle{display:flex;align-items:center;gap:6px;border:1.5px solid var(--ink);border-radius:999px;padding:5px 12px 5px 8px;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:500;box-shadow:2px 2px 0 var(--ink)}
+.toggle i{width:10px;height:10px;border-radius:50%;background:var(--sun);border:1.5px solid var(--ink);font-style:normal}
+
+.hero{flex:1;position:relative;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;padding:8px 28px 24px 44px}
+
+/* left column */
+.chip{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;padding:4px 12px;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;box-shadow:2px 2px 0 var(--ink);transform:rotate(-3deg)}
+.chip b{width:8px;height:8px;border-radius:50%;background:var(--mint);border:1.5px solid var(--ink)}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,4.6vw,52px);line-height:1.04;letter-spacing:-1.5px;margin:16px 0 4px}
+.mark{position:relative;white-space:nowrap}
+.mark svg{position:absolute;left:-4px;bottom:-2px;width:106%;height:.42em;overflow:visible}
+.lede{color:var(--muted);font-size:14.5px;line-height:1.65;max-width:400px;margin:14px 0 22px}
+.ctas{display:flex;align-items:center;gap:18px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--coral);color:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:12px 24px;font-weight:600;font-size:14px;text-decoration:none;box-shadow:3px 3px 0 var(--ink);transform:rotate(-1.5deg);transition:transform .15s ease}
+.btn:hover{transform:rotate(-1.5deg) translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.ghost{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:1.5px dashed var(--ink);padding-bottom:2px}
+
+/* speech bubble */
+.bubble{position:absolute;left:200px;top:120px;max-width:230px;background:#fff;border:1.5px solid var(--ink);border-radius:16px 16px 16px 4px;padding:10px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.5;box-shadow:3px 3px 0 var(--ink);transform:rotate(2deg);z-index:3;animation:bob 4.5s ease-in-out infinite}
+.bubble em{color:var(--coral);font-style:normal}
+
+/* right column: mascot stage */
+.stage{position:relative;height:100%;min-height:380px}
+.mascot{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);width:min(230px,90%);animation:bob 5s ease-in-out infinite}
+.d{position:absolute;overflow:visible}
+.d-bulb{top:4%;right:16%;width:44px;transform:rotate(8deg);animation:wiggle 3.2s ease-in-out infinite}
+.d-star1{top:14%;left:2%;width:30px;transform:rotate(-12deg);animation:twinkle 2.6s ease-in-out infinite}
+.d-star2{bottom:16%;right:4%;width:22px;transform:rotate(15deg);animation:twinkle 3.4s .6s ease-in-out infinite}
+.d-coffee{bottom:6%;left:4%;width:52px;transform:rotate(-6deg)}
+.d-squig{top:2%;left:24%;width:56px}
+.d-path{left:-64%;bottom:20%;width:120%;height:80px}
+.d-path path{stroke-dasharray:6 9;animation:dash 9s linear infinite}
+
+/* ---------- metadata strip ---------- */
+.meta{width:100%;max-width:960px;border:1.5px solid var(--ink);border-radius:12px;background:#fff;box-shadow:3px 3px 0 var(--ink);display:grid;grid-template-columns:1fr 1fr;gap:0 32px;padding:18px 22px;font-size:12px;line-height:1.6}
+.meta div{padding:6px 0;border-bottom:1px dashed var(--line)}
+.meta div:nth-last-child(-n+2){border-bottom:0}
+.meta b{display:block;font-family:'JetBrains Mono',monospace;font-size:9.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:2px}
+.meta span{color:var(--ink)}
+.dots{display:inline-flex;gap:8px;vertical-align:middle}
+.dot{display:inline-flex;align-items:center;gap:4px;font-family:'JetBrains Mono',monospace;font-size:9.5px}
+.dot i{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--ink);font-style:normal}
+
+/* ---------- motion ---------- */
+@keyframes bob{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,-53%)}}
+@keyframes wiggle{0%,100%{transform:rotate(8deg)}50%{transform:rotate(-5deg)}}
+@keyframes twinkle{0%,100%{opacity:1;transform:rotate(-12deg) scale(1)}50%{opacity:.45;transform:rotate(-12deg) scale(.82)}}
+.d-star2{animation-name:twinkle2}
+@keyframes twinkle2{0%,100%{opacity:1;transform:rotate(15deg) scale(1)}50%{opacity:.45;transform:rotate(15deg) scale(.8)}}
+@keyframes dash{to{stroke-dashoffset:-150}}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class=&quot;screen&quot;>
+  <nav>
+    <div class=&quot;logo&quot;>luis<span>.dev</span></div>
+    <div class=&quot;navlinks&quot;><a href=&quot;#&quot;>About</a><a href=&quot;#&quot;>Work</a><a href=&quot;#&quot;>Skills</a><a href=&quot;#&quot;>Contact</a></div>
+    <div class=&quot;toggle&quot;><i></i>light&amp;nbsp;/&amp;nbsp;dark</div>
+  </nav>
+
+  <div class=&quot;hero&quot;>
+    <div>
+      <span class=&quot;chip&quot;><b></b>open to new projects</span>
+      <h1>I sketch ideas,<br>then I <span class=&quot;mark&quot;>ship&amp;nbsp;them<svg viewBox=&quot;0 0 200 14&quot; preserveAspectRatio=&quot;none&quot;><path d=&quot;M3 9 C 40 3, 80 12, 120 6 S 175 4, 197 8&quot; fill=&quot;none&quot; stroke=&quot;#FFC95C&quot; stroke-width=&quot;9&quot; stroke-linecap=&quot;round&quot; opacity=&quot;.9&quot;/><path d=&quot;M3 9 C 40 3, 80 12, 120 6 S 175 4, 197 8&quot; fill=&quot;none&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; opacity=&quot;.35&quot;/></svg></span>.</h1>
+      <p class=&quot;lede&quot;>Hey, I&amp;rsquo;m Luis &amp;mdash; a software developer who believes clean code should feel as friendly as a doodle in the margin. I build fast, accessible web things.</p>
+      <div class=&quot;ctas&quot;>
+        <a class=&quot;btn&quot; href=&quot;#&quot;>See my work <svg width=&quot;14&quot; height=&quot;10&quot; viewBox=&quot;0 0 14 10&quot;><path d=&quot;M1 5h11M8 1l4 4-4 4&quot; fill=&quot;none&quot; stroke=&quot;#fff&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/></svg></a>
+        <a class=&quot;ghost&quot; href=&quot;#&quot;>or read my story &amp;rarr;</a>
+      </div>
+    </div>
+
+    <div class=&quot;stage&quot;>
+      <!-- speech bubble -->
+      <div class=&quot;bubble&quot;>&amp;ldquo;I turn <em>caffeine</em> into clean, fast software &amp;mdash; and bugs into stories.&amp;rdquo;</div>
+
+      <!-- doodle path from headline to CTA -->
+      <svg class=&quot;d d-path&quot; viewBox=&quot;0 0 240 80&quot; fill=&quot;none&quot;><path d=&quot;M235 8 C 190 -6, 150 30, 110 26 S 40 46, 12 70&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.6&quot; stroke-linecap=&quot;round&quot; opacity=&quot;.55&quot;/><path d=&quot;M12 70 l-6 -8 M12 70 l9 -4&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.6&quot; stroke-linecap=&quot;round&quot; opacity=&quot;.55&quot;/></svg>
+
+      <!-- lightbulb -->
+      <svg class=&quot;d d-bulb&quot; viewBox=&quot;0 0 40 52&quot; fill=&quot;none&quot;><path d=&quot;M20 4 a12 12 0 0 1 7 21.7 V32 h-14 v-6.3 A12 12 0 0 1 20 4Z&quot; fill=&quot;#FFC95C&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.5&quot;/><rect x=&quot;13&quot; y=&quot;32&quot; width=&quot;14&quot; height=&quot;5&quot; rx=&quot;2&quot; fill=&quot;#fff&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.5&quot;/><path d=&quot;M15 41h10M17 45h6&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot;/><path d=&quot;M20 12v6M17 16l3 2 3-2&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.2&quot; stroke-linecap=&quot;round&quot; opacity=&quot;.6&quot;/></svg>
+
+      <!-- stars -->
+      <svg class=&quot;d d-star1&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot;><path d=&quot;M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4Z&quot; fill=&quot;#8B7CFF&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.3&quot; stroke-linejoin=&quot;round&quot;/></svg>
+      <svg class=&quot;d d-star2&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot;><path d=&quot;M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2Z&quot; fill=&quot;#FF5C7A&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.3&quot; stroke-linejoin=&quot;round&quot;/></svg>
+
+      <!-- coffee cup -->
+      <svg class=&quot;d d-coffee&quot; viewBox=&quot;0 0 52 44&quot; fill=&quot;none&quot;><path d=&quot;M8 14h30v14a10 10 0 0 1-10 10h-10A10 10 0 0 1 8 28Z&quot; fill=&quot;#fff&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.5&quot;/><path d=&quot;M38 17h4a5 5 0 0 1 0 10h-4&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.5&quot;/><path d=&quot;M12 14c0-2 2-2 2-4M20 14c0-2 2-2 2-4M28 14c0-2 2-2 2-4&quot; stroke=&quot;#3FC7A9&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot;/><path d=&quot;M14 20h18&quot; stroke=&quot;#FF5C7A&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot;/></svg>
+
+      <!-- squiggle -->
+      <svg class=&quot;d d-squig&quot; viewBox=&quot;0 0 56 16&quot; fill=&quot;none&quot;><path d=&quot;M2 10 C 8 2, 14 14, 20 8 S 32 2, 38 9 S 48 12, 54 5&quot; stroke=&quot;#3FC7A9&quot; stroke-width=&quot;2.2&quot; stroke-linecap=&quot;round&quot;/></svg>
+
+      <!-- mascot: friendly blob robot -->
+      <svg class=&quot;mascot&quot; viewBox=&quot;0 0 220 240&quot; fill=&quot;none&quot;>
+        <ellipse cx=&quot;110&quot; cy=&quot;228&quot; rx=&quot;64&quot; ry=&quot;8&quot; fill=&quot;#221D2E&quot; opacity=&quot;.12&quot;/>
+        <path d=&quot;M110 26 v-14&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;2&quot;/><circle cx=&quot;110&quot; cy=&quot;8&quot; r=&quot;6&quot; fill=&quot;#FFC95C&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;2&quot;/>
+        <path d=&quot;M110 26 c-52 0-84 40-84 92 0 50 34 84 84 84 s84-34 84-84 c0-52-32-92-84-92Z&quot; fill=&quot;#8B7CFF&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;2.4&quot;/>
+        <path d=&quot;M110 26 c-52 0-84 40-84 92 0 6 1 12 2 18 16-10 46-16 82-16 s66 6 82 16 c1-6 2-12 2-18 0-52-32-92-84-92Z&quot; fill=&quot;#fff&quot; opacity=&quot;.18&quot;/>
+        <circle cx=&quot;82&quot; cy=&quot;106&quot; r=&quot;17&quot; fill=&quot;#fff&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;2&quot;/><circle cx=&quot;138&quot; cy=&quot;106&quot; r=&quot;17&quot; fill=&quot;#fff&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;2&quot;/>
+        <circle cx=&quot;86&quot; cy=&quot;109&quot; r=&quot;6&quot; fill=&quot;#221D2E&quot;/><circle cx=&quot;134&quot; cy=&quot;109&quot; r=&quot;6&quot; fill=&quot;#221D2E&quot;/>
+        <circle cx=&quot;88.5&quot; cy=&quot;106.5&quot; r=&quot;2&quot; fill=&quot;#fff&quot;/><circle cx=&quot;136.5&quot; cy=&quot;106.5&quot; r=&quot;2&quot; fill=&quot;#fff&quot;/>
+        <path d=&quot;M96 142 q14 14 28 0&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;2.4&quot; stroke-linecap=&quot;round&quot;/>
+        <circle cx=&quot;66&quot; cy=&quot;132&quot; r=&quot;6&quot; fill=&quot;#FF5C7A&quot; opacity=&quot;.8&quot;/><circle cx=&quot;154&quot; cy=&quot;132&quot; r=&quot;6&quot; fill=&quot;#FF5C7A&quot; opacity=&quot;.8&quot;/>
+        <path d=&quot;M26 118 q-14 6-10 22 M194 118 q14 6 10 22&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot;/>
+        <rect x=&quot;92&quot; y=&quot;176&quot; width=&quot;36&quot; height=&quot;12&quot; rx=&quot;6&quot; fill=&quot;#FFC95C&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.8&quot;/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<div class=&quot;meta&quot;>
+  <div><b>Title</b><span>V3 &amp;mdash; Doodle / Marker</span></div>
+  <div><b>The idea</b><span>An illustration-first hero where a hand-drawn blob-robot mascot and marker accents make Luis&amp;rsquo;s code feel human and playful.</span></div>
+  <div><b>Signature interaction</b><span>A dashed marker path animates (stroke-dashoffset) from the highlighted headline down to the coral CTA, while the mascot and speech bubble gently bob.</span></div>
+  <div><b>Palette</b><span class=&quot;dots&quot;>
+    <span class=&quot;dot&quot;><i style=&quot;background:#FFF6EC&quot;></i>#FFF6EC</span>
+    <span class=&quot;dot&quot;><i style=&quot;background:#221D2E&quot;></i>#221D2E</span>
+    <span class=&quot;dot&quot;><i style=&quot;background:#FF5C7A&quot;></i>#FF5C7A</span>
+    <span class=&quot;dot&quot;><i style=&quot;background:#FFC95C&quot;></i>#FFC95C</span>
+    <span class=&quot;dot&quot;><i style=&quot;background:#8B7CFF&quot;></i>#8B7CFF</span>
+    <span class=&quot;dot&quot;><i style=&quot;background:#3FC7A9&quot;></i>#3FC7A9</span></span></div>
+  <div><b>Fonts</b><span>Bricolage Grotesque (display) &amp;middot; Inter (body) &amp;middot; JetBrains Mono (logo, labels, bubble)</span></div>
+  <div><b>Motion</b><span>reduced-motion safe &amp;mdash; all animations disabled via @media (prefers-reduced-motion: reduce)</span></div>
+</div>
+
+</body>
+</html>
+"></iframe>
+  </section>
+
+  <section class="proposal">
+    <div class="p-head">
+      <span class="k">V4</span>
+      <h2>Retro desktop OS</h2>
+      <span class="dim">v4-retro-os</span>
+    </div>
+    <iframe class="shot" height="820" scrolling="no" title="Retro desktop OS" srcdoc="<!doctype html>
+<html lang=&quot;en&quot;>
+<head>
+  <meta charset=&quot;utf-8&quot;>
+  <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+  <title>Luis | Retro desktop OS</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap');
+    :root{--paper:#FFF6EC;--ink:#221D2E;--coral:#FF5C7A;--sun:#FFC95C;--violet:#8B7CFF;--mint:#3FC7A9;--muted:#574E63;--line:rgba(34,29,46,.16);font-family:Inter,sans-serif;color:var(--ink);background:var(--paper)}
+    *{box-sizing:border-box}body{margin:0;padding:28px clamp(12px,4vw,56px) 36px;background:var(--paper)}a{color:inherit}
+    .screen{position:relative;width:100%;height:580px;overflow:hidden;border-radius:14px;background:var(--paper)}
+    .menu{height:46px;display:flex;align-items:center;gap:clamp(10px,2vw,27px);padding:0 22px;border-bottom:1.5px solid var(--ink);position:relative;z-index:5;font:11px 'JetBrains Mono',monospace}
+    .brand{font-weight:600;white-space:nowrap;letter-spacing:-.04em}.brand-glyph{display:inline-grid;place-items:center;width:19px;height:19px;margin-right:5px;border:1.5px solid var(--ink);border-radius:6px;background:var(--sun);font-size:12px;vertical-align:-4px}
+    .nav{display:flex;align-items:center;gap:clamp(8px,1.8vw,24px)}.nav a{text-decoration:none;color:var(--muted)}.nav a:hover{color:var(--coral)}
+    .menu-right{margin-left:auto;display:flex;align-items:center;gap:12px;white-space:nowrap}.toggle{padding:5px 9px;border:1.5px solid var(--ink);border-radius:99px;background:var(--violet);box-shadow:2px 2px 0 var(--ink);font-size:10px}.clock{color:var(--muted)}
+    .desktop{position:relative;height:534px;overflow:hidden;background:var(--paper) radial-gradient(rgba(34,29,46,.06) .75px,transparent .75px) 0 0/17px 17px}
+    .wallpaper{position:absolute;z-index:1;left:4%;top:48px;width:45%}.eyebrow{display:inline-block;padding:6px 10px;border:1.5px solid var(--ink);border-radius:99px;background:var(--mint);box-shadow:3px 3px 0 var(--ink);font:10px 'JetBrains Mono',monospace;transform:rotate(-3deg)}
+    h1{max-width:520px;margin:18px 0 10px;font:800 clamp(42px,5.1vw,68px)/.94 'Bricolage Grotesque',sans-serif;letter-spacing:-.065em}.underline{display:block;width:min(245px,70%);height:16px;margin:-3px 0 8px 4px;overflow:visible}
+    .intro{max-width:355px;margin:0;color:var(--muted);font-size:13px;line-height:1.55}.actions{display:flex;align-items:center;gap:18px;margin-top:19px;font-size:12px}
+    .primary{padding:10px 16px;border:1.5px solid var(--ink);border-radius:99px;background:var(--coral);box-shadow:3px 3px 0 var(--ink);text-decoration:none;font-weight:700;transition:transform .18s,box-shadow .18s}.primary:hover{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}.ghost{text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px}
+    .window{position:absolute;z-index:2;border:1.5px solid var(--ink);border-radius:9px;background:var(--paper);box-shadow:4px 4px 0 var(--ink);overflow:hidden}
+    .about-window{top:25px;left:54%;width:34%;transform:rotate(1.2deg);animation:settle .7s ease-out both}.work-window{top:218px;left:64%;width:30%;transform:rotate(-1.7deg);animation:settle .8s .08s ease-out both}.music-window{top:371px;left:48%;width:25%;transform:rotate(1deg);background:var(--violet);animation:settle .8s .16s ease-out both}
+    .titlebar{height:30px;display:flex;align-items:center;gap:5px;padding:0 9px;border-bottom:1.5px solid var(--ink);background:var(--sun);font:10px 'JetBrains Mono',monospace}.work-window .titlebar{background:var(--mint)}.music-window .titlebar{background:var(--coral)}
+    .control{width:9px;height:9px;border:1.2px solid var(--ink);border-radius:50%;background:var(--coral)}.control:nth-child(2){background:var(--mint)}.control:nth-child(3){background:var(--violet)}.window-name{margin-left:5px}
+    .window-body{padding:13px 14px 15px}.window-body p{margin:0;font-size:12px;line-height:1.55}.file-kicker{margin-bottom:8px!important;color:var(--muted);font:9px 'JetBrains Mono',monospace!important}
+    .files{display:flex;flex-wrap:wrap;gap:7px}.file{padding:6px 9px;border:1.5px solid var(--ink);border-radius:7px;background:var(--sun);font:9px 'JetBrains Mono',monospace;box-shadow:2px 2px 0 var(--ink)}.file:nth-child(2){background:var(--coral)}.file:nth-child(3){background:var(--violet)}
+    .music-window .window-body{display:flex;align-items:center;gap:11px;padding:10px 12px}.play{width:26px;height:26px;display:grid;place-items:center;border:1.5px solid var(--ink);border-radius:50%;background:var(--sun);font-size:11px}.track{font:9px/1.4 'JetBrains Mono',monospace}.track b{display:block;font-size:10px}
+    .taskbar{position:absolute;z-index:4;bottom:12px;left:16px;right:16px;height:39px;display:flex;align-items:center;gap:7px;padding:4px 8px;border:1.5px solid var(--ink);border-radius:12px;background:var(--paper);box-shadow:3px 3px 0 var(--ink)}
+    .task-pill{padding:6px 10px;border:1px solid var(--line);border-radius:99px;background:var(--paper);font:9px 'JetBrains Mono',monospace}.task-pill.active{background:var(--sun);border-color:var(--ink)}.system{margin-left:auto;display:flex;gap:10px;align-items:center;font:10px 'JetBrains Mono',monospace}
+    .battery{width:18px;height:10px;border:1.3px solid var(--ink);border-radius:2px;position:relative}.battery:before{content:'';position:absolute;inset:2px 4px 2px 2px;background:var(--mint)}.battery:after{content:'';position:absolute;right:-3px;top:2px;width:2px;height:4px;background:var(--ink)}.wifi{letter-spacing:-3px;font-size:13px}
+    .meta{display:grid;grid-template-columns:1fr 1fr;gap:9px 32px;max-width:1050px;margin:24px auto 0;padding:0 3px}.meta-item{min-width:0;padding-bottom:8px;border-bottom:1px solid var(--line)}
+    .meta-label{display:block;margin-bottom:4px;color:var(--muted);font:9px 'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.07em}.meta-value{font-size:11px;line-height:1.45}.swatches{display:flex;flex-wrap:wrap;gap:5px 10px}.swatch{white-space:nowrap;font:9px 'JetBrains Mono',monospace}.dot{display:inline-block;width:9px;height:9px;margin-right:4px;border:1px solid var(--line);border-radius:50%;vertical-align:-1px}
+    @keyframes settle{from{opacity:0;translate:0 8px}to{opacity:1;translate:0 0}}
+    @media(max-width:700px){body{padding:12px 8px 24px}.menu{height:44px;gap:10px;padding:0 10px;font-size:9px}.brand-glyph{width:16px;height:16px;margin-right:2px;font-size:10px}.nav{gap:clamp(5px,2vw,10px)}.menu-right{gap:6px}.toggle{padding:4px 6px;font-size:8px}.clock{display:none}.desktop{height:536px}.wallpaper{left:6%;top:25px;width:88%}h1{max-width:400px;margin:13px 0 7px;font-size:clamp(39px,10.3vw,54px)}.underline{height:12px;width:180px;margin-bottom:4px}.intro{max-width:300px;font-size:11px}.actions{margin-top:11px;font-size:10px}.primary{padding:8px 12px}.about-window{top:252px;left:5%;width:57%}.work-window{top:352px;left:42%;width:53%}.music-window{top:435px;left:7%;width:48%}.window-body{padding:9px 10px 11px}.window-body p{font-size:10px}.titlebar{height:26px;font-size:9px}.file{padding:5px 6px;font-size:8px}.taskbar{left:9px;right:9px;bottom:9px;height:34px;gap:4px;padding:3px 5px}.task-pill{padding:5px 7px;font-size:8px}.system{gap:7px;font-size:9px}.meta{gap:9px 16px;margin-top:19px}}
+    @media(max-width:370px){.menu{gap:6px;padding:0 7px;font-size:8px}.nav{gap:5px}.brand-glyph{display:none}.toggle{font-size:7px}.meta{grid-template-columns:1fr}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <main>
+    <section class=&quot;screen&quot; aria-label=&quot;Retro desktop portfolio mockup&quot;>
+      <header class=&quot;menu&quot;>
+        <div class=&quot;brand&quot;><span class=&quot;brand-glyph&quot;>✳</span>luis.dev</div>
+        <nav class=&quot;nav&quot; aria-label=&quot;Main navigation&quot;>
+          <a href=&quot;#about&quot;>About</a><a href=&quot;#work&quot;>Work</a><a href=&quot;#skills&quot;>Skills</a><a href=&quot;#contact&quot;>Contact</a>
+        </nav>
+        <div class=&quot;menu-right&quot;><span class=&quot;toggle&quot;>◐ Theme</span><span class=&quot;clock&quot;>WED&amp;nbsp; 10:14</span></div>
+      </header>
+      <div class=&quot;desktop&quot;>
+        <div class=&quot;wallpaper&quot; id=&quot;about&quot;>
+          <span class=&quot;eyebrow&quot;>SOFTWARE DEVELOPER · LUIS</span>
+          <h1>I make the internet feel a little more human.</h1>
+          <svg class=&quot;underline&quot; viewBox=&quot;0 0 245 16&quot; aria-hidden=&quot;true&quot;><path d=&quot;M3 10 C48 2, 72 15, 113 8 S181 4, 241 9&quot; fill=&quot;none&quot; stroke=&quot;#FF5C7A&quot; stroke-width=&quot;5&quot; stroke-linecap=&quot;round&quot;/></svg>
+          <p class=&quot;intro&quot;>Thoughtful interfaces, sturdy code, and the occasional excellent button. I’m Luis, and I make useful things delightful.</p>
+          <div class=&quot;actions&quot; id=&quot;contact&quot;><a class=&quot;primary&quot; href=&quot;mailto:hello@luis.dev&quot;>Let’s make something</a><a class=&quot;ghost&quot; href=&quot;#work&quot;>A peek at my work ↗</a></div>
+        </div>
+        <article class=&quot;window about-window&quot;>
+          <div class=&quot;titlebar&quot;><i class=&quot;control&quot;></i><i class=&quot;control&quot;></i><i class=&quot;control&quot;></i><span class=&quot;window-name&quot;>About.txt</span></div>
+          <div class=&quot;window-body&quot;><p><strong>Hey, I’m Luis.</strong> I turn fuzzy ideas into friendly, dependable software. I like clear writing, tiny details, and making hard things feel simple.</p></div>
+        </article>
+        <article class=&quot;window work-window&quot; id=&quot;work&quot;>
+          <div class=&quot;titlebar&quot;><i class=&quot;control&quot;></i><i class=&quot;control&quot;></i><i class=&quot;control&quot;></i><span class=&quot;window-name&quot;>selected-work/</span></div>
+          <div class=&quot;window-body&quot;><p class=&quot;file-kicker&quot;>3 GOOD THINGS I MADE</p><div class=&quot;files&quot;><span class=&quot;file&quot;>✳ little-lens.app</span><span class=&quot;file&quot;>↗ field-notes</span><span class=&quot;file&quot;>▧ good-forms</span></div></div>
+        </article>
+        <article class=&quot;window music-window&quot; id=&quot;skills&quot;>
+          <div class=&quot;titlebar&quot;><i class=&quot;control&quot;></i><i class=&quot;control&quot;></i><i class=&quot;control&quot;></i><span class=&quot;window-name&quot;>now-playing.exe</span></div>
+          <div class=&quot;window-body&quot;><span class=&quot;play&quot;>▶</span><span class=&quot;track&quot;><b>Good code, good mood</b>Currently compiling joy.mp3</span></div>
+        </article>
+        <div class=&quot;taskbar&quot; aria-label=&quot;Desktop taskbar&quot;>
+          <span class=&quot;task-pill active&quot;>⌂ Desktop</span><span class=&quot;task-pill&quot;>About.txt</span><span class=&quot;task-pill&quot;>selected-work/</span>
+          <span class=&quot;system&quot;><span class=&quot;wifi&quot;>)))</span><span class=&quot;battery&quot;></span><span>98%</span></span>
+        </div>
+      </div>
+    </section>
+    <section class=&quot;meta&quot; aria-label=&quot;Design notes&quot;>
+      <div class=&quot;meta-item&quot;><span class=&quot;meta-label&quot;>Title</span><div class=&quot;meta-value&quot;>V4 · Retro desktop OS</div></div>
+      <div class=&quot;meta-item&quot;><span class=&quot;meta-label&quot;>The idea</span><div class=&quot;meta-value&quot;>A friendly desktop with my work already open.</div></div>
+      <div class=&quot;meta-item&quot;><span class=&quot;meta-label&quot;>Signature interaction</span><div class=&quot;meta-value&quot;>Overlapping windows make my portfolio feel like a lived-in computer.</div></div>
+      <div class=&quot;meta-item&quot;><span class=&quot;meta-label&quot;>Palette</span><div class=&quot;swatches&quot;><span class=&quot;swatch&quot;><i class=&quot;dot&quot; style=&quot;background:#FFF6EC&quot;></i>#FFF6EC</span><span class=&quot;swatch&quot;><i class=&quot;dot&quot; style=&quot;background:#221D2E&quot;></i>#221D2E</span><span class=&quot;swatch&quot;><i class=&quot;dot&quot; style=&quot;background:#FF5C7A&quot;></i>#FF5C7A</span><span class=&quot;swatch&quot;><i class=&quot;dot&quot; style=&quot;background:#FFC95C&quot;></i>#FFC95C</span><span class=&quot;swatch&quot;><i class=&quot;dot&quot; style=&quot;background:#8B7CFF&quot;></i>#8B7CFF</span><span class=&quot;swatch&quot;><i class=&quot;dot&quot; style=&quot;background:#3FC7A9&quot;></i>#3FC7A9</span><span class=&quot;swatch&quot;><i class=&quot;dot&quot; style=&quot;background:#574E63&quot;></i>#574E63</span></div></div>
+      <div class=&quot;meta-item&quot;><span class=&quot;meta-label&quot;>Fonts</span><div class=&quot;meta-value&quot;>Bricolage Grotesque · Inter · JetBrains Mono</div></div>
+      <div class=&quot;meta-item&quot;><span class=&quot;meta-label&quot;>Motion</span><div class=&quot;meta-value&quot;>Reduced-motion safe</div></div>
+    </section>
+  </main>
+</body>
+</html>
+"></iframe>
+  </section>
+
+  <section class="proposal">
+    <div class="p-head">
+      <span class="k">V5</span>
+      <h2>Lab / control panel</h2>
+      <span class="dim">v5-lab</span>
+    </div>
+    <iframe class="shot" height="820" scrolling="no" title="Lab / control panel" srcdoc="<!doctype html>
+<html lang=&quot;en&quot;>
+<head>
+<meta charset=&quot;utf-8&quot;>
+<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+<title>V5 — Lab / control panel · About-Me playground</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap');
+:root{--paper:#FFF6EC;--ink:#221D2E;--coral:#FF5C7A;--sun:#FFC95C;--violet:#8B7CFF;--mint:#3FC7A9;--muted:#574E63;--line:rgba(34,29,46,.16)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#F0E7D9;padding:26px 18px 44px;min-width:920px}
+.wrap{max-width:1060px;margin:0 auto}
+.screen{height:580px;position:relative;overflow:hidden;background:var(--paper);border:1.5px solid var(--ink);border-radius:14px;background-image:linear-gradient(rgba(34,29,46,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(34,29,46,.055) 1px,transparent 1px);background-size:24px 24px}
+.nav{height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;border-bottom:1.5px solid var(--line)}
+.logo{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px}
+.logo b{color:var(--coral)}
+.nav-links{display:flex;gap:20px;font-size:12px;font-weight:500}
+.nav-links a{color:var(--ink);text-decoration:none}
+.nav-links a:hover{color:var(--coral)}
+.mode{width:54px;height:24px;border:1.5px solid var(--ink);border-radius:12px;position:relative;display:flex;align-items:center;justify-content:space-between;padding:0 6px;background:var(--paper)}
+.mode svg{width:11px;height:11px;display:block}
+.mode .thumb{position:absolute;top:2px;right:2px;width:14px;height:14px;border-radius:50%;background:var(--ink)}
+.hero{position:absolute;inset:48px 0 0 0;display:grid;grid-template-columns:1.06fr .94fr;gap:30px;padding:28px 34px 30px 38px;align-items:center}
+.sticker{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;background:var(--sun);border:1.5px solid var(--ink);border-radius:99px;padding:5px 13px;box-shadow:2px 2px 0 var(--ink);transform:rotate(-4deg);margin-bottom:16px}
+.hl{font-family:'Bricolage Grotesque',Inter,sans-serif;font-weight:800;font-size:51px;line-height:1.04;letter-spacing:-.01em}
+.hl-name{position:relative;display:inline-block}
+.squig{position:absolute;left:2px;bottom:-13px;width:100%}
+.sub{margin-top:16px;font-size:14.5px;line-height:1.55;color:var(--muted);max-width:400px}
+.sub b{color:var(--ink)}
+.ctas{display:flex;align-items:center;gap:22px;margin-top:26px}
+.cta{font-family:'Bricolage Grotesque',Inter,sans-serif;font-weight:700;font-size:16px;color:var(--paper);background:var(--coral);border:1.5px solid var(--ink);border-radius:99px;padding:13px 26px;box-shadow:3px 3px 0 var(--ink);text-decoration:none;display:inline-block;transition:transform .15s ease,box-shadow .15s ease}
+.cta:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.ghost{font-size:13.5px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--ink);padding-bottom:3px;transition:color .15s ease,border-color .15s ease}
+.ghost:hover{color:var(--coral);border-color:var(--coral)}
+.panel{position:relative;transform:rotate(1.5deg);background:var(--paper);border:1.5px solid var(--ink);border-radius:12px;box-shadow:3px 3px 0 var(--ink);padding:12px 14px 14px}
+.p-head{display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1.5px dashed var(--line);margin-bottom:10px}
+.p-dots i{display:inline-block;width:9px;height:9px;border-radius:50%;border:1.5px solid var(--ink);margin-right:4px}
+.d-coral{background:var(--coral)}.d-sun{background:var(--sun)}.d-mint{background:var(--mint)}
+.p-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.06em}
+.readout{background:var(--ink);border-radius:9px;padding:9px 12px;font-family:'JetBrains Mono',monospace;font-size:10.5px;line-height:1.6;color:var(--mint)}
+.ro-k{color:var(--sun)}.ro-d{color:var(--violet)}
+.cursor{display:inline-block;margin-left:4px;animation:blink 1.1s steps(1) infinite}
+.krow{display:flex;justify-content:space-between;gap:8px;margin:12px 0 10px}
+.kunit{text-align:center;flex:1}
+.kunit svg{width:54px;height:54px;display:block;margin:0 auto}
+.kunit .meter{width:86px}
+.klab{display:block;font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.05em;color:var(--muted);margin-top:4px;white-space:nowrap}
+.kval{display:block;font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:700;margin-top:1px}
+.srow{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1.5px dashed var(--line);padding-top:10px}
+.sliders{display:flex;gap:16px}
+.slider{display:flex;flex-direction:column;align-items:center;gap:4px}
+.sl-track{position:relative;width:10px;height:54px;border:1.5px solid var(--ink);border-radius:7px;background:var(--paper)}
+.sl-fill{position:absolute;left:0;right:0;bottom:0;border-radius:0 0 5px 5px}
+.sl-thumb{position:absolute;left:50%;transform:translateX(-50%);width:14px;height:8px;border:1.5px solid var(--ink);border-radius:4px;background:var(--sun)}
+.sl-label{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.05em;color:var(--muted);white-space:nowrap}
+.toggles{display:flex;flex-direction:column;justify-content:center;gap:10px}
+.toggle{display:flex;align-items:center;gap:8px}
+.tg-track{position:relative;width:34px;height:18px;border:1.5px solid var(--ink);border-radius:9px;background:var(--paper)}
+.tg-track.on{background:var(--mint)}
+.tg-thumb{position:absolute;top:1.5px;left:2px;width:11px;height:11px;border-radius:50%;background:var(--ink);transition:left .15s ease,background .15s ease}
+.tg-track.on .tg-thumb{left:17px;background:var(--paper)}
+.tg-label{font-family:'JetBrains Mono',monospace;font-size:8.5px;font-weight:700;letter-spacing:.04em}
+.annot{position:absolute;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;line-height:1.3;z-index:3}
+.annot .av{width:50px;height:34px;display:block}
+.a1{top:96px;right:66px;text-align:right;transform:rotate(-2deg)}
+.a1 .av{margin-left:auto;transform:scaleX(-1)}
+.a2{left:300px;bottom:78px;transform:rotate(2deg)}
+.a2 .av{transform:rotate(14deg)}
+.needle{transform-box:view-box;transform-origin:60px 56px;animation:wag 4.5s ease-in-out infinite}
+.idle{transform-box:view-box;transform-origin:30px 30px;animation:idle 7s ease-in-out infinite}
+@keyframes wag{0%,100%{transform:rotate(-42deg)}50%{transform:rotate(28deg)}}
+@keyframes idle{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+.meta{margin-top:22px}
+.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 36px}
+.meta h4{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.meta p{font-size:12px;line-height:1.5}
+.sw{display:inline-flex;align-items:center;gap:5px;font-family:'JetBrains Mono',monospace;font-size:9.5px;margin:0 12px 7px 0}
+.sw i{width:14px;height:14px;border-radius:50%;border:1.5px solid var(--ink);display:inline-block;background:var(--sw,transparent)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
+</style>
+</head>
+<body>
+<div class=&quot;wrap&quot;>
+
+<div class=&quot;screen&quot;>
+<nav class=&quot;nav&quot;>
+<span class=&quot;logo&quot;>luis<b>.</b>dev</span>
+<div class=&quot;nav-links&quot;><a href=&quot;#&quot;>About</a><a href=&quot;#&quot;>Work</a><a href=&quot;#&quot;>Skills</a><a href=&quot;#&quot;>Contact</a></div>
+<div class=&quot;mode&quot; aria-hidden=&quot;true&quot;>
+<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot;><circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;4&quot;/><path d=&quot;M12 2v3M12 19v3M2 12h3M19 12h3&quot;/></svg>
+<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;#221D2E&quot;><path d=&quot;M20 13.5A8.5 8.5 0 1 1 10.5 4a7 7 0 0 0 9.5 9.5z&quot;/></svg>
+<span class=&quot;thumb&quot;></span>
+</div>
+</nav>
+
+<div class=&quot;hero&quot;>
+<div class=&quot;hero-left&quot;>
+<div class=&quot;sticker&quot;>open to work &amp;#10022;</div>
+<h1 class=&quot;hl&quot;>Hi, I&amp;rsquo;m <span class=&quot;hl-name&quot;>Luis<svg class=&quot;squig&quot; viewBox=&quot;0 0 120 16&quot; aria-hidden=&quot;true&quot;><path d=&quot;M4 10C22 4 40 14 60 8s36 6 56-2&quot; fill=&quot;none&quot; stroke=&quot;#FF5C7A&quot; stroke-width=&quot;4&quot; stroke-linecap=&quot;round&quot;/></svg></span>.</h1>
+<p class=&quot;sub&quot;>I turn coffee into type-safe, ship-ready software &amp;mdash; mostly in public, occasionally at <b>2 a.m.</b></p>
+<div class=&quot;ctas&quot;>
+<a class=&quot;cta&quot; href=&quot;#&quot;>Activate me &amp;rarr;</a>
+<a class=&quot;ghost&quot; href=&quot;#&quot;>read the manual &amp;darr;</a>
+</div>
+</div>
+
+<div class=&quot;hero-right&quot;>
+<div class=&quot;panel&quot;>
+<div class=&quot;p-head&quot;>
+<span class=&quot;p-dots&quot;><i class=&quot;d-coral&quot;></i><i class=&quot;d-sun&quot;></i><i class=&quot;d-mint&quot;></i></span>
+<span class=&quot;p-title&quot;>control_panel &amp;mdash; v5</span>
+</div>
+<div class=&quot;readout&quot;>
+<div>luis@lab:~$ cat spec.txt</div>
+<div><span class=&quot;ro-k&quot;>role</span><span class=&quot;ro-d&quot;> ....... </span>software developer</div>
+<div><span class=&quot;ro-k&quot;>stack</span><span class=&quot;ro-d&quot;> ...... </span>TS &amp;middot; React &amp;middot; Node</div>
+<div><span class=&quot;ro-k&quot;>years</span><span class=&quot;ro-d&quot;> ...... </span>7 (and counting)</div>
+<div><span class=&quot;ro-k&quot;>tz</span><span class=&quot;ro-d&quot;> ......... </span>UTC-5 &amp;middot; caffeinated<span class=&quot;cursor&quot;>&amp;#9612;</span></div>
+</div>
+<div class=&quot;krow&quot;>
+<div class=&quot;kunit&quot;>
+<svg viewBox=&quot;0 0 60 60&quot; aria-hidden=&quot;true&quot;>
+<circle cx=&quot;30&quot; cy=&quot;30&quot; r=&quot;25&quot; fill=&quot;#FFF6EC&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.5&quot;/>
+<path d=&quot;M30 7v4M30 49v4&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot;/>
+<g class=&quot;idle&quot;><g transform=&quot;rotate(150 30 30)&quot;><rect x=&quot;28.4&quot; y=&quot;10&quot; width=&quot;3.2&quot; height=&quot;13&quot; rx=&quot;1.6&quot; fill=&quot;#221D2E&quot;/></g></g>
+<circle cx=&quot;30&quot; cy=&quot;30&quot; r=&quot;4&quot; fill=&quot;#FFC95C&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.5&quot;/>
+</svg>
+<span class=&quot;klab&quot;>CURIOSITY</span><span class=&quot;kval&quot;>MAX</span>
+</div>
+<div class=&quot;kunit&quot;>
+<svg viewBox=&quot;0 0 60 60&quot; aria-hidden=&quot;true&quot;>
+<circle cx=&quot;30&quot; cy=&quot;30&quot; r=&quot;25&quot; fill=&quot;#FFF6EC&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.5&quot;/>
+<path d=&quot;M30 7v4M30 49v4&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot;/>
+<g transform=&quot;rotate(60 30 30)&quot;><rect x=&quot;28.4&quot; y=&quot;10&quot; width=&quot;3.2&quot; height=&quot;13&quot; rx=&quot;1.6&quot; fill=&quot;#221D2E&quot;/></g>
+<circle cx=&quot;30&quot; cy=&quot;30&quot; r=&quot;4&quot; fill=&quot;#FFC95C&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.5&quot;/>
+</svg>
+<span class=&quot;klab&quot;>COFFEE LVL</span><span class=&quot;kval&quot;>87%</span>
+</div>
+<div class=&quot;kunit&quot;>
+<svg class=&quot;meter&quot; viewBox=&quot;0 0 120 64&quot; aria-hidden=&quot;true&quot;>
+<path d=&quot;M14 56A46 46 0 0 1 106 56&quot; fill=&quot;none&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.5&quot;/>
+<path d=&quot;M25.4 36A40 40 0 0 1 60 16&quot; fill=&quot;none&quot; stroke=&quot;#3FC7A9&quot; stroke-width=&quot;4&quot; stroke-linecap=&quot;round&quot;/>
+<path d=&quot;M60 16A40 40 0 0 1 80 21.4&quot; fill=&quot;none&quot; stroke=&quot;#FFC95C&quot; stroke-width=&quot;4&quot; stroke-linecap=&quot;round&quot;/>
+<path d=&quot;M80 21.4A40 40 0 0 1 94.6 36&quot; fill=&quot;none&quot; stroke=&quot;#FF5C7A&quot; stroke-width=&quot;4&quot; stroke-linecap=&quot;round&quot;/>
+<g fill=&quot;#221D2E&quot;><circle cx=&quot;21.9&quot; cy=&quot;34&quot; r=&quot;1.6&quot;/><circle cx=&quot;38&quot; cy=&quot;17.9&quot; r=&quot;1.6&quot;/><circle cx=&quot;60&quot; cy=&quot;12&quot; r=&quot;1.6&quot;/><circle cx=&quot;82&quot; cy=&quot;17.9&quot; r=&quot;1.6&quot;/><circle cx=&quot;98.1&quot; cy=&quot;34&quot; r=&quot;1.6&quot;/></g>
+<g class=&quot;needle&quot;><line x1=&quot;60&quot; y1=&quot;56&quot; x2=&quot;60&quot; y2=&quot;22&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot;/></g>
+<circle cx=&quot;60&quot; cy=&quot;56&quot; r=&quot;4.5&quot; fill=&quot;#221D2E&quot;/>
+<circle cx=&quot;60&quot; cy=&quot;56&quot; r=&quot;1.8&quot; fill=&quot;#FFF6EC&quot;/>
+</svg>
+<span class=&quot;klab&quot;>SHIP-IT FREQ</span><span class=&quot;kval&quot;>DAILY</span>
+</div>
+</div>
+<div class=&quot;srow&quot;>
+<div class=&quot;sliders&quot;>
+<div class=&quot;slider&quot;>
+<div class=&quot;sl-track&quot;><span class=&quot;sl-fill&quot; style=&quot;height:72%;background:#8B7CFF&quot;></span><span class=&quot;sl-thumb&quot; style=&quot;bottom:72%&quot;></span></div>
+<span class=&quot;sl-label&quot;>FOCUS 92</span>
+</div>
+<div class=&quot;slider&quot;>
+<div class=&quot;sl-track&quot;><span class=&quot;sl-fill&quot; style=&quot;height:45%;background:#3FC7A9&quot;></span><span class=&quot;sl-thumb&quot; style=&quot;bottom:45%&quot;></span></div>
+<span class=&quot;sl-label&quot;>PUNS/MIN 45</span>
+</div>
+</div>
+<div class=&quot;toggles&quot;>
+<label class=&quot;toggle&quot;><span class=&quot;tg-track on&quot;><span class=&quot;tg-thumb&quot;></span></span><span class=&quot;tg-label&quot;>SHIP IT</span></label>
+<label class=&quot;toggle&quot;><span class=&quot;tg-track&quot;><span class=&quot;tg-thumb&quot;></span></span><span class=&quot;tg-label&quot;>2AM IDEAS</span></label>
+</div>
+</div>
+</div>
+</div>
+
+<div class=&quot;annot a1&quot;>
+<svg class=&quot;av&quot; viewBox=&quot;0 0 70 44&quot; aria-hidden=&quot;true&quot;><path d=&quot;M62 6C40 8 22 22 14 40&quot; fill=&quot;none&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot;/><path d=&quot;M8 36l8-4-4 8&quot; fill=&quot;none&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/></svg>
+calibrated daily
+</div>
+<div class=&quot;annot a2&quot;>
+<svg class=&quot;av&quot; viewBox=&quot;0 0 70 44&quot; aria-hidden=&quot;true&quot;><path d=&quot;M6 12C28 6 48 22 60 38&quot; fill=&quot;none&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot;/><path d=&quot;M58 30l6 6-8 1&quot; fill=&quot;none&quot; stroke=&quot;#221D2E&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/></svg>
+yes, this one ships
+</div>
+</div>
+</div>
+
+<section class=&quot;meta&quot;>
+<div class=&quot;meta-grid&quot;>
+<div>
+<h4>Title</h4>
+<p>V5 &amp;mdash; Lab / control panel</p>
+</div>
+<div>
+<h4>The idea</h4>
+<p>My hero as a tactile engineering control panel: a one-glance spec sheet surrounded by knobs, sliders and gauges.</p>
+</div>
+<div>
+<h4>Signature interaction</h4>
+<p>The VU needle twitches gently and the curiosity knob idles a few degrees &amp;mdash; the only motion, 100% CSS.</p>
+</div>
+<div>
+<h4>Palette</h4>
+<p>
+<span class=&quot;sw&quot;><i style=&quot;--sw:#FFF6EC&quot;></i>#FFF6EC</span>
+<span class=&quot;sw&quot;><i style=&quot;--sw:#221D2E&quot;></i>#221D2E</span>
+<span class=&quot;sw&quot;><i style=&quot;--sw:#FF5C7A&quot;></i>#FF5C7A</span>
+<span class=&quot;sw&quot;><i style=&quot;--sw:#FFC95C&quot;></i>#FFC95C</span>
+<span class=&quot;sw&quot;><i style=&quot;--sw:#8B7CFF&quot;></i>#8B7CFF</span>
+<span class=&quot;sw&quot;><i style=&quot;--sw:#3FC7A9&quot;></i>#3FC7A9</span>
+<span class=&quot;sw&quot;><i style=&quot;--sw:#574E63&quot;></i>#574E63</span>
+<span class=&quot;sw&quot;><i style=&quot;--sw:rgba(34,29,46,.16)&quot;></i>line .16</span>
+</p>
+</div>
+<div>
+<h4>Fonts</h4>
+<p>Bricolage Grotesque (display) &amp;middot; Inter (body) &amp;middot; JetBrains Mono (labels &amp;amp; code)</p>
+</div>
+<div>
+<h4>Motion</h4>
+<p>Reduced-motion safe</p>
+</div>
+</div>
+</section>
+
+</div>
+</body>
+</html>
+"></iframe>
+  </section>
+</div>
+</body>
+</html>

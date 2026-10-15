@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V3 — Doodle / Marker · luis.dev</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap');
+:root{
+  --paper:#FFF6EC;--ink:#221D2E;--coral:#FF5C7A;--sun:#FFC95C;
+  --violet:#8B7CFF;--mint:#3FC7A9;--muted:#574E63;--line:rgba(34,29,46,.16);
+}
+*{margin:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;padding:28px 20px 48px;display:flex;flex-direction:column;align-items:center;gap:22px}
+
+/* ---------- screen ---------- */
+.screen{width:100%;max-width:960px;height:580px;background:var(--paper);border:1.5px solid var(--ink);border-radius:14px;box-shadow:3px 3px 0 var(--ink);overflow:hidden;position:relative;display:flex;flex-direction:column}
+nav{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;border-bottom:1.5px solid var(--line)}
+.logo{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:15px;letter-spacing:-.5px}
+.logo span{color:var(--coral)}
+.navlinks{display:flex;gap:20px;font-size:13.5px;font-weight:500;color:var(--muted)}
+.navlinks a{color:inherit;text-decoration:none}
+.navlinks a:hover{color:var(--ink)}
+.toggle{display:flex;align-items:center;gap:6px;border:1.5px solid var(--ink);border-radius:999px;padding:5px 12px 5px 8px;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:500;box-shadow:2px 2px 0 var(--ink)}
+.toggle i{width:10px;height:10px;border-radius:50%;background:var(--sun);border:1.5px solid var(--ink);font-style:normal}
+
+.hero{flex:1;position:relative;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;padding:8px 28px 24px 44px}
+
+/* left column */
+.chip{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;padding:4px 12px;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;box-shadow:2px 2px 0 var(--ink);transform:rotate(-3deg)}
+.chip b{width:8px;height:8px;border-radius:50%;background:var(--mint);border:1.5px solid var(--ink)}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,4.6vw,52px);line-height:1.04;letter-spacing:-1.5px;margin:16px 0 4px}
+.mark{position:relative;white-space:nowrap}
+.mark svg{position:absolute;left:-4px;bottom:-2px;width:106%;height:.42em;overflow:visible}
+.lede{color:var(--muted);font-size:14.5px;line-height:1.65;max-width:400px;margin:14px 0 22px}
+.ctas{display:flex;align-items:center;gap:18px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--coral);color:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:12px 24px;font-weight:600;font-size:14px;text-decoration:none;box-shadow:3px 3px 0 var(--ink);transform:rotate(-1.5deg);transition:transform .15s ease}
+.btn:hover{transform:rotate(-1.5deg) translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.ghost{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:1.5px dashed var(--ink);padding-bottom:2px}
+
+/* speech bubble */
+.bubble{position:absolute;left:200px;top:120px;max-width:230px;background:#fff;border:1.5px solid var(--ink);border-radius:16px 16px 16px 4px;padding:10px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.5;box-shadow:3px 3px 0 var(--ink);transform:rotate(2deg);z-index:3;animation:bob 4.5s ease-in-out infinite}
+.bubble em{color:var(--coral);font-style:normal}
+
+/* right column: mascot stage */
+.stage{position:relative;height:100%;min-height:380px}
+.mascot{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);width:min(230px,90%);animation:bob 5s ease-in-out infinite}
+.d{position:absolute;overflow:visible}
+.d-bulb{top:4%;right:16%;width:44px;transform:rotate(8deg);animation:wiggle 3.2s ease-in-out infinite}
+.d-star1{top:14%;left:2%;width:30px;transform:rotate(-12deg);animation:twinkle 2.6s ease-in-out infinite}
+.d-star2{bottom:16%;right:4%;width:22px;transform:rotate(15deg);animation:twinkle 3.4s .6s ease-in-out infinite}
+.d-coffee{bottom:6%;left:4%;width:52px;transform:rotate(-6deg)}
+.d-squig{top:2%;left:24%;width:56px}
+.d-path{left:-64%;bottom:20%;width:120%;height:80px}
+.d-path path{stroke-dasharray:6 9;animation:dash 9s linear infinite}
+
+/* ---------- metadata strip ---------- */
+.meta{width:100%;max-width:960px;border:1.5px solid var(--ink);border-radius:12px;background:#fff;box-shadow:3px 3px 0 var(--ink);display:grid;grid-template-columns:1fr 1fr;gap:0 32px;padding:18px 22px;font-size:12px;line-height:1.6}
+.meta div{padding:6px 0;border-bottom:1px dashed var(--line)}
+.meta div:nth-last-child(-n+2){border-bottom:0}
+.meta b{display:block;font-family:'JetBrains Mono',monospace;font-size:9.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:2px}
+.meta span{color:var(--ink)}
+.dots{display:inline-flex;gap:8px;vertical-align:middle}
+.dot{display:inline-flex;align-items:center;gap:4px;font-family:'JetBrains Mono',monospace;font-size:9.5px}
+.dot i{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--ink);font-style:normal}
+
+/* ---------- motion ---------- */
+@keyframes bob{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,-53%)}}
+@keyframes wiggle{0%,100%{transform:rotate(8deg)}50%{transform:rotate(-5deg)}}
+@keyframes twinkle{0%,100%{opacity:1;transform:rotate(-12deg) scale(1)}50%{opacity:.45;transform:rotate(-12deg) scale(.82)}}
+.d-star2{animation-name:twinkle2}
+@keyframes twinkle2{0%,100%{opacity:1;transform:rotate(15deg) scale(1)}50%{opacity:.45;transform:rotate(15deg) scale(.8)}}
+@keyframes dash{to{stroke-dashoffset:-150}}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class="screen">
+  <nav>
+    <div class="logo">luis<span>.dev</span></div>
+    <div class="navlinks"><a href="#">About</a><a href="#">Work</a><a href="#">Skills</a><a href="#">Contact</a></div>
+    <div class="toggle"><i></i>light&nbsp;/&nbsp;dark</div>
+  </nav>
+
+  <div class="hero">
+    <div>
+      <span class="chip"><b></b>open to new projects</span>
+      <h1>I sketch ideas,<br>then I <span class="mark">ship&nbsp;them<svg viewBox="0 0 200 14" preserveAspectRatio="none"><path d="M3 9 C 40 3, 80 12, 120 6 S 175 4, 197 8" fill="none" stroke="#FFC95C" stroke-width="9" stroke-linecap="round" opacity=".9"/><path d="M3 9 C 40 3, 80 12, 120 6 S 175 4, 197 8" fill="none" stroke="#221D2E" stroke-width="1.5" stroke-linecap="round" opacity=".35"/></svg></span>.</h1>
+      <p class="lede">Hey, I&rsquo;m Luis &mdash; a software developer who believes clean code should feel as friendly as a doodle in the margin. I build fast, accessible web things.</p>
+      <div class="ctas">
+        <a class="btn" href="#">See my work <svg width="14" height="10" viewBox="0 0 14 10"><path d="M1 5h11M8 1l4 4-4 4" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="ghost" href="#">or read my story &rarr;</a>
+      </div>
+    </div>
+
+    <div class="stage">
+      <!-- speech bubble -->
+      <div class="bubble">&ldquo;I turn <em>caffeine</em> into clean, fast software &mdash; and bugs into stories.&rdquo;</div>
+
+      <!-- doodle path from headline to CTA -->
+      <svg class="d d-path" viewBox="0 0 240 80" fill="none"><path d="M235 8 C 190 -6, 150 30, 110 26 S 40 46, 12 70" stroke="#221D2E" stroke-width="1.6" stroke-linecap="round" opacity=".55"/><path d="M12 70 l-6 -8 M12 70 l9 -4" stroke="#221D2E" stroke-width="1.6" stroke-linecap="round" opacity=".55"/></svg>
+
+      <!-- lightbulb -->
+      <svg class="d d-bulb" viewBox="0 0 40 52" fill="none"><path d="M20 4 a12 12 0 0 1 7 21.7 V32 h-14 v-6.3 A12 12 0 0 1 20 4Z" fill="#FFC95C" stroke="#221D2E" stroke-width="1.5"/><rect x="13" y="32" width="14" height="5" rx="2" fill="#fff" stroke="#221D2E" stroke-width="1.5"/><path d="M15 41h10M17 45h6" stroke="#221D2E" stroke-width="1.5" stroke-linecap="round"/><path d="M20 12v6M17 16l3 2 3-2" stroke="#221D2E" stroke-width="1.2" stroke-linecap="round" opacity=".6"/></svg>
+
+      <!-- stars -->
+      <svg class="d d-star1" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4Z" fill="#8B7CFF" stroke="#221D2E" stroke-width="1.3" stroke-linejoin="round"/></svg>
+      <svg class="d d-star2" viewBox="0 0 24 24" fill="none"><path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2Z" fill="#FF5C7A" stroke="#221D2E" stroke-width="1.3" stroke-linejoin="round"/></svg>
+
+      <!-- coffee cup -->
+      <svg class="d d-coffee" viewBox="0 0 52 44" fill="none"><path d="M8 14h30v14a10 10 0 0 1-10 10h-10A10 10 0 0 1 8 28Z" fill="#fff" stroke="#221D2E" stroke-width="1.5"/><path d="M38 17h4a5 5 0 0 1 0 10h-4" stroke="#221D2E" stroke-width="1.5"/><path d="M12 14c0-2 2-2 2-4M20 14c0-2 2-2 2-4M28 14c0-2 2-2 2-4" stroke="#3FC7A9" stroke-width="1.5" stroke-linecap="round"/><path d="M14 20h18" stroke="#FF5C7A" stroke-width="2.5" stroke-linecap="round"/></svg>
+
+      <!-- squiggle -->
+      <svg class="d d-squig" viewBox="0 0 56 16" fill="none"><path d="M2 10 C 8 2, 14 14, 20 8 S 32 2, 38 9 S 48 12, 54 5" stroke="#3FC7A9" stroke-width="2.2" stroke-linecap="round"/></svg>
+
+      <!-- mascot: friendly blob robot -->
+      <svg class="mascot" viewBox="0 0 220 240" fill="none">
+        <ellipse cx="110" cy="228" rx="64" ry="8" fill="#221D2E" opacity=".12"/>
+        <path d="M110 26 v-14" stroke="#221D2E" stroke-width="2"/><circle cx="110" cy="8" r="6" fill="#FFC95C" stroke="#221D2E" stroke-width="2"/>
+        <path d="M110 26 c-52 0-84 40-84 92 0 50 34 84 84 84 s84-34 84-84 c0-52-32-92-84-92Z" fill="#8B7CFF" stroke="#221D2E" stroke-width="2.4"/>
+        <path d="M110 26 c-52 0-84 40-84 92 0 6 1 12 2 18 16-10 46-16 82-16 s66 6 82 16 c1-6 2-12 2-18 0-52-32-92-84-92Z" fill="#fff" opacity=".18"/>
+        <circle cx="82" cy="106" r="17" fill="#fff" stroke="#221D2E" stroke-width="2"/><circle cx="138" cy="106" r="17" fill="#fff" stroke="#221D2E" stroke-width="2"/>
+        <circle cx="86" cy="109" r="6" fill="#221D2E"/><circle cx="134" cy="109" r="6" fill="#221D2E"/>
+        <circle cx="88.5" cy="106.5" r="2" fill="#fff"/><circle cx="136.5" cy="106.5" r="2" fill="#fff"/>
+        <path d="M96 142 q14 14 28 0" stroke="#221D2E" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="66" cy="132" r="6" fill="#FF5C7A" opacity=".8"/><circle cx="154" cy="132" r="6" fill="#FF5C7A" opacity=".8"/>
+        <path d="M26 118 q-14 6-10 22 M194 118 q14 6 10 22" stroke="#221D2E" stroke-width="2" stroke-linecap="round"/>
+        <rect x="92" y="176" width="36" height="12" rx="6" fill="#FFC95C" stroke="#221D2E" stroke-width="1.8"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<div class="meta">
+  <div><b>Title</b><span>V3 &mdash; Doodle / Marker</span></div>
+  <div><b>The idea</b><span>An illustration-first hero where a hand-drawn blob-robot mascot and marker accents make Luis&rsquo;s code feel human and playful.</span></div>
+  <div><b>Signature interaction</b><span>A dashed marker path animates (stroke-dashoffset) from the highlighted headline down to the coral CTA, while the mascot and speech bubble gently bob.</span></div>
+  <div><b>Palette</b><span class="dots">
+    <span class="dot"><i style="background:#FFF6EC"></i>#FFF6EC</span>
+    <span class="dot"><i style="background:#221D2E"></i>#221D2E</span>
+    <span class="dot"><i style="background:#FF5C7A"></i>#FF5C7A</span>
+    <span class="dot"><i style="background:#FFC95C"></i>#FFC95C</span>
+    <span class="dot"><i style="background:#8B7CFF"></i>#8B7CFF</span>
+    <span class="dot"><i style="background:#3FC7A9"></i>#3FC7A9</span></span></div>
+  <div><b>Fonts</b><span>Bricolage Grotesque (display) &middot; Inter (body) &middot; JetBrains Mono (logo, labels, bubble)</span></div>
+  <div><b>Motion</b><span>reduced-motion safe &mdash; all animations disabled via @media (prefers-reduced-motion: reduce)</span></div>
+</div>
+
+</body>
+</html>

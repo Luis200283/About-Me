@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luis | Retro desktop OS</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+    :root{--paper:#FFF6EC;--ink:#221D2E;--coral:#FF5C7A;--sun:#FFC95C;--violet:#8B7CFF;--mint:#3FC7A9;--muted:#574E63;--line:rgba(34,29,46,.16);font-family:Inter,sans-serif;color:var(--ink);background:var(--paper)}
+    *{box-sizing:border-box}body{margin:0;padding:28px clamp(12px,4vw,56px) 36px;background:var(--paper)}a{color:inherit}
+    .screen{position:relative;width:100%;height:580px;overflow:hidden;border-radius:14px;background:var(--paper)}
+    .menu{height:46px;display:flex;align-items:center;gap:clamp(10px,2vw,27px);padding:0 22px;border-bottom:1.5px solid var(--ink);position:relative;z-index:5;font:11px 'JetBrains Mono',monospace}
+    .brand{font-weight:600;white-space:nowrap;letter-spacing:-.04em}.brand-glyph{display:inline-grid;place-items:center;width:19px;height:19px;margin-right:5px;border:1.5px solid var(--ink);border-radius:6px;background:var(--sun);font-size:12px;vertical-align:-4px}
+    .nav{display:flex;align-items:center;gap:clamp(8px,1.8vw,24px)}.nav a{text-decoration:none;color:var(--muted)}.nav a:hover{color:var(--coral)}
+    .menu-right{margin-left:auto;display:flex;align-items:center;gap:12px;white-space:nowrap}.toggle{padding:5px 9px;border:1.5px solid var(--ink);border-radius:99px;background:var(--violet);box-shadow:2px 2px 0 var(--ink);font-size:10px}.clock{color:var(--muted)}
+    .desktop{position:relative;height:534px;overflow:hidden;background:var(--paper) radial-gradient(rgba(34,29,46,.06) .75px,transparent .75px) 0 0/17px 17px}
+    .wallpaper{position:absolute;z-index:1;left:4%;top:48px;width:45%}.eyebrow{display:inline-block;padding:6px 10px;border:1.5px solid var(--ink);border-radius:99px;background:var(--mint);box-shadow:3px 3px 0 var(--ink);font:10px 'JetBrains Mono',monospace;transform:rotate(-3deg)}
+    h1{max-width:520px;margin:18px 0 10px;font:800 clamp(42px,5.1vw,68px)/.94 'Bricolage Grotesque',sans-serif;letter-spacing:-.065em}.underline{display:block;width:min(245px,70%);height:16px;margin:-3px 0 8px 4px;overflow:visible}
+    .intro{max-width:355px;margin:0;color:var(--muted);font-size:13px;line-height:1.55}.actions{display:flex;align-items:center;gap:18px;margin-top:19px;font-size:12px}
+    .primary{padding:10px 16px;border:1.5px solid var(--ink);border-radius:99px;background:var(--coral);box-shadow:3px 3px 0 var(--ink);text-decoration:none;font-weight:700;transition:transform .18s,box-shadow .18s}.primary:hover{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}.ghost{text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px}
+    .window{position:absolute;z-index:2;border:1.5px solid var(--ink);border-radius:9px;background:var(--paper);box-shadow:4px 4px 0 var(--ink);overflow:hidden}
+    .about-window{top:25px;left:54%;width:34%;transform:rotate(1.2deg);animation:settle .7s ease-out both}.work-window{top:218px;left:64%;width:30%;transform:rotate(-1.7deg);animation:settle .8s .08s ease-out both}.music-window{top:371px;left:48%;width:25%;transform:rotate(1deg);background:var(--violet);animation:settle .8s .16s ease-out both}
+    .titlebar{height:30px;display:flex;align-items:center;gap:5px;padding:0 9px;border-bottom:1.5px solid var(--ink);background:var(--sun);font:10px 'JetBrains Mono',monospace}.work-window .titlebar{background:var(--mint)}.music-window .titlebar{background:var(--coral)}
+    .control{width:9px;height:9px;border:1.2px solid var(--ink);border-radius:50%;background:var(--coral)}.control:nth-child(2){background:var(--mint)}.control:nth-child(3){background:var(--violet)}.window-name{margin-left:5px}
+    .window-body{padding:13px 14px 15px}.window-body p{margin:0;font-size:12px;line-height:1.55}.file-kicker{margin-bottom:8px!important;color:var(--muted);font:9px 'JetBrains Mono',monospace!important}
+    .files{display:flex;flex-wrap:wrap;gap:7px}.file{padding:6px 9px;border:1.5px solid var(--ink);border-radius:7px;background:var(--sun);font:9px 'JetBrains Mono',monospace;box-shadow:2px 2px 0 var(--ink)}.file:nth-child(2){background:var(--coral)}.file:nth-child(3){background:var(--violet)}
+    .music-window .window-body{display:flex;align-items:center;gap:11px;padding:10px 12px}.play{width:26px;height:26px;display:grid;place-items:center;border:1.5px solid var(--ink);border-radius:50%;background:var(--sun);font-size:11px}.track{font:9px/1.4 'JetBrains Mono',monospace}.track b{display:block;font-size:10px}
+    .taskbar{position:absolute;z-index:4;bottom:12px;left:16px;right:16px;height:39px;display:flex;align-items:center;gap:7px;padding:4px 8px;border:1.5px solid var(--ink);border-radius:12px;background:var(--paper);box-shadow:3px 3px 0 var(--ink)}
+    .task-pill{padding:6px 10px;border:1px solid var(--line);border-radius:99px;background:var(--paper);font:9px 'JetBrains Mono',monospace}.task-pill.active{background:var(--sun);border-color:var(--ink)}.system{margin-left:auto;display:flex;gap:10px;align-items:center;font:10px 'JetBrains Mono',monospace}
+    .battery{width:18px;height:10px;border:1.3px solid var(--ink);border-radius:2px;position:relative}.battery:before{content:'';position:absolute;inset:2px 4px 2px 2px;background:var(--mint)}.battery:after{content:'';position:absolute;right:-3px;top:2px;width:2px;height:4px;background:var(--ink)}.wifi{letter-spacing:-3px;font-size:13px}
+    .meta{display:grid;grid-template-columns:1fr 1fr;gap:9px 32px;max-width:1050px;margin:24px auto 0;padding:0 3px}.meta-item{min-width:0;padding-bottom:8px;border-bottom:1px solid var(--line)}
+    .meta-label{display:block;margin-bottom:4px;color:var(--muted);font:9px 'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.07em}.meta-value{font-size:11px;line-height:1.45}.swatches{display:flex;flex-wrap:wrap;gap:5px 10px}.swatch{white-space:nowrap;font:9px 'JetBrains Mono',monospace}.dot{display:inline-block;width:9px;height:9px;margin-right:4px;border:1px solid var(--line);border-radius:50%;vertical-align:-1px}
+    @keyframes settle{from{opacity:0;translate:0 8px}to{opacity:1;translate:0 0}}
+    @media(max-width:700px){body{padding:12px 8px 24px}.menu{height:44px;gap:10px;padding:0 10px;font-size:9px}.brand-glyph{width:16px;height:16px;margin-right:2px;font-size:10px}.nav{gap:clamp(5px,2vw,10px)}.menu-right{gap:6px}.toggle{padding:4px 6px;font-size:8px}.clock{display:none}.desktop{height:536px}.wallpaper{left:6%;top:25px;width:88%}h1{max-width:400px;margin:13px 0 7px;font-size:clamp(39px,10.3vw,54px)}.underline{height:12px;width:180px;margin-bottom:4px}.intro{max-width:300px;font-size:11px}.actions{margin-top:11px;font-size:10px}.primary{padding:8px 12px}.about-window{top:252px;left:5%;width:57%}.work-window{top:352px;left:42%;width:53%}.music-window{top:435px;left:7%;width:48%}.window-body{padding:9px 10px 11px}.window-body p{font-size:10px}.titlebar{height:26px;font-size:9px}.file{padding:5px 6px;font-size:8px}.taskbar{left:9px;right:9px;bottom:9px;height:34px;gap:4px;padding:3px 5px}.task-pill{padding:5px 7px;font-size:8px}.system{gap:7px;font-size:9px}.meta{gap:9px 16px;margin-top:19px}}
+    @media(max-width:370px){.menu{gap:6px;padding:0 7px;font-size:8px}.nav{gap:5px}.brand-glyph{display:none}.toggle{font-size:7px}.meta{grid-template-columns:1fr}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <main>
+    <section class="screen" aria-label="Retro desktop portfolio mockup">
+      <header class="menu">
+        <div class="brand"><span class="brand-glyph">✳</span>luis.dev</div>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#about">About</a><a href="#work">Work</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+        </nav>
+        <div class="menu-right"><span class="toggle">◐ Theme</span><span class="clock">WED&nbsp; 10:14</span></div>
+      </header>
+      <div class="desktop">
+        <div class="wallpaper" id="about">
+          <span class="eyebrow">SOFTWARE DEVELOPER · LUIS</span>
+          <h1>I make the internet feel a little more human.</h1>
+          <svg class="underline" viewBox="0 0 245 16" aria-hidden="true"><path d="M3 10 C48 2, 72 15, 113 8 S181 4, 241 9" fill="none" stroke="#FF5C7A" stroke-width="5" stroke-linecap="round"/></svg>
+          <p class="intro">Thoughtful interfaces, sturdy code, and the occasional excellent button. I’m Luis, and I make useful things delightful.</p>
+          <div class="actions" id="contact"><a class="primary" href="mailto:hello@luis.dev">Let’s make something</a><a class="ghost" href="#work">A peek at my work ↗</a></div>
+        </div>
+        <article class="window about-window">
+          <div class="titlebar"><i class="control"></i><i class="control"></i><i class="control"></i><span class="window-name">About.txt</span></div>
+          <div class="window-body"><p><strong>Hey, I’m Luis.</strong> I turn fuzzy ideas into friendly, dependable software. I like clear writing, tiny details, and making hard things feel simple.</p></div>
+        </article>
+        <article class="window work-window" id="work">
+          <div class="titlebar"><i class="control"></i><i class="control"></i><i class="control"></i><span class="window-name">selected-work/</span></div>
+          <div class="window-body"><p class="file-kicker">3 GOOD THINGS I MADE</p><div class="files"><span class="file">✳ little-lens.app</span><span class="file">↗ field-notes</span><span class="file">▧ good-forms</span></div></div>
+        </article>
+        <article class="window music-window" id="skills">
+          <div class="titlebar"><i class="control"></i><i class="control"></i><i class="control"></i><span class="window-name">now-playing.exe</span></div>
+          <div class="window-body"><span class="play">▶</span><span class="track"><b>Good code, good mood</b>Currently compiling joy.mp3</span></div>
+        </article>
+        <div class="taskbar" aria-label="Desktop taskbar">
+          <span class="task-pill active">⌂ Desktop</span><span class="task-pill">About.txt</span><span class="task-pill">selected-work/</span>
+          <span class="system"><span class="wifi">)))</span><span class="battery"></span><span>98%</span></span>
+        </div>
+      </div>
+    </section>
+    <section class="meta" aria-label="Design notes">
+      <div class="meta-item"><span class="meta-label">Title</span><div class="meta-value">V4 · Retro desktop OS</div></div>
+      <div class="meta-item"><span class="meta-label">The idea</span><div class="meta-value">A friendly desktop with my work already open.</div></div>
+      <div class="meta-item"><span class="meta-label">Signature interaction</span><div class="meta-value">Overlapping windows make my portfolio feel like a lived-in computer.</div></div>
+      <div class="meta-item"><span class="meta-label">Palette</span><div class="swatches"><span class="swatch"><i class="dot" style="background:#FFF6EC"></i>#FFF6EC</span><span class="swatch"><i class="dot" style="background:#221D2E"></i>#221D2E</span><span class="swatch"><i class="dot" style="background:#FF5C7A"></i>#FF5C7A</span><span class="swatch"><i class="dot" style="background:#FFC95C"></i>#FFC95C</span><span class="swatch"><i class="dot" style="background:#8B7CFF"></i>#8B7CFF</span><span class="swatch"><i class="dot" style="background:#3FC7A9"></i>#3FC7A9</span><span class="swatch"><i class="dot" style="background:#574E63"></i>#574E63</span></div></div>
+      <div class="meta-item"><span class="meta-label">Fonts</span><div class="meta-value">Bricolage Grotesque · Inter · JetBrains Mono</div></div>
+      <div class="meta-item"><span class="meta-label">Motion</span><div class="meta-value">Reduced-motion safe</div></div>
+    </section>
+  </main>
+</body>
+</html>

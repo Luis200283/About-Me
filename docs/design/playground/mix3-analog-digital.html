@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIX 3 · Analog-Digital — About-Me</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap');
+*{box-sizing:border-box}
+body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#221D2E;background:#FFF6EC}
+.page{position:relative;width:100%;background:radial-gradient(circle at 1px 1px,rgba(34,29,46,.07) 1px,transparent 1.6px),#FFF6EC;background-size:9px 9px,auto}
+/* circuit bus: the spine that connects all three sections */
+.bus{position:absolute;left:0;top:0;bottom:0;width:40px;border-right:1.5px solid rgba(34,29,46,.35);background:transparent}
+.bus::before{content:"";position:absolute;left:19px;top:0;bottom:0;width:1.5px;background:rgba(34,29,46,.35)}
+.bus span{position:absolute;left:12px;width:16px;height:16px;border-radius:50%;border:1.5px solid #221D2E;background:#FFF6EC}
+.bus .b1{top:14%}.bus .b2{top:50%;background:#FFC95C}.bus .b3{top:86%;background:#3FC7A9}
+.trace{position:absolute;left:0;right:0;height:1px;background:repeating-linear-gradient(90deg,#221D2E 0 14px,transparent 14px 24px);opacity:.3}
+section{position:relative;padding:0 34px 0 70px}
+.idx{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:#574E63;padding:26px 0 10px;display:flex;align-items:center;gap:12px}
+.idx i{display:block;width:34px;height:1px;background:rgba(34,29,46,.3)}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(38px,5.2vw,54px);line-height:1.02;font-weight:750;letter-spacing:-.03em;margin:0 0 18px}
+.hl{position:relative;display:inline-block;white-space:nowrap}
+.hl::before{content:"";position:absolute;left:-6px;right:-6px;bottom:6%;height:44%;background:#FFC95C;z-index:-1;transform:rotate(-1.2deg)}
+.sub{font-size:15px;line-height:1.62;color:#574E63;max-width:44ch;margin:0 0 24px}
+.cta{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.btn{background:#FF5C7A;color:#FFF6EC;padding:12px 22px;border-radius:999px;font-family:'Bricolage Grotesque',sans-serif;font-weight:650;font-size:14px;border:1.5px solid #221D2E;box-shadow:5px 5px 0 #221D2E;text-decoration:none;transition:transform .18s cubic-bezier(.22,1,.36,1)}
+.btn:hover{transform:translate(-1px,-1px)}
+.ghost{font-size:14px;border-bottom:1.5px solid #221D2E;padding-bottom:2px;text-decoration:none;color:#221D2E}
+.note{position:absolute;width:150px;padding:11px 12px 13px;font-size:11.5px;line-height:1.42;border:1.5px solid #221D2E;box-shadow:3px 3px 0 #221D2E;border-radius:3px}
+.note b{display:block;font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px;opacity:.85}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -7px}}
+.panel{background:#FFF;border:1.5px solid #221D2E;box-shadow:5px 5px 0 #221D2E;border-radius:10px}
+.mono{font-family:'JetBrains Mono',monospace}
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;min-height:640px}
+.scope{position:relative;padding:12px;background:#1A2E22;border-radius:8px;margin-bottom:14px}
+.scope svg{display:block;width:100%;height:112px}
+.scope .lbl{display:flex;justify-content:space-between;font-size:9.5px;color:#8FE3B0;letter-spacing:.1em;margin-top:8px;padding:0 4px}
+.wave{stroke:#3FC7A9;stroke-width:2.6;fill:none;stroke-linecap:round;stroke-dasharray:600;stroke-dashoffset:600;animation:trace 4s ease-in-out infinite}
+@keyframes trace{to{stroke-dashoffset:0}}
+.meter{display:flex;gap:10px;align-items:center;padding:10px 12px;margin-bottom:12px}
+.meter .v{font-size:19px;font-weight:500;color:#221D2E}
+.meter .u{font-size:10px;color:#574E63;letter-spacing:.1em}
+.meter .bar{flex:1;height:10px;border:1.5px solid #221D2E;border-radius:999px;overflow:hidden;background:#FFF6EC}
+.meter .bar i{display:block;height:100%;width:78%;background:repeating-linear-gradient(90deg,#FF5C7A 0 8px,#221D2E 8px 12px)}
+.artwrap{position:relative;min-height:560px}
+.mascot{position:absolute;left:4%;bottom:8px;width:222px;animation:bob 7s ease-in-out infinite}
+.n1{background:#FFC95C;top:16px;left:0;transform:rotate(-5deg);animation:bob 6s ease-in-out infinite}
+.n2{background:#FF5C7A;color:#FFF6EC;top:26px;right:-6px;transform:rotate(4deg);animation:bob 7s ease-in-out .8s infinite}
+.n3{background:#3FC7A9;bottom:112px;right:2%;transform:rotate(-3deg);width:150px;animation:bob 6.5s ease-in-out 1.5s infinite}
+.weld{position:absolute;top:-4px;left:30%;width:64px;height:24px;z-index:3}
+.weld path{fill:#FFC95C;stroke:#221D2E;stroke-width:2}
+/* schematic */
+.schem{display:grid;grid-template-columns:.9fr 1.1fr;gap:30px;align-items:center;min-height:560px}
+.sch{position:relative;padding:22px 18px}
+.sch svg{display:block;width:100%;height:190px}
+.node{position:absolute;font-family:'JetBrains Mono',monospace;font-size:9.5px;padding:4px 8px;border-radius:999px;border:1.5px solid #221D2E;background:#FFF;box-shadow:2px 2px 0 #221D2E;white-space:nowrap}
+.legend{display:grid;gap:12px}
+.leg{display:flex;align-items:flex-start;gap:12px}
+.leg .k{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#574E63;min-width:78px;padding-top:5px}
+.leg .v{display:flex;gap:7px;flex-wrap:wrap}
+.chip{font-family:'JetBrains Mono',monospace;font-size:10.5px;padding:5px 10px;border-radius:8px;border:1.5px solid #221D2E;box-shadow:2.5px 2.5px 0 #221D2E}
+/* gauges */
+.gauges{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:8px 0 36px}
+.gauge{text-align:center}
+.dial{position:relative;width:118px;height:60px;margin:0 auto 10px;border:1.5px solid #221D2E;border-radius:118px 118px 0 0;background:#FFF;box-shadow:4px 4px 0 #221D2E;overflow:hidden}
+.dial::before{content:"";position:absolute;left:14px;right:14px;top:14px;height:30px;border-radius:100px 100px 0 0;background:repeating-linear-gradient(90deg,rgba(34,29,46,.14) 0 1px,transparent 1px 18px)}
+.needle{position:absolute;left:50%;bottom:6px;width:2px;height:46px;background:#FF5C7A;transform-origin:bottom center;border-radius:2px}
+.nA{transform:rotate(-42deg)}.nB{transform:rotate(6deg)}.nC{transform:rotate(40deg)}
+.pin{position:absolute;left:50%;bottom:0;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#221D2E}
+.gauge .t{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#574E63}
+.gauge .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;margin-top:3px}
+.meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px;padding:26px 34px 30px 70px;font-size:12.5px;line-height:1.55}
+.meta b{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(34,29,46,.55);margin-bottom:5px;font-weight:500}
+.dots{display:flex;gap:7px}.dotc{width:16px;height:16px;border-radius:50%;border:1px solid rgba(34,29,46,.25)}
+@media (max-width:640px){section{padding:0 18px 0 56px}.hero{grid-template-columns:1fr;min-height:0}.artwrap{min-height:400px}.schem{grid-template-columns:1fr;gap:24px;min-height:0}.gauges{grid-template-columns:1fr;gap:30px}.n3{display:none}.meta{grid-template-columns:1fr;padding:24px 18px 28px 56px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}.wave{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="bus" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span></div>
+
+  <!-- 01 -->
+  <section class="hero">
+    <div>
+      <div class="idx"><i></i>01 — HELLO, WORLD</div>
+      <h1>I build software that feels <span class="hl">alive</span>.</h1>
+      <p class="sub">Fullstack &amp; IA engineer. Six semesters of mechatronics and three years of industrial electricity taught me how things actually behave. Now I build for the web.</p>
+      <div class="cta"><a class="btn" href="#work">See my work</a><a class="ghost" href="#contact">or just say hi →</a></div>
+      <div class="scope">
+        <svg viewBox="0 0 300 112" aria-hidden="true">
+          <path class="wave" d="M6 62 H60 L70 20 L84 104 L98 46 H150 L160 30 L172 76 L184 62 H294"/>
+        </svg>
+        <div class="lbl"><span>CH1 — SIGNAL: GOOD</span><span>2.4 DIV</span></div>
+      </div>
+      <div class="meter panel">
+        <span class="mono v">87</span><span class="u">% COFFEE</span>
+        <span class="bar"><i></i></span>
+      </div>
+    </div>
+    <div class="artwrap">
+      <svg class="mascot" viewBox="0 0 260 300" role="img" aria-label="Luis: a tough engineer character with a welding mask pushed up on his forehead, square jaw and a smirk">
+        <ellipse cx="130" cy="272" rx="96" ry="17" fill="#221D2E" opacity=".13"/>
+        <path d="M28 300c6-52 40-76 102-76s96 24 102 76z" fill="#221D2E"/>
+        <path d="M104 226h52l-26 74z" fill="#FFF6EC"/><path d="M120 232l10 44 10-44z" fill="#FF5C7A"/>
+        <path d="M108 196h44v34h-44z" fill="#E8A87C"/>
+        <!-- welding mask pushed up -->
+        <svg class="weld" viewBox="0 0 64 24"><path d="M4 12c0-6 12-10 28-10s28 4 28 10-12 10-28 10S4 18 4 12z"/><rect x="26" y="4" width="12" height="16" rx="3" fill="#221D2E"/></svg>
+        <path d="M130 40c40 0 62 24 62 62 0 18-6 30-6 44 0 30-24 56-56 56s-56-26-56-56c0-14-6-26-6-44 0-38 22-62 62-62z" fill="#E8A87C"/>
+        <path d="M78 140c6 32 26 52 52 52s46-20 52-52c2 44-18 74-52 74s-54-30-52-74z" fill="#221D2E" opacity=".13"/>
+        <path d="M92 128c10-8 22-9 30-3-10 0-22 3-30 9z" fill="#221D2E"/>
+        <path d="M168 128c-10-8-22-9-30-3 10 0 22 3 30 9z" fill="#221D2E"/>
+        <ellipse cx="107" cy="146" rx="11" ry="12.5" fill="#FFF6EC"/><ellipse cx="153" cy="146" rx="11" ry="12.5" fill="#FFF6EC"/>
+        <circle cx="109" cy="148" r="5.4" fill="#221D2E"/><circle cx="151" cy="148" r="5.4" fill="#221D2E"/>
+        <circle cx="111" cy="145" r="2" fill="#FFF"/><circle cx="153" cy="145" r="2" fill="#FFF"/>
+        <path d="M130 152l-9 20h18z" fill="#D98F63"/>
+        <path d="M108 190c14 10 30 11 44 2" stroke="#221D2E" stroke-width="5" stroke-linecap="round" fill="none"/>
+        <path d="M192 160l6 10-4 1 6 11h-10l2-8 4 1-5-10z" fill="#FFC95C" stroke="#221D2E" stroke-width="1.6"/>
+      </svg>
+      <div class="note n1"><b>background</b>Ex-industrial electrician. 3 years on real systems.</div>
+      <div class="note n2"><b>hardware</b>PIC · Arduino · ESP32</div>
+      <div class="note n3"><b>superpower</b>I speak both volts and TypeScript.</div>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section class="schem">
+    <div class="idx" style="position:absolute;top:0;left:70px"><i></i>02 — SCHEMATIC</div>
+    <div class="panel sch">
+      <svg viewBox="0 0 220 190" aria-hidden="true">
+        <path d="M110 26v30M60 100h100M110 56v74" stroke="#221D2E" stroke-width="1.6" fill="none"/>
+        <path d="M110 26 60 100M110 26 160 100" stroke="#221D2E" stroke-width="1.6" fill="none"/>
+        <path d="M110 130v24M60 100 30 150M160 100 190 150" stroke="#221D2E" stroke-width="1.6" fill="none"/>
+        <circle cx="110" cy="22" r="7" fill="#FF5C7A" stroke="#221D2E" stroke-width="1.6"/>
+        <circle cx="60" cy="100" r="5.5" fill="#FFC95C" stroke="#221D2E" stroke-width="1.6"/>
+        <circle cx="110" cy="56" r="0" />
+        <circle cx="160" cy="100" r="5.5" fill="#3FC7A9" stroke="#221D2E" stroke-width="1.6"/>
+        <circle cx="110" cy="154" r="6" fill="#8B7CFF" stroke="#221D2E" stroke-width="1.6"/>
+        <circle cx="30" cy="150" r="5" fill="#FFF" stroke="#221D2E" stroke-width="1.6"/>
+        <circle cx="190" cy="150" r="5" fill="#FFF" stroke="#221D2E" stroke-width="1.6"/>
+        <path d="M198 96l10-8v16z" fill="#221D2E"/><path d="M12 96l10-8v16z" fill="#221D2E"/>
+        <path d="M84 176h14v-10h10v10h14v-8h10v8h14" stroke="#221D2E" stroke-width="1.6" fill="none"/>
+      </svg>
+    </div>
+    <div class="legend">
+      <div class="leg"><span class="k">Frontend</span><span class="v"><span class="chip" style="background:#3FC7A9">TypeScript</span><span class="chip" style="background:#FFC95C">React</span><span class="chip">Next.js</span><span class="chip">Tailwind</span></span></div>
+      <div class="leg"><span class="k">Backend</span><span class="v"><span class="chip" style="background:#8B7CFF;color:#FFF6EC">Node.js</span><span class="chip">Express</span><span class="chip">Prisma</span><span class="chip">Passport</span></span></div>
+      <div class="leg"><span class="k">Data</span><span class="v"><span class="chip" style="background:#FFF">PostgreSQL</span><span class="chip" style="background:#FFC95C">SQL</span></span></div>
+      <div class="leg"><span class="k">Hardware</span><span class="v"><span class="chip" style="background:#3FC7A9">ESP32</span><span class="chip">Arduino</span><span class="chip">PIC</span><span class="chip" style="background:#FFF">Oscilloscope</span></span></div>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section>
+    <div class="idx"><i></i>03 — MEASUREMENTS</div>
+    <div class="gauges">
+      <div class="gauge"><div class="dial"><span class="needle nA"></span><span class="pin"></span></div><div class="t">CURIOSITY</div><div class="n">MAX</div></div>
+      <div class="gauge"><div class="dial"><span class="needle nB"></span><span class="pin"></span></div><div class="t">SHIP FREQUENCY</div><div class="n">DAILY</div></div>
+      <div class="gauge"><div class="dial"><span class="needle nC"></span><span class="pin"></span></div><div class="t">BUGS TOLERATED</div><div class="n">ZERO</div></div>
+    </div>
+    <div class="cta"><a class="btn" href="#work">See my work</a><a class="ghost" href="#contact">or just say hi →</a></div>
+  </section>
+
+  <div class="meta">
+    <div><b>Title</b>MIX 3 — Analog-Digital (workshop bench)</div>
+    <div><b>The character</b>Same tough square-jaw mascot with a welding mask pushed up on his forehead — an engineer at the bench, not an office worker.</div>
+    <div><b>Idea</b>A circuit bus runs down the whole page and connects the three sections: oscilloscope, labeled skills schematic, and measurement gauges.</div>
+    <div><b>Palette</b><div class="dots"><span class="dotc" style="background:#FFF6EC"></span><span class="dotc" style="background:#221D2E"></span><span class="dotc" style="background:#FF5C7A"></span><span class="dotc" style="background:#FFC95C"></span><span class="dotc" style="background:#8B7CFF"></span><span class="dotc" style="background:#3FC7A9"></span></div></div>
+    <div><b>Fonts</b>Bricolage Grotesque · Inter · JetBrains Mono</div>
+    <div><b>Motion</b>Reduced-motion safe — CSS-only, disabled under prefers-reduced-motion</div>
+  </div>
+</div>
+</body>
+</html>

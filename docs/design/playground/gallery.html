@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About-Me · 5 variaciones Playground (W1.5)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#EDEAE3;color:#221D2E;font-family:'Inter',system-ui,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:48px 28px 80px}
+.head h1{font-family:'Bricolage Grotesque',sans-serif;font-size:34px;font-weight:700;letter-spacing:-.02em;margin:0 0 10px}
+.head p{margin:0 0 8px;font-size:15px;line-height:1.6;color:#574E63;max-width:62ch}
+.head .over{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#8B7CFF;margin-bottom:14px}
+.item{margin-top:56px}
+.item-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.k{font-family:'JetBrains Mono',monospace;font-size:12px;color:#FF5C7A}
+.item-head h2{font-family:'Bricolage Grotesque',sans-serif;font-size:21px;font-weight:650;margin:0;letter-spacing:-.01em}
+.item-head p{margin:0;font-size:13px;color:#574E63;flex:1 1 240px;line-height:1.5}
+frame,iframe{width:100%;border:0;display:block;border-radius:14px;background:#FFF6EC}
+.note{font-size:13px;color:#574E63;background:#FFF;border:1.5px solid #221D2E;border-radius:12px;box-shadow:3px 3px 0 #221D2E;padding:14px 16px;margin-top:36px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="head">
+    <div class="over">W1.5 · Variaciones de la dirección Playground</div>
+    <h1>Cinco formas de jugar con el mismo lenguaje</h1>
+    <p>Misma paleta, tipografía y voz: cinco dispositivos de composición distintos. Cada bloque es interactivo y autónomo (580px por propuesta + ficha técnica). Dime cuál se acerca más a ti.</p>
+  </header>
+
+  <section class="item">
+    <div class="item-head"><span class="k">V1</span><h2>Terminal-first</h2><p>El hero es la terminal: escribes o eliges comandos y el sitio te responde.</p></div>
+    <iframe src="v1-terminal.html" height="700" title="V1 Terminal-first" scrolling="no"></iframe>
+  </section>
+
+  <section class="item">
+    <div class="item-head"><span class="k">V2</span><h2>Scrapbook</h2><p>El escritorio de Luis: polaroid pegada, notas adhesivas y washi tape.</p></div>
+    <iframe src="v2-scrapbook.html" height="760" title="V2 Scrapbook" scrolling="no"></iframe>
+  </section>
+
+  <section class="item">
+    <div class="item-head"><span class="k">V3</span><h2>Doodle</h2><p>Ilustración hecha a mano: garabatos, marcador y una mascota acompañante.</p></div>
+    <iframe src="v3-doodle.html" height="700" title="V3 Doodle" scrolling="no"></iframe>
+  </section>
+
+  <section class="item">
+    <div class="item-head"><span class="k">V4</span><h2>Retro desktop OS</h2><p>El navegador como sistema operativo: ventanas, taskbar y reloj en vivo.</p></div>
+    <iframe src="v4-retro-os.html" height="760" title="V4 Retro desktop OS" scrolling="no"></iframe>
+  </section>
+
+  <section class="item">
+    <div class="item-head"><span class="k">MIX 1</span><h2>Everything together</h2><p>Las tres estéticas en una misma página que se revela al escrollear: doodle + scrapbook + terminal compartiendo un solo sistema visual.</p></div>
+    <iframe src="mix1-together.html" height="2000" title="MIX 1 Everything together" scrolling="no"></iframe>
+  </section>
+
+  <section class="item">
+    <div class="item-head"><span class="k">MIX 2</span><h2>Scrapbook terminal</h2><p>El collage manda: polaroid pegada, notas, nota de escritorio con reglas y un block de código anotado a mano.</p></div>
+    <iframe src="mix2-scrapbook-terminal.html" height="1500" title="MIX 2 Scrapbook terminal" scrolling="no"></iframe>
+  </section>
+
+  <section class="item">
+    <div class="item-head"><span class="k">MIX 3</span><h2>Analog-digital</h2><p>Tu lado mecatrónico como identidad: osciloscopio, bus de circuito, esquemática de skills y medidores.</p></div>
+    <iframe src="mix3-analog-digital.html" height="1600" title="MIX 3 Analog digital" scrolling="no"></iframe>
+  </section>
+
+  <section class="item">
+    <div class="item-head"><span class="k">MIX 4</span><h2>Engineer's notebook</h2><p>Papel cuadriculado, margen rojo y anillas: el personaje bocetado a mano, código anotado y spec sheet.</p></div>
+    <iframe src="mix4-notebook.html" height="1600" title="MIX 4 Notebook" scrolling="no"></iframe>
+  </section>
+
+  <p class="note">Las cuatro son <strong>una sola página que se revela al escrollear</strong> (no tres páginas suelas), con el personaje audaz, rudo y varonil que pediste. Elige una —o combina— y la paso al proyecto real con Next.js.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V5 — Lab / control panel · About-Me playground</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap');
+:root{--paper:#FFF6EC;--ink:#221D2E;--coral:#FF5C7A;--sun:#FFC95C;--violet:#8B7CFF;--mint:#3FC7A9;--muted:#574E63;--line:rgba(34,29,46,.16)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#F0E7D9;padding:26px 18px 44px;min-width:920px}
+.wrap{max-width:1060px;margin:0 auto}
+.screen{height:580px;position:relative;overflow:hidden;background:var(--paper);border:1.5px solid var(--ink);border-radius:14px;background-image:linear-gradient(rgba(34,29,46,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(34,29,46,.055) 1px,transparent 1px);background-size:24px 24px}
+.nav{height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;border-bottom:1.5px solid var(--line)}
+.logo{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px}
+.logo b{color:var(--coral)}
+.nav-links{display:flex;gap:20px;font-size:12px;font-weight:500}
+.nav-links a{color:var(--ink);text-decoration:none}
+.nav-links a:hover{color:var(--coral)}
+.mode{width:54px;height:24px;border:1.5px solid var(--ink);border-radius:12px;position:relative;display:flex;align-items:center;justify-content:space-between;padding:0 6px;background:var(--paper)}
+.mode svg{width:11px;height:11px;display:block}
+.mode .thumb{position:absolute;top:2px;right:2px;width:14px;height:14px;border-radius:50%;background:var(--ink)}
+.hero{position:absolute;inset:48px 0 0 0;display:grid;grid-template-columns:1.06fr .94fr;gap:30px;padding:28px 34px 30px 38px;align-items:center}
+.sticker{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;background:var(--sun);border:1.5px solid var(--ink);border-radius:99px;padding:5px 13px;box-shadow:2px 2px 0 var(--ink);transform:rotate(-4deg);margin-bottom:16px}
+.hl{font-family:'Bricolage Grotesque',Inter,sans-serif;font-weight:800;font-size:51px;line-height:1.04;letter-spacing:-.01em}
+.hl-name{position:relative;display:inline-block}
+.squig{position:absolute;left:2px;bottom:-13px;width:100%}
+.sub{margin-top:16px;font-size:14.5px;line-height:1.55;color:var(--muted);max-width:400px}
+.sub b{color:var(--ink)}
+.ctas{display:flex;align-items:center;gap:22px;margin-top:26px}
+.cta{font-family:'Bricolage Grotesque',Inter,sans-serif;font-weight:700;font-size:16px;color:var(--paper);background:var(--coral);border:1.5px solid var(--ink);border-radius:99px;padding:13px 26px;box-shadow:3px 3px 0 var(--ink);text-decoration:none;display:inline-block;transition:transform .15s ease,box-shadow .15s ease}
+.cta:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.ghost{font-size:13.5px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--ink);padding-bottom:3px;transition:color .15s ease,border-color .15s ease}
+.ghost:hover{color:var(--coral);border-color:var(--coral)}
+.panel{position:relative;transform:rotate(1.5deg);background:var(--paper);border:1.5px solid var(--ink);border-radius:12px;box-shadow:3px 3px 0 var(--ink);padding:12px 14px 14px}
+.p-head{display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1.5px dashed var(--line);margin-bottom:10px}
+.p-dots i{display:inline-block;width:9px;height:9px;border-radius:50%;border:1.5px solid var(--ink);margin-right:4px}
+.d-coral{background:var(--coral)}.d-sun{background:var(--sun)}.d-mint{background:var(--mint)}
+.p-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.06em}
+.readout{background:var(--ink);border-radius:9px;padding:9px 12px;font-family:'JetBrains Mono',monospace;font-size:10.5px;line-height:1.6;color:var(--mint)}
+.ro-k{color:var(--sun)}.ro-d{color:var(--violet)}
+.cursor{display:inline-block;margin-left:4px;animation:blink 1.1s steps(1) infinite}
+.krow{display:flex;justify-content:space-between;gap:8px;margin:12px 0 10px}
+.kunit{text-align:center;flex:1}
+.kunit svg{width:54px;height:54px;display:block;margin:0 auto}
+.kunit .meter{width:86px}
+.klab{display:block;font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.05em;color:var(--muted);margin-top:4px;white-space:nowrap}
+.kval{display:block;font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:700;margin-top:1px}
+.srow{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1.5px dashed var(--line);padding-top:10px}
+.sliders{display:flex;gap:16px}
+.slider{display:flex;flex-direction:column;align-items:center;gap:4px}
+.sl-track{position:relative;width:10px;height:54px;border:1.5px solid var(--ink);border-radius:7px;background:var(--paper)}
+.sl-fill{position:absolute;left:0;right:0;bottom:0;border-radius:0 0 5px 5px}
+.sl-thumb{position:absolute;left:50%;transform:translateX(-50%);width:14px;height:8px;border:1.5px solid var(--ink);border-radius:4px;background:var(--sun)}
+.sl-label{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.05em;color:var(--muted);white-space:nowrap}
+.toggles{display:flex;flex-direction:column;justify-content:center;gap:10px}
+.toggle{display:flex;align-items:center;gap:8px}
+.tg-track{position:relative;width:34px;height:18px;border:1.5px solid var(--ink);border-radius:9px;background:var(--paper)}
+.tg-track.on{background:var(--mint)}
+.tg-thumb{position:absolute;top:1.5px;left:2px;width:11px;height:11px;border-radius:50%;background:var(--ink);transition:left .15s ease,background .15s ease}
+.tg-track.on .tg-thumb{left:17px;background:var(--paper)}
+.tg-label{font-family:'JetBrains Mono',monospace;font-size:8.5px;font-weight:700;letter-spacing:.04em}
+.annot{position:absolute;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;line-height:1.3;z-index:3}
+.annot .av{width:50px;height:34px;display:block}
+.a1{top:96px;right:66px;text-align:right;transform:rotate(-2deg)}
+.a1 .av{margin-left:auto;transform:scaleX(-1)}
+.a2{left:300px;bottom:78px;transform:rotate(2deg)}
+.a2 .av{transform:rotate(14deg)}
+.needle{transform-box:view-box;transform-origin:60px 56px;animation:wag 4.5s ease-in-out infinite}
+.idle{transform-box:view-box;transform-origin:30px 30px;animation:idle 7s ease-in-out infinite}
+@keyframes wag{0%,100%{transform:rotate(-42deg)}50%{transform:rotate(28deg)}}
+@keyframes idle{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+.meta{margin-top:22px}
+.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 36px}
+.meta h4{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.meta p{font-size:12px;line-height:1.5}
+.sw{display:inline-flex;align-items:center;gap:5px;font-family:'JetBrains Mono',monospace;font-size:9.5px;margin:0 12px 7px 0}
+.sw i{width:14px;height:14px;border-radius:50%;border:1.5px solid var(--ink);display:inline-block;background:var(--sw,transparent)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="screen">
+<nav class="nav">
+<span class="logo">luis<b>.</b>dev</span>
+<div class="nav-links"><a href="#">About</a><a href="#">Work</a><a href="#">Skills</a><a href="#">Contact</a></div>
+<div class="mode" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="#221D2E" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+<svg viewBox="0 0 24 24" fill="#221D2E"><path d="M20 13.5A8.5 8.5 0 1 1 10.5 4a7 7 0 0 0 9.5 9.5z"/></svg>
+<span class="thumb"></span>
+</div>
+</nav>
+
+<div class="hero">
+<div class="hero-left">
+<div class="sticker">open to work &#10022;</div>
+<h1 class="hl">Hi, I&rsquo;m <span class="hl-name">Luis<svg class="squig" viewBox="0 0 120 16" aria-hidden="true"><path d="M4 10C22 4 40 14 60 8s36 6 56-2" fill="none" stroke="#FF5C7A" stroke-width="4" stroke-linecap="round"/></svg></span>.</h1>
+<p class="sub">I turn coffee into type-safe, ship-ready software &mdash; mostly in public, occasionally at <b>2 a.m.</b></p>
+<div class="ctas">
+<a class="cta" href="#">Activate me &rarr;</a>
+<a class="ghost" href="#">read the manual &darr;</a>
+</div>
+</div>
+
+<div class="hero-right">
+<div class="panel">
+<div class="p-head">
+<span class="p-dots"><i class="d-coral"></i><i class="d-sun"></i><i class="d-mint"></i></span>
+<span class="p-title">control_panel &mdash; v5</span>
+</div>
+<div class="readout">
+<div>luis@lab:~$ cat spec.txt</div>
+<div><span class="ro-k">role</span><span class="ro-d"> ....... </span>software developer</div>
+<div><span class="ro-k">stack</span><span class="ro-d"> ...... </span>TS &middot; React &middot; Node</div>
+<div><span class="ro-k">years</span><span class="ro-d"> ...... </span>7 (and counting)</div>
+<div><span class="ro-k">tz</span><span class="ro-d"> ......... </span>UTC-5 &middot; caffeinated<span class="cursor">&#9612;</span></div>
+</div>
+<div class="krow">
+<div class="kunit">
+<svg viewBox="0 0 60 60" aria-hidden="true">
+<circle cx="30" cy="30" r="25" fill="#FFF6EC" stroke="#221D2E" stroke-width="1.5"/>
+<path d="M30 7v4M30 49v4" stroke="#221D2E" stroke-width="1.5" stroke-linecap="round"/>
+<g class="idle"><g transform="rotate(150 30 30)"><rect x="28.4" y="10" width="3.2" height="13" rx="1.6" fill="#221D2E"/></g></g>
+<circle cx="30" cy="30" r="4" fill="#FFC95C" stroke="#221D2E" stroke-width="1.5"/>
+</svg>
+<span class="klab">CURIOSITY</span><span class="kval">MAX</span>
+</div>
+<div class="kunit">
+<svg viewBox="0 0 60 60" aria-hidden="true">
+<circle cx="30" cy="30" r="25" fill="#FFF6EC" stroke="#221D2E" stroke-width="1.5"/>
+<path d="M30 7v4M30 49v4" stroke="#221D2E" stroke-width="1.5" stroke-linecap="round"/>
+<g transform="rotate(60 30 30)"><rect x="28.4" y="10" width="3.2" height="13" rx="1.6" fill="#221D2E"/></g>
+<circle cx="30" cy="30" r="4" fill="#FFC95C" stroke="#221D2E" stroke-width="1.5"/>
+</svg>
+<span class="klab">COFFEE LVL</span><span class="kval">87%</span>
+</div>
+<div class="kunit">
+<svg class="meter" viewBox="0 0 120 64" aria-hidden="true">
+<path d="M14 56A46 46 0 0 1 106 56" fill="none" stroke="#221D2E" stroke-width="1.5"/>
+<path d="M25.4 36A40 40 0 0 1 60 16" fill="none" stroke="#3FC7A9" stroke-width="4" stroke-linecap="round"/>
+<path d="M60 16A40 40 0 0 1 80 21.4" fill="none" stroke="#FFC95C" stroke-width="4" stroke-linecap="round"/>
+<path d="M80 21.4A40 40 0 0 1 94.6 36" fill="none" stroke="#FF5C7A" stroke-width="4" stroke-linecap="round"/>
+<g fill="#221D2E"><circle cx="21.9" cy="34" r="1.6"/><circle cx="38" cy="17.9" r="1.6"/><circle cx="60" cy="12" r="1.6"/><circle cx="82" cy="17.9" r="1.6"/><circle cx="98.1" cy="34" r="1.6"/></g>
+<g class="needle"><line x1="60" y1="56" x2="60" y2="22" stroke="#221D2E" stroke-width="2.5" stroke-linecap="round"/></g>
+<circle cx="60" cy="56" r="4.5" fill="#221D2E"/>
+<circle cx="60" cy="56" r="1.8" fill="#FFF6EC"/>
+</svg>
+<span class="klab">SHIP-IT FREQ</span><span class="kval">DAILY</span>
+</div>
+</div>
+<div class="srow">
+<div class="sliders">
+<div class="slider">
+<div class="sl-track"><span class="sl-fill" style="height:72%;background:#8B7CFF"></span><span class="sl-thumb" style="bottom:72%"></span></div>
+<span class="sl-label">FOCUS 92</span>
+</div>
+<div class="slider">
+<div class="sl-track"><span class="sl-fill" style="height:45%;background:#3FC7A9"></span><span class="sl-thumb" style="bottom:45%"></span></div>
+<span class="sl-label">PUNS/MIN 45</span>
+</div>
+</div>
+<div class="toggles">
+<label class="toggle"><span class="tg-track on"><span class="tg-thumb"></span></span><span class="tg-label">SHIP IT</span></label>
+<label class="toggle"><span class="tg-track"><span class="tg-thumb"></span></span><span class="tg-label">2AM IDEAS</span></label>
+</div>
+</div>
+</div>
+</div>
+
+<div class="annot a1">
+<svg class="av" viewBox="0 0 70 44" aria-hidden="true"><path d="M62 6C40 8 22 22 14 40" fill="none" stroke="#221D2E" stroke-width="1.8" stroke-linecap="round"/><path d="M8 36l8-4-4 8" fill="none" stroke="#221D2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+calibrated daily
+</div>
+<div class="annot a2">
+<svg class="av" viewBox="0 0 70 44" aria-hidden="true"><path d="M6 12C28 6 48 22 60 38" fill="none" stroke="#221D2E" stroke-width="1.8" stroke-linecap="round"/><path d="M58 30l6 6-8 1" fill="none" stroke="#221D2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+yes, this one ships
+</div>
+</div>
+</div>
+
+<section class="meta">
+<div class="meta-grid">
+<div>
+<h4>Title</h4>
+<p>V5 &mdash; Lab / control panel</p>
+</div>
+<div>
+<h4>The idea</h4>
+<p>My hero as a tactile engineering control panel: a one-glance spec sheet surrounded by knobs, sliders and gauges.</p>
+</div>
+<div>
+<h4>Signature interaction</h4>
+<p>The VU needle twitches gently and the curiosity knob idles a few degrees &mdash; the only motion, 100% CSS.</p>
+</div>
+<div>
+<h4>Palette</h4>
+<p>
+<span class="sw"><i style="--sw:#FFF6EC"></i>#FFF6EC</span>
+<span class="sw"><i style="--sw:#221D2E"></i>#221D2E</span>
+<span class="sw"><i style="--sw:#FF5C7A"></i>#FF5C7A</span>
+<span class="sw"><i style="--sw:#FFC95C"></i>#FFC95C</span>
+<span class="sw"><i style="--sw:#8B7CFF"></i>#8B7CFF</span>
+<span class="sw"><i style="--sw:#3FC7A9"></i>#3FC7A9</span>
+<span class="sw"><i style="--sw:#574E63"></i>#574E63</span>
+<span class="sw"><i style="--sw:rgba(34,29,46,.16)"></i>line .16</span>
+</p>
+</div>
+<div>
+<h4>Fonts</h4>
+<p>Bricolage Grotesque (display) &middot; Inter (body) &middot; JetBrains Mono (labels &amp; code)</p>
+</div>
+<div>
+<h4>Motion</h4>
+<p>Reduced-motion safe</p>
+</div>
+</div>
+</section>
+
+</div>
+</body>
+</html>

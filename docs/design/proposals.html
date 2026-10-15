@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About-Me — Propuestas de diseño (W1)</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300..700&family=Inter+Tight:wght@400..800&family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap');
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  color:var(--foreground);
+  background:transparent;
+  -webkit-font-smoothing:antialiased;
+}
+.page{display:flex;flex-direction:column;gap:56px}
+.page-head{display:flex;flex-direction:column;gap:8px}
+.overline{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-foreground)}
+.page-head h2{font-size:26px;font-weight:650;letter-spacing:-.02em;margin:0}
+.page-head p{margin:0;font-size:14px;line-height:1.6;color:var(--muted-foreground);max-width:60ch}
+
+.proposal{display:flex;flex-direction:column;gap:14px}
+.prop-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px}
+.prop-index{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:var(--muted-foreground)}
+.prop-name{font-size:21px;font-weight:650;letter-spacing:-.01em;margin:0}
+.prop-desc{font-size:13.5px;color:var(--muted-foreground);flex:1 1 260px;margin:0;line-height:1.5}
+.prop-tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border:1px solid var(--border);border-radius:999px;color:var(--muted-foreground);white-space:nowrap}
+.tag.rec{border-color:transparent;background:var(--accent-surface);color:var(--accent-surface-foreground);font-weight:600}
+
+.mock{position:relative;height:580px;border-radius:var(--radius,14px);overflow:hidden;isolation:isolate}
+.meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px;font-size:12.5px;line-height:1.55;color:var(--foreground)}
+.meta b{display:block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-foreground);margin-bottom:5px;font-weight:500}
+.meta .mutedline{color:var(--muted-foreground)}
+.dots{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.dot{width:16px;height:16px;border-radius:50%;border:1px solid rgba(128,128,128,.35);flex:none}
+.dots code{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;color:var(--muted-foreground)}
+
+/* ---------- shared mock chrome ---------- */
+.mock nav{display:flex;align-items:center;justify-content:space-between;font-size:13px}
+.mock .nav-links{display:flex;gap:20px;opacity:.85}
+
+/* =========================================================
+   A — VERDANT
+   ========================================================= */
+.dir-a{
+  background:#F2EDE3;
+  color:#0F2A20;
+  font-family:'Inter',system-ui,sans-serif;
+}
+.dir-a::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(rgba(15,42,32,.06) 1px,transparent 1px);
+  background-size:7px 7px;
+}
+.dir-a nav{padding:22px 40px}
+.dir-a .a-logo{font-family:'Fraunces',Georgia,serif;font-size:22px;font-weight:600;letter-spacing:-.01em}
+.dir-a .a-logo i{color:#6D7F72;font-style:normal}
+.dir-a .a-links{color:#3C5348}
+.dir-a .a-btn-out{border:1px solid rgba(15,42,32,.28);padding:7px 16px;border-radius:999px;font-size:12px;letter-spacing:.02em}
+.dir-a .a-hero{display:grid;grid-template-columns:1.12fr .88fr;gap:20px;align-items:center;padding:8px 40px 0;height:60%}
+.dir-a .a-eyebrow{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.22em;color:#5E7568;margin-bottom:14px}
+.dir-a h1{font-family:'Fraunces',Georgia,serif;font-size:45px;line-height:1.08;font-weight:420;letter-spacing:-.015em;margin:0 0 16px}
+.dir-a h1 em{font-style:italic;font-weight:480;color:#2E5C4A}
+.dir-a p.a-sub{font-size:13.5px;line-height:1.65;color:#4E6357;max-width:38ch;margin:0 0 22px}
+.dir-a .a-actions{display:flex;gap:14px;align-items:center}
+.dir-a .a-btn-solid{background:#0F2A20;color:#F2EDE3;padding:10px 20px;border-radius:999px;font-size:12.5px;letter-spacing:.02em}
+.dir-a .a-btn-ghost{font-size:12.5px;color:#2E5C4A;border-bottom:1px solid rgba(46,92,74,.4);padding-bottom:2px}
+.dir-a .a-art{position:relative;height:100%;display:flex;align-items:center;justify-content:center}
+.dir-a .a-blob{
+  position:absolute;width:295px;height:295px;
+  background:
+    radial-gradient(120% 120% at 28% 22%, #A9E15C 0%, #5F9E62 38%, #2E5C4A 72%, #17382C 100%);
+  border-radius:58% 42% 55% 45% / 50% 56% 44% 50%;
+  animation:a-morph 16s ease-in-out infinite;
+  box-shadow:0 30px 60px -30px rgba(23,56,44,.55);
+}
+@keyframes a-morph{
+  0%,100%{border-radius:58% 42% 55% 45% / 50% 56% 44% 50%;transform:rotate(0deg)}
+  50%{border-radius:45% 55% 42% 58% / 56% 44% 56% 44%;transform:rotate(-4deg)}
+}
+.dir-a .a-portrait{
+  position:relative;width:150px;height:150px;border-radius:50%;
+  background:rgba(242,237,227,.14);
+  border:1px solid rgba(242,237,227,.55);
+  backdrop-filter:blur(2px);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:62px;color:#F2EDE3;
+  text-shadow:0 2px 12px rgba(15,42,32,.3);
+}
+.dir-a .a-leaf{position:absolute;width:64px;height:64px}
+.dir-a .a-leaf-1{top:6%;right:2%;transform:rotate(18deg);animation:a-float 7s ease-in-out infinite}
+.dir-a .a-leaf-2{bottom:4%;left:0;transform:rotate(-24deg) scale(.82);animation:a-float 9s ease-in-out infinite reverse}
+@keyframes a-float{0%,100%{translate:0 0}50%{translate:0 -10px}}
+.dir-a .a-strip{
+  position:absolute;left:0;right:0;bottom:0;height:52px;
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  border-top:1px solid rgba(15,42,32,.12);
+  font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:13.5px;color:#3C5348;
+  background:rgba(242,237,227,.72);
+}
+.dir-a .a-strip i{color:#A9E15C;font-style:normal;font-size:9px}
+
+/* =========================================================
+   B — PLAYGROUND
+   ========================================================= */
+.dir-b{
+  background:#FFF6EC;
+  color:#221D2E;
+  font-family:'Inter',system-ui,sans-serif;
+}
+.dir-b nav{padding:20px 36px}
+.dir-b .b-logo{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:15px;font-weight:500}
+.dir-b .b-logo span{color:#FF5C7A}
+.dir-b .b-links{color:#4A4157}
+.dir-b .b-toggle{width:44px;height:24px;border-radius:999px;background:#221D2E;position:relative}
+.dir-b .b-toggle::after{content:"";position:absolute;top:3px;right:3px;width:18px;height:18px;border-radius:50%;background:#FFC95C}
+.dir-b .b-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:center;padding:6px 36px 0;height:calc(100% - 64px)}
+.dir-b .b-eyebrow{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#FF5C7A;margin-bottom:14px;letter-spacing:.06em}
+.dir-b h1{font-family:'Bricolage Grotesque','Inter Tight',sans-serif;font-size:44px;line-height:1.06;font-weight:640;letter-spacing:-.02em;margin:0 0 16px}
+.dir-b .b-underline{position:relative;display:inline-block}
+.dir-b .b-underline svg{position:absolute;left:-2%;bottom:-8px;width:104%;height:14px;overflow:visible}
+.dir-b .b-underline path{stroke:#FF5C7A;stroke-width:3.4;fill:none;stroke-linecap:round;stroke-dasharray:220;stroke-dashoffset:0;animation:b-draw 2.6s ease-in-out infinite alternate}
+@keyframes b-draw{from{stroke-dashoffset:0}to{stroke-dashoffset:36}}
+.dir-b p.b-sub{font-size:13.5px;line-height:1.65;color:#574E63;max-width:38ch;margin:0 0 20px}
+.dir-b mark{background:#FFC95C;padding:1px 5px;border-radius:4px;color:#221D2E;font-weight:600}
+.dir-b .b-em{position:relative;font-weight:600;white-space:nowrap}
+.dir-b .b-em::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:#8B7CFF;border-radius:2px}
+.dir-b .b-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.dir-b .b-btn{background:#FF5C7A;color:#FFF6EC;padding:11px 20px;border-radius:999px;font-size:12.5px;font-weight:600;box-shadow:0 10px 24px -12px rgba(255,92,122,.7)}
+.dir-b .b-kbd{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;color:#574E63;border:1.5px dashed rgba(34,29,46,.3);padding:7px 11px;border-radius:8px;background:rgba(255,255,255,.55)}
+.dir-b .b-art{position:relative;height:100%}
+.dir-b .b-term{
+  position:absolute;top:9%;left:6%;width:78%;
+  background:#221D2E;border-radius:14px;overflow:hidden;
+  box-shadow:0 26px 50px -24px rgba(34,29,46,.55);
+  transform:rotate(-1.5deg);
+}
+.dir-b .b-term-bar{display:flex;gap:6px;padding:10px 13px;border-bottom:1px solid rgba(255,246,236,.08)}
+.dir-b .b-term-bar i{width:10px;height:10px;border-radius:50%;display:block}
+.dir-b .b-term-bar i:nth-child(1){background:#FF5C7A}
+.dir-b .b-term-bar i:nth-child(2){background:#FFC95C}
+.dir-b .b-term-bar i:nth-child(3){background:#3FC7A9}
+.dir-b .b-term-body{padding:14px 16px 16px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;line-height:1.85;color:#F4EDE4}
+.dir-b .b-term-body p{margin:0}
+.dir-b .t-p{color:#3FC7A9}
+.dir-b .t-out{color:#B9AFC7}
+.dir-b .b-caret{display:inline-block;color:#FFC95C;animation:b-blink 1.1s steps(1) infinite;margin-left:2px}
+@keyframes b-blink{50%{opacity:0}}
+.dir-b .b-stickers{position:absolute;bottom:3%;left:2%;display:flex;gap:8px;align-items:flex-end}
+.dir-b .b-sticker{
+  font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;font-weight:500;
+  padding:7px 12px;border-radius:10px;border:1.5px solid #221D2E;background:#FFF;
+  box-shadow:3px 3px 0 #221D2E;white-space:nowrap;animation:b-bob 6s ease-in-out infinite;
+}
+.dir-b .b-sticker:nth-child(1){background:#FFC95C;transform:rotate(-5deg)}
+.dir-b .b-sticker:nth-child(2){background:#FFF;transform:rotate(2.5deg);animation-delay:.6s}
+.dir-b .b-sticker:nth-child(3){background:#8B7CFF;color:#FFF6EC;transform:rotate(-2deg);animation-delay:1.2s}
+.dir-b .b-sticker:nth-child(4){background:#3FC7A9;transform:rotate(4deg);animation-delay:1.8s}
+@keyframes b-bob{0%,100%{translate:0 0}50%{translate:0 -6px}}
+.dir-b .b-widget{
+  position:absolute;right:0;bottom:16%;
+  background:#FFF;border:1.5px solid rgba(34,29,46,.16);border-radius:12px;
+  padding:9px 12px;font-size:11px;display:flex;align-items:center;gap:9px;
+  box-shadow:0 14px 30px -18px rgba(34,29,46,.4);transform:rotate(2deg);
+  font-family:'JetBrains Mono',ui-monospace,monospace;color:#574E63;
+}
+.dir-b .b-switch{width:30px;height:16px;border-radius:999px;background:#3FC7A9;position:relative;display:inline-block}
+.dir-b .b-switch::after{content:"";position:absolute;top:2px;right:2px;width:12px;height:12px;border-radius:50%;background:#FFF}
+.dir-b .b-dot{position:absolute;display:block;border-radius:50%;animation:b-bob 5s ease-in-out infinite}
+.dir-b .b-dot.sq{border-radius:3px;animation-duration:7s}
+
+/* =========================================================
+   C — STUDIO
+   ========================================================= */
+.dir-c{
+  background:#0B0C0F;
+  color:#F2EFE7;
+  font-family:'Inter Tight','Inter',system-ui,sans-serif;
+}
+.dir-c .c-progress{position:absolute;top:0;left:0;height:3px;width:58%;background:#D9FF57;z-index:3}
+.dir-c .c-progress::after{content:"";position:absolute;right:-40px;top:0;bottom:0;width:40px;background:linear-gradient(90deg,#D9FF57,transparent)}
+.dir-c nav{padding:20px 40px}
+.dir-c .c-logo{font-weight:700;font-size:17px;letter-spacing:-.01em}
+.dir-c .c-logo span{color:#D9FF57}
+.dir-c .c-links{color:#B9BBC2}
+.dir-c .c-btn-mono{
+  font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;
+  background:#D9FF57;color:#0B0C0F;padding:8px 15px;border-radius:999px;font-weight:500;
+}
+.dir-c .c-hero{display:grid;grid-template-columns:1.08fr .92fr;gap:16px;align-items:center;padding:4px 40px 0;height:calc(100% - 62px - 42px)}
+.dir-c .c-eyebrow{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.2em;color:#8B8D93;margin-bottom:15px}
+.dir-c h1{font-size:43px;line-height:1.06;font-weight:700;letter-spacing:-.03em;margin:0 0 8px}
+.dir-c .c-script{font-size:25px;font-weight:500;letter-spacing:-.015em;margin:0 0 16px;color:#C9C6BE;height:34px;position:relative}
+.dir-c .c-rotor{position:relative;display:inline-block;width:172px;height:34px;vertical-align:baseline;font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:30px;color:#D9FF57;line-height:34px}
+.dir-c .c-rotor span{position:absolute;left:0;top:0;opacity:0;white-space:nowrap;animation:c-rotate 9s linear infinite}
+.dir-c .c-rotor span:nth-child(2){animation-delay:3s}
+.dir-c .c-rotor span:nth-child(3){animation-delay:6s}
+@keyframes c-rotate{
+  0%{opacity:0;transform:translateY(12px)}
+  4%,30%{opacity:1;transform:translateY(0)}
+  34%,100%{opacity:0;transform:translateY(-10px)}
+}
+.dir-c p.c-sub{font-size:13.5px;line-height:1.65;color:#9A9CA3;max-width:40ch;margin:0 0 22px}
+.dir-c .c-actions{display:flex;gap:16px;align-items:center;margin-bottom:26px}
+.dir-c .c-btn-solid{background:#D9FF57;color:#0B0C0F;padding:11px 20px;border-radius:999px;font-size:12.5px;font-weight:650}
+.dir-c .c-btn-ghost{font-size:12.5px;color:#F2EFE7;opacity:.85}
+.dir-c .c-stats{display:flex;gap:34px}
+.dir-c .c-stats b{display:block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:21px;font-weight:500;color:#F2EFE7}
+.dir-c .c-stats b i{color:#FFB86B;font-style:normal}
+.dir-c .c-stats span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8B8D93}
+.dir-c .c-art{position:relative;height:100%;display:flex;align-items:center;justify-content:center}
+.dir-c .c-ghost-num{
+  position:absolute;top:2%;right:-4%;font-size:158px;font-weight:800;letter-spacing:-.06em;line-height:1;
+  color:transparent;-webkit-text-stroke:1px rgba(242,239,231,.14);z-index:0;user-select:none;
+}
+.dir-c .c-card{
+  position:relative;width:236px;height:300px;border-radius:16px;z-index:1;
+  background:linear-gradient(158deg,#191C21 0%,#20302A 48%,#3A2E22 100%);
+  border:1px solid rgba(242,239,231,.12);
+  transform:rotate(-2.2deg);
+  box-shadow:0 40px 70px -30px rgba(0,0,0,.8);
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.dir-c .c-card::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(65% 50% at 28% 18%, rgba(255,255,255,.16), transparent 70%);
+}
+.dir-c .c-initials{
+  font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:104px;color:#F2EFE7;
+  text-shadow:0 3px 24px rgba(0,0,0,.5);
+}
+.dir-c .c-tagcard{
+  position:absolute;right:2%;bottom:6%;z-index:2;
+  background:#15171B;border:1px solid rgba(242,239,231,.14);border-radius:10px;
+  padding:8px 12px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;color:#B9BBC2;
+  transform:rotate(1.5deg);
+}
+.dir-c .c-tagcard i{color:#D9FF57;font-style:normal}
+.dir-c .c-glow{
+  position:absolute;width:210px;height:210px;border-radius:50%;z-index:0;
+  background:radial-gradient(circle, rgba(217,255,87,.30), transparent 65%);
+  top:-6%;left:2%;filter:blur(6px);animation:c-glow 7s ease-in-out infinite;
+}
+@keyframes c-glow{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.18);opacity:1}}
+.dir-c .c-marquee{
+  position:absolute;left:0;right:0;bottom:0;height:42px;background:#D9FF57;color:#0B0C0F;
+  overflow:hidden;display:flex;align-items:center;
+}
+.dir-c .c-marquee-track{
+  display:flex;white-space:nowrap;gap:0;
+  font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;font-weight:500;letter-spacing:.14em;
+  animation:c-marq 22s linear infinite;
+}
+@keyframes c-marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- comparison ---------- */
+.cmp{margin-top:8px}
+table.cmp{border-collapse:collapse;width:100%;font-size:12.5px;line-height:1.5}
+table.cmp th,table.cmp td{text-align:left;vertical-align:top;padding:9px 12px;border-bottom:1px solid var(--border)}
+table.cmp th{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-foreground);font-weight:500}
+table.cmp td:first-child{color:var(--muted-foreground);white-space:nowrap}
+table.cmp tr:last-child td{border-bottom:none}
+.final-note{font-size:13px;color:var(--muted-foreground);line-height:1.6;border-left:2px solid var(--accent);padding-left:14px;max-width:62ch}
+
+@media (max-width:640px){
+  .dir-a .a-hero,.dir-b .b-hero,.dir-c .c-hero{grid-template-columns:1fr;padding:0 22px}
+  .dir-a .a-art,.dir-b .b-art,.dir-c .c-art{display:none}
+  .dir-a h1,.dir-b h1,.dir-c h1{font-size:32px}
+  .mock{height:500px}
+  .meta{grid-template-columns:1fr}
+  table.cmp{font-size:11.5px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="page-head">
+    <div class="overline">W1 · Direcciones de diseño</div>
+    <h2>Tres formas de contar quién eres</h2>
+    <p>Misma información, tres personalidades. Cada propuesta incluye identidad completa: tipografía, paleta, composición hero, detalles de UI e interacciones planeadas. Los bloques son maquetas vivas — algunas animaciones ya se están moviendo.</p>
+  </header>
+
+  <!-- ============ PROPOSAL A ============ -->
+  <section class="proposal">
+    <div class="prop-head">
+      <span class="prop-index">A</span>
+      <h3 class="prop-name">Verdant</h3>
+      <p class="prop-desc">Editorial orgánico. La calma, el aire y el lujo natural de la referencia Ecotourism, aplicados a un portafolio de software.</p>
+      <div class="prop-tags"><span class="tag">Serif editorial</span><span class="tag">Claro</span><span class="tag">Orgánico</span></div>
+    </div>
+    <div class="mock dir-a">
+      <nav>
+        <div class="a-logo">Luis<i>.</i></div>
+        <div class="nav-links a-links"><span>About</span><span>Work</span><span>Skills</span><span>Contact</span></div>
+        <div class="a-btn-out">Résumé</div>
+      </nav>
+      <div class="a-hero">
+        <div>
+          <div class="a-eyebrow">SOFTWARE DEVELOPER</div>
+          <h1>I build digital products that feel <em>alive</em>.</h1>
+          <p class="a-sub">Full-stack developer crafting fast, elegant experiences — with care for every pixel and every millisecond.</p>
+          <div class="a-actions">
+            <span class="a-btn-solid">See my work</span>
+            <span class="a-btn-ghost">Read my story →</span>
+          </div>
+        </div>
+        <div class="a-art">
+          <div class="a-blob"></div>
+          <div class="a-portrait">L</div>
+          <svg class="a-leaf a-leaf-1" viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M52 10C33 8 17 21 13 39c-1 6 0 11 0 11s5 1 11 0c18-4 31-21 28-40Z" fill="#2E5C4A" opacity=".5"/>
+            <path d="M13 52C24 41 36 30 50 13" stroke="#A9E15C" stroke-width="2.4" fill="none"/>
+          </svg>
+          <svg class="a-leaf a-leaf-2" viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M52 10C33 8 17 21 13 39c-1 6 0 11 0 11s5 1 11 0c18-4 31-21 28-40Z" fill="#5F9E62" opacity=".45"/>
+            <path d="M13 52C24 41 36 30 50 13" stroke="#0F2A20" stroke-width="2.2" fill="none"/>
+          </svg>
+        </div>
+      </div>
+      <div class="a-strip">
+        <span>TypeScript</span><i>◆</i><span>React</span><i>◆</i><span>Next.js</span><i>◆</i><span>Node</span><i>◆</i><span>Design Systems</span>
+      </div>
+    </div>
+    <div class="meta">
+      <div><b>Paleta</b><div class="dots"><span class="dot" style="background:#F2EDE3"></span><span class="dot" style="background:#0F2A20"></span><span class="dot" style="background:#2E5C4A"></span><span class="dot" style="background:#A9E15C"></span><span class="dot" style="background:#6D7F72"></span></div></div>
+      <div><b>Tipografía</b><span class="mutedline">Fraunces (display, con itálicas) + Inter (texto) + JetBrains Mono (etiquetas técnicas)</span></div>
+      <div><b>Movimiento</b><span class="mutedline">Reveals con máscaras orgánicas, parallax de hojas, botones magnéticos, transiciones suaves de sección</span></div>
+      <div><b>Mejor para / trade-off</b><span class="mutedline">Transmitir calma, artesanía y confianza. Contra: menor "wow" inmediato; exige arte y contenido de calidad constante.</span></div>
+    </div>
+  </section>
+
+  <!-- ============ PROPOSAL B ============ -->
+  <section class="proposal">
+    <div class="prop-head">
+      <span class="prop-index">B</span>
+      <h3 class="prop-name">Playground</h3>
+      <p class="prop-desc">Ingenio jugable. La calidez, el humor y las sorpresas de la referencia Josh Comeau, con acento de desarrollador.</p>
+      <div class="prop-tags"><span class="tag">Display chunky</span><span class="tag">Cálido</span><span class="tag">Easter eggs</span></div>
+    </div>
+    <div class="mock dir-b">
+      <nav>
+        <div class="b-logo">luis<span>.dev</span></div>
+        <div class="nav-links b-links"><span>About</span><span>Work</span><span>Skills</span><span>Contact</span></div>
+        <div class="b-toggle" title="Dark mode"></div>
+      </nav>
+      <div class="b-hero">
+        <div>
+          <div class="b-eyebrow">// HELLO, WORLD</div>
+          <h1>I make the web feel
+            <span class="b-underline">human
+              <svg viewBox="0 0 120 14" aria-hidden="true"><path d="M3 9 C 22 2, 42 13, 62 6 S 102 3, 117 8"/></svg>
+            </span>.
+          </h1>
+          <p class="b-sub">Software developer, tinkerer, and unapologetic <mark>detail nerd</mark>. I build for the internet — and sweat the <span class="b-em">small stuff</span>.</p>
+          <div class="b-actions">
+            <span class="b-btn">Let's build something</span>
+            <span class="b-kbd">press K for confetti</span>
+          </div>
+        </div>
+        <div class="b-art">
+          <div class="b-term">
+            <div class="b-term-bar"><i></i><i></i><i></i></div>
+            <div class="b-term-body">
+              <p><span class="t-p">$</span> whoami</p>
+              <p class="t-out">luis — software developer</p>
+              <p><span class="t-p">$</span> ls skills/</p>
+              <p class="t-out">typescript react node css<span class="b-caret">▍</span></p>
+              <p><span class="t-p">$</span> cat motto.txt</p>
+              <p class="t-out">"ship it, but make it delightful"</p>
+            </div>
+          </div>
+          <div class="b-stickers">
+            <span class="b-sticker">TypeScript</span>
+            <span class="b-sticker">React</span>
+            <span class="b-sticker">Node</span>
+            <span class="b-sticker">CSS wizard</span>
+          </div>
+          <div class="b-widget">Sound <span class="b-switch"></span></div>
+          <i class="b-dot" style="width:9px;height:9px;background:#FF5C7A;top:4%;left:-1%"></i>
+          <i class="b-dot sq" style="width:8px;height:8px;background:#FFC95C;top:26%;left:0"></i>
+          <i class="b-dot" style="width:7px;height:7px;background:#8B7CFF;top:2%;right:6%"></i>
+          <i class="b-dot" style="width:8px;height:8px;background:#3FC7A9;bottom:34%;right:0"></i>
+          <i class="b-dot sq" style="width:7px;height:7px;background:#FF5C7A;bottom:40%;left:4%"></i>
+          <i class="b-dot" style="width:6px;height:6px;background:#FFC95C;top:44%;right:12%"></i>
+        </div>
+      </div>
+    </div>
+    <div class="meta">
+      <div><b>Paleta</b><div class="dots"><span class="dot" style="background:#FFF6EC"></span><span class="dot" style="background:#221D2E"></span><span class="dot" style="background:#FF5C7A"></span><span class="dot" style="background:#FFC95C"></span><span class="dot" style="background:#8B7CFF"></span><span class="dot" style="background:#3FC7A9"></span></div></div>
+      <div><b>Tipografía</b><span class="mutedline">Bricolage Grotesque (display) + Inter (texto) + JetBrains Mono (personalidad de código)</span></div>
+      <div><b>Movimiento</b><span class="mutedline">Hovers con resorte, confetti contenido, easter eggs de teclado, stickers y widgets interactivos reales</span></div>
+      <div><b>Mejor para / trade-off</b><span class="mutedline">Caer bien rápido y mostrar personalidad. Contra: exige disciplina para no volverse caricaturesco.</span></div>
+    </div>
+  </section>
+
+  <!-- ============ PROPOSAL C ============ -->
+  <section class="proposal">
+    <div class="prop-head">
+      <span class="prop-index">C</span>
+      <h3 class="prop-name">Studio</h3>
+      <p class="prop-desc">Híbrido oscuro. Refinamiento editorial + interacción de estudio: la fusión directa de tus dos referencias.</p>
+      <div class="prop-tags"><span class="tag rec">Mi recomendación</span><span class="tag">Dark</span><span class="tag">Kinetic type</span></div>
+    </div>
+    <div class="mock dir-c">
+      <div class="c-progress"></div>
+      <nav>
+        <div class="c-logo">Luis<span>—H</span></div>
+        <div class="nav-links c-links"><span>About</span><span>Work</span><span>Skills</span><span>Contact</span></div>
+        <div class="c-btn-mono">GET IN TOUCH</div>
+      </nav>
+      <div class="c-hero">
+        <div>
+          <div class="c-eyebrow">// PORTFOLIO — 2026</div>
+          <h1>Software with an artist's eye.</h1>
+          <p class="c-script">I craft
+            <span class="c-rotor"><span>interfaces</span><span>systems</span><span>experiences</span></span>
+            that ship.
+          </p>
+          <p class="c-sub">Full-stack developer focused on motion, performance, and the details nobody notices — but everybody feels.</p>
+          <div class="c-actions">
+            <span class="c-btn-solid">View selected work</span>
+            <span class="c-btn-ghost">About me →</span>
+          </div>
+          <div class="c-stats">
+            <div><b>05<i>+</i></b><span>years experience</span></div>
+            <div><b>24</b><span>projects shipped</span></div>
+            <div><b>99</b><span>avg. lighthouse</span></div>
+          </div>
+        </div>
+        <div class="c-art">
+          <div class="c-ghost-num">01</div>
+          <div class="c-card"><div class="c-initials">L</div></div>
+          <div class="c-tagcard"><i>●</i> AVAILABLE FOR WORK</div>
+          <div class="c-glow"></div>
+        </div>
+      </div>
+      <div class="c-marquee">
+        <div class="c-marquee-track">
+          <span>BUILDING COOL THINGS — MOTION — PERFORMANCE — CRAFT — SCROLL FOR MORE —&nbsp;</span>
+          <span>BUILDING COOL THINGS — MOTION — PERFORMANCE — CRAFT — SCROLL FOR MORE —&nbsp;</span>
+        </div>
+      </div>
+    </div>
+    <div class="meta">
+      <div><b>Paleta</b><div class="dots"><span class="dot" style="background:#0B0C0F"></span><span class="dot" style="background:#F2EFE7"></span><span class="dot" style="background:#D9FF57"></span><span class="dot" style="background:#FFB86B"></span><span class="dot" style="background:#9A9CA3"></span></div></div>
+      <div><b>Tipografía</b><span class="mutedline">Inter Tight (titulares, alto contraste) + Instrument Serif itálica (acento editorial) + JetBrains Mono (etiquetas)</span></div>
+      <div><b>Movimiento</b><span class="mutedline">Spotlight de cursor, tarjeta con tilt y profundidad, tipografía cinética, marquee, contadores, barra de progreso</span></div>
+      <div><b>Mejor para / trade-off</b><span class="mutedline">Verse senior y memorable a la vez, en cualquier pantalla. Contra: el dark exige cuidado con contraste y reduced-motion.</span></div>
+    </div>
+  </section>
+
+  <!-- ============ COMPARACIÓN ============ -->
+  <section class="cmp">
+    <table>
+      <thead>
+        <tr><th></th><th>A · Verdant</th><th>B · Playground</th><th>C · Studio</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Personalidad</td><td>Calma, artesanal, confiable</td><td>Cercano, ingenioso, cálido</td><td>Senior, preciso, magnético</td></tr>
+        <tr><td>Tono del copy</td><td>Editorial y sereno</td><td>Primera persona, con broma seca</td><td>Seguro y directo</td></tr>
+        <tr><td>Primera impresión</td><td>"Quiere hacer las cosas bien"</td><td>"Es divertido trabajar con él"</td><td>"Este tipo es un crack"</td></tr>
+        <tr><td>Interacción estrella</td><td>Reveals orgánicos y parallax natural</td><td>Easter eggs y widgets jugables</td><td>Spotlight, tilt y tipografía cinética</td></tr>
+        <tr><td>Esfuerzo de arte</td><td>Medio (ilustración orgánica)</td><td>Alto (muchos detalles y estados)</td><td>Medio (tipografía y profundidad)</td></tr>
+        <tr><td>Riesgo principal</td><td>Verse sobrio en exceso</td><td>Verse caricaturesco si se exagera</td><td>Más técnica que personal</td></tr>
+      </tbody>
+    </table>
+    <p class="final-note">Se pueden combinar: por ejemplo C como base con los easter eggs y el humor de B, o A como base con la tipografía cinética de C. Dime la letra elegida (o la mezcla) y arranco las fundaciones de W2 con esa dirección.</p>
+  </section>
+
+</div>
+</body>
+</html>
