@@ -153,7 +153,44 @@ Verificaciones disponibles: `pnpm typecheck`, `pnpm lint`, `pnpm build`.
 
 ---
 
-## 10. Changelog de implementaciones
+## Despliegue
+
+**Producción:** https://about-me-two-zeta.vercel.app
+
+| Dato | Valor |
+|---|---|
+| Proyecto Vercel | `about-me` (scope `luishernandezopsu2019-5472s-projects`) |
+| Deploy | vía Vercel CLI (`vercel --prod --yes`) |
+| Build | Next.js 16.4.0 · Turbopack · Cache Components |
+| Verificado | `200` home, `404` controlada, `200` robots/sitemap, CSS 34.6 KB |
+
+**Dominio propio (cómo agregarlo)** — dos caminos:
+
+1. **Dashboard (recomendado):** https://vercel.com/luishernandezopsu2019-5472s-projects/about-me/settings/domains
+   → *Domains* → escribe tu dominio → *Add*. Vercel detecta tu registrador y te da los registros DNS exactos.
+2. **CLI:**
+   ```bash
+   vercel domains add tudominio.com        # o: vercel alias set <deployment-url> tudominio.com
+   ```
+
+Vercel emite el certificado TLS solo. Si tu dominio vive en otro registrador, crea:
+- **A** → `76.76.21.21` (apex) — o el valor que muestre el panel
+- **CNAME** `www` → `cname.vercel-dns.com`
+
+> Nota: mientras el dominio no apunte, `https://<dominio>` falla; la URL de Vercel sigue viva.
+
+**Auto-deploy con Git:** el proyecto ya está **conectado** a https://github.com/Luis200283/About-Me.
+El commit `e926d96` está solo en local; al hacer `git push -u origin main` cada push a `main`
+volverá a desplegar automáticamente.
+
+---
+
+## 11. Pendiente para la próxima sesión
+
+1. **Elección de la mezcla ganadora** (MIX 1–5 en `docs/design/playground/`).
+2. Contenido real: email, ubicación, LinkedIn/X, foto, detalle de `File-Up-loader`, stack de IA.
+3. `git push -u origin main` para activar el auto-deploy.
+4. Dominio propio + OG image.
 
 | Fecha | Hito |
 |---|---|
@@ -162,5 +199,5 @@ Verificaciones disponibles: `pnpm typecheck`, `pnpm lint`, `pnpm build`.
 | 2026-10-14 | W1.5: 5 variaciones Playground producidas en paralelo (V1 Terminal, V2 Scrapbook, V3 Doodle, V4 Retro OS, V5 Lab) y verificadas una por una en navegador real (0 errores de consola, `prefers-reduced-motion` presente, sin imágenes externas) |
 | 2026-10-14 | Scaffold Next.js 16.4.0 + React 19.3.0 + Tailwind 4.3.3 + Motion 14.2.0 + Lenis 1.3.26 sobre el repo, con `typecheck`/`lint`/`build` verdes y `pnpm add motion lenis` versionado |
 | 2026-10-14 | W2/W3: scaffold, tokens Playground, tema claro/oscuro, secciones (Hero, About, Skills, Work, Contact), nav sticky con menú móvil, 404, robots, sitemap, confetti y sound toggle — todo con build/typecheck/lint verdes |
-| 2026-10-14 | W5 (auditoría a11y del sitio real): corregidos **3 defectos reales** — contraste insuficiente (`paper` sobre `coral`/`violeta` = 2.78/3.06 → nuevo sistema `--color-on-accent` + variantes `*-ink`, AA en ambos temas), targets táctiles < 24px en nav/footer/contacto, y glifo `✦` dentro de un `<h3>` (ahora SVG `aria-hidden`). Verificado: 0 targets pequeños, 0 glifos en texto, orden de encabezados correcto, `:focus-visible` activo, sin overflow horizontal, menú móvil operable |
+| 2026-10-14 | W6: commit inicial `e926d96` (63 archivos) y **deploy a producción en Vercel** — https://about-me-two-zeta.vercel.app. Proyecto `about-me` creado y conectado a GitHub; verificado home/404/robots/sitemap y CSS en producción |
 | 2026-10-15 | W5b — Auditoría de contraste en ambos temas con medidor propio en navegador. Corregidos: terminal que se invertía en dark (`bg-ink` → tokens `--color-terminal*` no tematizados), texto heredado sobre superficies amarillas en dark (→ `text-on-accent`), y texto `sr-only` invisible en el toggle de tema. Resultado: **0 fallos de contraste en claro y 0 en oscuro** |
