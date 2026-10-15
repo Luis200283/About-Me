@@ -164,20 +164,35 @@ Verificaciones disponibles: `pnpm typecheck`, `pnpm lint`, `pnpm build`.
 | Build | Next.js 16.4.0 · Turbopack · Cache Components |
 | Verificado | `200` home, `404` controlada, `200` robots/sitemap, CSS 34.6 KB |
 
-**Dominio propio (cómo agregarlo)** — dos caminos:
+**Dominio propio `luishswe.com`** — ya añadido al proyecto con `vercel domains add luishswe.com`.
+Vercel responde *"not configured properly"*: falta el DNS. Comprado en **Namecheap**.
 
-1. **Dashboard (recomendado):** https://vercel.com/luishernandezopsu2019-5472s-projects/about-me/settings/domains
-   → *Domains* → escribe tu dominio → *Add*. Vercel detecta tu registrador y te da los registros DNS exactos.
-2. **CLI:**
-   ```bash
-   vercel domains add tudominio.com        # o: vercel alias set <deployment-url> tudominio.com
-   ```
+**Opción A — registrar un A (recomendada; conservas los DNS de Namecheap):**
 
-Vercel emite el certificado TLS solo. Si tu dominio vive en otro registrador, crea:
-- **A** → `76.76.21.21` (apex) — o el valor que muestre el panel
-- **CNAME** `www` → `cname.vercel-dns.com`
+1. https://ap.www.namecheap.com/ → *Domain List* → `luishswe.com` → **Manage** → pestaña **Advanced DNS**.
+2. En *Host Records*, agrega:
 
-> Nota: mientras el dominio no apunte, `https://<dominio>` falla; la URL de Vercel sigue viva.
+| Type | Host | Value | TTL |
+|---|---|---|---|
+| `A Record` | `@` | `76.76.21.21` | Automatic |
+| `CNAME Record` | `www` | `cname.vercel-dns.com` | Automatic |
+
+3. Guarda. Vercel verifica y emite el certificado TLS solo (minutos).
+
+**Opción B — delegar el DNS a Vercel** (gestionas todo desde Vercel):
+
+| Campo | Valor |
+|---|---|
+| Nameserver 1 | `ns1.vercel-dns.com` |
+| Nameserver 2 | `ns2.vercel-dns.com` |
+
+En Namecheap: *Domain* → *Manage* → **Nameservers** → *Custom DNS*.
+
+**Comprobar:**
+```bash
+dig +short luishswe.com A          # debe salir 76.76.21.21
+curl -sI https://luishswe.com | head -1
+```
 
 **Auto-deploy con Git:** el proyecto ya está **conectado** a https://github.com/Luis200283/About-Me.
 El commit `e926d96` está solo en local; al hacer `git push -u origin main` cada push a `main`
