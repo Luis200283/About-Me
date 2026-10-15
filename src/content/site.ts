@@ -25,9 +25,9 @@ export const site = {
   role: "Fullstack Engineer",
   roleSecondary: "IA Engineer",
   tagline: "I build for the internet — and I sweat the small stuff.",
-  url: "https://luis.dev",
-  email: "hello@luis.dev", // TODO(luis): real email
-  location: "Mexico · Remote-friendly", // TODO(luis): confirm
+  url: "https://luishswe.com",
+  email: "luisdevr122@gmail.com",
+  location: "Caracas, Venezuela",
   availability: "Open to new work",
   since: 2026,
   year: 2026,
@@ -106,12 +106,11 @@ export const site = {
     items: [
       {
         name: "File-Up-loader",
-        // TODO(luis): what it solves, stack, and one measurable result.
         blurb:
           "File uploads that behave — progress, validation and error handling that users can actually understand.",
         tags: ["Node", "Express"],
         repo: "https://github.com/Luis200283/File-Up-loader",
-        live: null as string | null,
+        live: "https://file-up-loader.onrender.com/",
       },
       {
         name: "blogr-nextjs-prisma",
@@ -128,11 +127,12 @@ export const site = {
         live: null as string | null,
       },
       {
-        name: "Inventory-App",
-        blurb: "Store inventory system on Node, Express, PostgreSQL and EJS — CRUD that survives real data.",
-        tags: ["Express", "PostgreSQL", "EJS"],
-        repo: "https://github.com/Luis200283/Inventory-App",
-        live: null as string | null,
+        name: "Shoping-Cart",
+        blurb:
+          "A working storefront cart in React + Vite: routing, state, cart logic and Tailwind, deployed on Vercel.",
+        tags: ["React", "Vite", "React Router", "Tailwind CSS"],
+        repo: "https://github.com/Luis200283/Shoping-Cart",
+        live: "https://shoping-cart-r21v.vercel.app/",
       },
     ],
   },
@@ -145,7 +145,8 @@ export const site = {
 
   socials: [
     { label: "GitHub", href: "https://github.com/Luis200283" },
-    // TODO(luis): LinkedIn and X/Bluesky handles.
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/luis-hern%C3%A1ndez-castillo-307a6829b/" },
+    { label: "X", href: "https://x.com/LuisH2803" },
   ],
 
   footer: {
