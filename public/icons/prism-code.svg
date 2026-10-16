@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Triangular prism merged with code bracket">
+  <style>
+    .prism-g { transform-box: fill-box; transform-origin: center; animation: prism-rotate 6s ease-in-out infinite; }
+    @keyframes prism-rotate {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(8deg); }
+    }
+    .bracket-l { transform-box: fill-box; transform-origin: center; animation: wiggle-l 2.4s cubic-bezier(.22,1,.36,1) infinite; }
+    .bracket-r { transform-box: fill-box; transform-origin: center; animation: wiggle-r 2.4s cubic-bezier(.22,1,.36,1) infinite; }
+    @keyframes wiggle-l {
+      0%, 100% { transform: rotate(-6deg); }
+      50% { transform: rotate(6deg); }
+    }
+    @keyframes wiggle-r {
+      0%, 100% { transform: rotate(6deg); }
+      50% { transform: rotate(-6deg); }
+    }
+    .ray { stroke-dasharray: 6 4; animation: ray-flow 1s linear infinite; }
+    @keyframes ray-flow {
+      to { stroke-dashoffset: -20; }
+    }
+    .glint { transform-box: fill-box; transform-origin: center; animation: glint 2s ease-in-out infinite; }
+    @keyframes glint {
+      0%, 100% { opacity: 0; transform: scale(.4); }
+      50% { opacity: 1; transform: scale(1); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .prism-g, .bracket-l, .bracket-r, .ray, .glint { animation: none; }
+    }
+  </style>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="14" fill="#FFF6EC" stroke="#221D2E" stroke-width="1.5"/>
+  <g class="bracket-l">
+    <path d="M 8 16 L 2 26 L 8 36" fill="none" stroke="#221D2E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g class="bracket-r">
+    <path d="M 56 16 L 62 26 L 56 36" fill="none" stroke="#221D2E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g class="prism-g">
+    <path d="M 28 10 L 42 28 L 28 46 Z" fill="#8B7CFF" stroke="#221D2E" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M 28 10 L 42 28 L 28 46 Z" fill="none" stroke="#FFC95C" stroke-width="1" stroke-dasharray="2 3" opacity="0.6"/>
+  </g>
+  <path class="ray" d="M 42 28 L 50 24" stroke="#FF5C7A" stroke-width="2.5" stroke-linecap="round"/>
+  <path class="ray" d="M 42 28 L 51 27" stroke="#3FC7A9" stroke-width="2.5" stroke-linecap="round"/>
+  <path class="ray" d="M 42 28 L 50 32" stroke="#FFC95C" stroke-width="2.5" stroke-linecap="round"/>
+  <path class="glint" d="M 14 6 L 15.2 8.8 L 18 10 L 15.2 11.3 L 14 14 L 12.8 11.3 L 10 10 L 12.8 8.8 Z" fill="#FFC95C" stroke="#221D2E" stroke-width="1"/>
+  <text x="24" y="58" font-family="'JetBrains Mono', monospace" font-size="8" fill="#574E63">&lt;/&gt;</text>
+</svg>

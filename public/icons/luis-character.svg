@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" width="120" height="140" role="img" aria-label="Luis Hernández as a 2D neo-brutalist character">
+  <style>
+    .head-tilt { transform-box: fill-box; transform-origin: center bottom; animation: head-tilt 4s ease-in-out infinite; }
+    @keyframes head-tilt {
+      0%, 100% { transform: rotate(-2deg); }
+      50% { transform: rotate(2deg); }
+    }
+    .arm-wave { transform-box: fill-box; transform-origin: left center; animation: arm-wave 2.4s cubic-bezier(.22,1,.36,1) infinite; }
+    @keyframes arm-wave {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(-18deg); }
+    }
+    .lead-sway { transform-box: fill-box; transform-origin: top center; animation: lead-sway 2s ease-in-out infinite; }
+    @keyframes lead-sway {
+      0%, 100% { transform: rotate(-4deg); }
+      50% { transform: rotate(4deg); }
+    }
+    .blink { animation: blink 3.6s ease-in-out infinite; }
+    @keyframes blink {
+      0%, 91%, 100% { transform: scaleY(1); }
+      95% { transform: scaleY(0.1); }
+    }
+    .screen { animation: screen-flicker 2s steps(1) infinite; }
+    @keyframes screen-flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.85; }
+    }
+    .bob { animation: bob 3s cubic-bezier(.22,1,.36,1) infinite; }
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-2px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .head-tilt, .arm-wave, .lead-sway, .blink, .screen, .bob { animation: none; }
+    }
+  </style>
+  <rect x="1.5" y="1.5" width="117" height="137" rx="18" fill="#FFF6EC" stroke="#221D2E" stroke-width="2"/>
+  <g class="bob">
+    <ellipse cx="60" cy="128" rx="28" ry="4" fill="#221D2E" opacity="0.1"/>
+    <path d="M 42 128 L 46 108 L 74 108 L 78 128 Z" fill="#221D2E"/>
+    <path d="M 46 108 L 40 96 L 52 92 L 58 108 Z" fill="#8B7CFF" stroke="#221D2E" stroke-width="1.5"/>
+    <path d="M 74 108 L 80 96 L 68 92 L 62 108 Z" fill="#8B7CFF" stroke="#221D2E" stroke-width="1.5"/>
+    <path d="M 40 108 L 74 108 L 70 92 L 44 92 Z" fill="#FFFFFF" stroke="#221D2E" stroke-width="2"/>
+    <line x1="57" y1="92" x2="57" y2="108" stroke="#221D2E" stroke-width="1.5"/>
+    <path d="M 44 92 L 70 92" stroke="#221D2E" stroke-width="1.5"/>
+    <rect x="48" y="96" width="6" height="4" rx="1" fill="#3FC7A9" stroke="#221D2E" stroke-width="1"/>
+    <rect x="60" y="96" width="6" height="4" rx="1" fill="#3FC7A9" stroke="#221D2E" stroke-width="1"/>
+    <g class="arm-wave">
+      <path d="M 70 96 L 88 82" stroke="#221D2E" stroke-width="8" stroke-linecap="round"/>
+      <path d="M 70 96 L 88 82" fill="none" stroke="#5D422F" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="89" cy="81" r="5" fill="#5D422F" stroke="#221D2E" stroke-width="1.5"/>
+    </g>
+    <g class="lead-sway">
+      <path d="M 89 81 C 96 90, 100 100, 98 110" fill="none" stroke="#FF5C7A" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="98" cy="111" r="2.5" fill="#FF5C7A" stroke="#221D2E" stroke-width="1"/>
+    </g>
+    <path d="M 44 92 L 30 78" stroke="#221D2E" stroke-width="8" stroke-linecap="round"/>
+    <path d="M 44 92 L 30 78" fill="none" stroke="#5D422F" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="29" cy="77" r="5" fill="#5D422F" stroke="#221D2E" stroke-width="1.5"/>
+    <g class="head-tilt">
+      <rect x="38" y="42" width="44" height="48" rx="20" fill="#221D2E"/>
+      <rect x="40" y="44" width="44" height="48" rx="20" fill="#5D422F" stroke="#221D2E" stroke-width="2"/>
+      <ellipse cx="62" cy="42" rx="24" ry="14" fill="#221D2E"/>
+      <ellipse cx="62" cy="40" rx="24" ry="14" fill="#3A2A1A" stroke="#221D2E" stroke-width="2"/>
+      <path d="M 42 44 Q 44 30, 62 30 Q 80 30, 82 44" fill="none" stroke="#221D2E" stroke-width="2"/>
+      <circle cx="50" cy="58" r="3" fill="#221D2E" class="blink"/>
+      <circle cx="74" cy="58" r="3" fill="#221D2E" class="blink"/>
+      <path d="M 52 68 Q 62 74, 72 68" fill="none" stroke="#221D2E" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="44" cy="64" r="4" fill="#FF5C7A" opacity="0.3"/>
+      <circle cx="80" cy="64" r="4" fill="#FF5C7A" opacity="0.3"/>
+    </g>
+    <g transform="translate(24 14)">
+      <rect width="22" height="14" rx="6" fill="#221D2E"/>
+      <rect x="2" y="2" width="22" height="14" rx="6" fill="#FFC95C" stroke="#221D2E" stroke-width="1.5"/>
+      <text x="8" y="12" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#221D2E">V~</text>
+    </g>
+    <g transform="translate(86 18)">
+      <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="14" fill="#FF5C7A" stroke="#221D2E" stroke-width="0.8">&#9889;</text>
+    </g>
+  </g>
+</svg>

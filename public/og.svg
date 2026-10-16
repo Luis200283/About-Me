@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#faf6ec"/>
+  
+  <rect x="80" y="80" width="1040" height="470" rx="20" fill="#221d2e" transform="rotate(-1 600 315)"/>
+  
+  <circle cx="180" cy="160" r="10" fill="#ff5c7a"/>
+  <circle cx="215" cy="160" r="10" fill="#ffc95c"/>
+  <circle cx="250" cy="160" r="10" fill="#3fc7a9"/>
+  
+  <text x="300" y="168" font-family="monospace" font-size="16" fill="#b9afc7" letter-spacing="2">luis.dev — zsh</text>
+  
+  <text x="140" y="240" font-family="monospace" font-size="22" fill="#3fc7a9">➜</text>
+  <text x="170" y="240" font-family="monospace" font-size="22" fill="#f4ede4">luis.dev</text>
+  <text x="290" y="240" font-family="monospace" font-size="22" fill="#ffc95c">whoami</text>
+  
+  <text x="170" y="280" font-family="monospace" font-size="18" fill="#b9afc7">Luis — fullstack &amp; AI engineer.</text>
+  
+  <text x="140" y="340" font-family="monospace" font-size="22" fill="#3fc7a9">➜</text>
+  <text x="170" y="340" font-family="monospace" font-size="22" fill="#f4ede4">luis.dev</text>
+  <text x="290" y="340" font-family="monospace" font-size="22" fill="#ffc95c">cat motto.txt</text>
+  
+  <text x="170" y="380" font-family="monospace" font-size="18" fill="#b9afc7">"Ship small, ship often, make it feel alive."</text>
+  
+  <rect x="140" y="430" width="200" height="50" rx="25" fill="#ff5c7a" transform="rotate(-1 240 455)"/>
+  <text x="185" y="462" font-family="sans-serif" font-weight="bold" font-size="20" fill="#221d2e">Let's build something</text>
+  
+  <text x="600" y="520" font-family="monospace" font-size="14" fill="#574e63" text-anchor="middle">luishswe.com</text>
+</svg>

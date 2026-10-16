@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <style>
+    .badge { animation: logo-bob 2.8s cubic-bezier(.22,1,.36,1) infinite; transform-origin: 32px 34px; }
+    @keyframes logo-bob {
+      0%,100% { transform: rotate(-3deg) translateY(0) scale(1); }
+      50% { transform: rotate(3deg) translateY(-4px) scale(1.04); }
+    }
+    .aura { animation: aura-pulse 2.8s cubic-bezier(.22,1,.36,1) infinite; transform-origin: 32px 34px; }
+    @keyframes aura-pulse {
+      0%,100% { opacity: .25; transform: scale(1); }
+      50% { opacity: .6; transform: scale(1.15); }
+    }
+    .spark { animation: spark-pop 2s cubic-bezier(.22,1,.36,1) infinite; }
+    .s1 { animation-delay: 0s; }
+    .s2 { animation-delay: .5s; }
+    .s3 { animation-delay: 1s; }
+    .s4 { animation-delay: 1.5s; }
+    @keyframes spark-pop {
+      0%,100% { opacity: 0; transform: translateY(0) scale(.4) rotate(0deg); }
+      20% { opacity: 1; transform: translateY(-5px) scale(1.1) rotate(20deg); }
+      60% { opacity: 1; transform: translateY(-8px) scale(1) rotate(-15deg); }
+    }
+    .glow { animation: glow-pulse 2.8s cubic-bezier(.22,1,.36,1) infinite; }
+    @keyframes glow-pulse {
+      0%,100% { opacity: .35; }
+      50% { opacity: .75; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .badge, .aura, .spark, .glow { animation: none !important; }
+      .spark { opacity: 1; }
+    }
+  </style>
+  <circle class="aura" cx="32" cy="34" r="26" fill="#FFC95C" opacity="0.3"/>
+  <g class="badge">
+    <rect x="14" y="12" width="36" height="40" rx="10" fill="#FFC95C" stroke="#221D2E" stroke-width="1.5"/>
+    <rect x="17" y="15" width="36" height="40" rx="10" fill="#FFC95C" stroke="#221D2E" stroke-width="1.5" transform="translate(-3 3)"/>
+    <text x="32" y="38" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="700" fill="#221D2E">JS</text>
+  </g>
+  <g class="glow">
+    <circle cx="10" cy="10" r="2" fill="#FF5C7A" stroke="#221D2E" stroke-width="1"/>
+    <circle cx="54" cy="12" r="2" fill="#3FC7A9" stroke="#221D2E" stroke-width="1"/>
+  </g>
+  <g font-family="'JetBrains Mono', monospace" font-size="10" fill="#221D2E">
+    <text class="spark s1" x="8" y="28">&#10022;</text>
+    <text class="spark s2" x="46" y="26">&#10022;</text>
+    <text class="spark s3" x="5" y="44">&#10022;</text>
+    <text class="spark s4" x="49" y="48">&#10022;</text>
+  </g>
+  <path d="M20 58q6-6 12 0t12 0" stroke="#8B7CFF" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+</svg>

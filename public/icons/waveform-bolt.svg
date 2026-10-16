@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Waveform merging into lightning bolt">
+  <style>
+    .wave { stroke-dasharray: 120; stroke-dashoffset: 120; animation: wave-draw 3s cubic-bezier(.22,1,.36,1) infinite; }
+    @keyframes wave-draw {
+      0% { stroke-dashoffset: 120; }
+      60% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: 0; }
+    }
+    .bolt { transform-box: fill-box; transform-origin: center; animation: bolt-appear 3s cubic-bezier(.22,1,.36,1) infinite; }
+    @keyframes bolt-appear {
+      0%, 55% { opacity: 0; transform: scale(.5) rotate(-10deg); }
+      70% { opacity: 1; transform: scale(1.15) rotate(5deg); }
+      85%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    }
+    .spark { transform-box: fill-box; transform-origin: center; animation: spark 1.6s ease-in-out infinite; }
+    .spark.s2 { animation-delay: .8s; }
+    @keyframes spark {
+      0%, 100% { opacity: 0; transform: scale(.3); }
+      50% { opacity: 1; transform: scale(1); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .wave, .bolt, .spark { animation: none; }
+      .wave { stroke-dashoffset: 0; }
+      .bolt { opacity: 1; }
+    }
+  </style>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="14" fill="#FFF6EC" stroke="#221D2E" stroke-width="1.5"/>
+  <path class="wave" pathLength="120" d="M 6 34 L 8 30 L 10 38 L 12 26 L 14 42 L 16 30 L 18 38 L 20 28 L 22 40 L 24 32 L 26 36 L 28 34" fill="none" stroke="#3FC7A9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g class="bolt">
+    <path d="M 38 10 L 30 28 L 36 28 L 32 46 L 46 22 L 39 22 L 44 10 Z" fill="#FFC95C" stroke="#221D2E" stroke-width="2" stroke-linejoin="round"/>
+  </g>
+  <path class="spark" d="M 52 8 L 53.2 10.8 L 56 12 L 53.2 13.3 L 52 16 L 50.8 13.3 L 48 12 L 50.8 10.8 Z" fill="#FF5C7A"/>
+  <path class="spark s2" d="M 10 52 L 11.2 54.8 L 14 56 L 11.2 57.3 L 10 60 L 8.8 57.3 L 6 56 L 8.8 54.8 Z" fill="#8B7CFF"/>
+  <line x1="4" y1="34" x2="60" y2="34" stroke="#E5D9F2" stroke-width="1" stroke-dasharray="2 4"/>
+</svg>

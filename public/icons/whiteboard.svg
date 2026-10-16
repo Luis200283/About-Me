@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <style>
+    .board { animation: board-bob 4s cubic-bezier(.22,1,.36,1) infinite; transform-origin: 32px 32px; }
+    @keyframes board-bob {
+      0%, 100% { transform: rotate(-1deg) translateY(0); }
+      50% { transform: rotate(-1deg) translateY(-1.5px); }
+    }
+    .draw { stroke-dasharray: 100; stroke-dashoffset: 100; animation: draw-in 3.6s cubic-bezier(.22,1,.36,1) infinite; }
+    .d1 { animation-delay: .1s; }
+    .d2 { animation-delay: .5s; }
+    @keyframes draw-in {
+      0% { stroke-dashoffset: 100; }
+      45% { stroke-dashoffset: 0; }
+      80% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: 100; }
+    }
+    .star { animation: star-pop 3.6s cubic-bezier(.22,1,.36,1) infinite; transform-origin: 49px 19px; }
+    @keyframes star-pop {
+      0%, 100% { transform: scale(.6) rotate(-8deg); opacity: .5; }
+      50% { transform: scale(1) rotate(8deg); opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .board, .draw, .star { animation: none !important; }
+      .draw { stroke-dashoffset: 0; }
+      .star { transform: scale(1) rotate(8deg); opacity: 1; }
+    }
+  </style>
+  <g class="board">
+    <rect x="12" y="14" width="46" height="36" rx="14" fill="#221D2E"/>
+    <rect x="9" y="11" width="46" height="36" rx="14" fill="#FFFFFF" stroke="#221D2E" stroke-width="1.5"/>
+    <rect x="20" y="44" width="24" height="3" rx="1.5" fill="#FFC95C" stroke="#221D2E" stroke-width="1"/>
+    <path class="draw d1" pathLength="100" d="M14.5,17 L18,17 L16,22 L18,27 L14.5,27" stroke="#8B7CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path class="draw d2" pathLength="100" d="M20,33 L23,27 L26,38 L29,27 L32,38 L35,27 L38,38 L41,33" stroke="#FF5C7A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path class="star" d="M49,14 L50.2,17.8 L54,19 L50.2,20.2 L49,24 L47.8,20.2 L44,19 L47.8,17.8 Z" fill="#FFC95C" stroke="#221D2E" stroke-width="1"/>
+    <path d="M22,41.5 H30" stroke="#3FC7A9" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 3"/>
+  </g>
+</svg>

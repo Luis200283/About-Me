@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Friendly robot coming to life">
+  <style>
+    .eyes { transform-box: fill-box; transform-origin: center; animation: blink 3.6s ease-in-out infinite; }
+    .antenna-light { animation: antenna-blink 1.6s ease-in-out infinite; }
+    .wave { transform-box: view-box; transform-origin: 45px 42px; animation: wave 1.8s cubic-bezier(.22,1,.36,1) infinite; }
+    .gear { transform-box: fill-box; transform-origin: center; animation: spin 6s linear infinite; }
+    @keyframes blink {
+      0%, 91%, 100% { transform: scaleY(1); }
+      95% { transform: scaleY(0.1); }
+    }
+    @keyframes antenna-blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+    @keyframes wave {
+      0%, 100% { transform: rotate(-10deg); }
+      50% { transform: rotate(30deg); }
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .eyes, .antenna-light, .wave, .gear { animation: none; }
+    }
+  </style>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="14" fill="#FFFFFF" stroke="#221D2E" stroke-width="1.5"/>
+  <rect x="20" y="18" width="30" height="20" rx="7" fill="#221D2E"/>
+  <rect x="22" y="40" width="26" height="16" rx="6" fill="#221D2E"/>
+  <rect x="15" y="58" width="34" height="4" rx="2" fill="#221D2E"/>
+  <line x1="32" y1="15" x2="32" y2="8" stroke="#221D2E" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="32" cy="6" r="3" fill="#FF5C7A" stroke="#221D2E" stroke-width="1.5" class="antenna-light"/>
+  <rect x="13" y="21" width="4" height="8" rx="2" fill="#8B7CFF" stroke="#221D2E" stroke-width="1.5"/>
+  <rect x="47" y="21" width="4" height="8" rx="2" fill="#8B7CFF" stroke="#221D2E" stroke-width="1.5"/>
+  <rect x="17" y="15" width="30" height="20" rx="7" fill="#3FC7A9" stroke="#221D2E" stroke-width="2"/>
+  <circle cx="26" cy="25" r="3" fill="#221D2E" class="eyes"/>
+  <circle cx="38" cy="25" r="3" fill="#221D2E" class="eyes"/>
+  <path d="M 27 30 Q 32 33.5 37 30" fill="none" stroke="#221D2E" stroke-width="2" stroke-linecap="round"/>
+  <rect x="19" y="37" width="26" height="16" rx="6" fill="#8B7CFF" stroke="#221D2E" stroke-width="2"/>
+  <g class="gear">
+    <circle cx="32" cy="45" r="6.2" fill="none" stroke="#221D2E" stroke-width="2.5" stroke-dasharray="2.9 2"/>
+    <circle cx="32" cy="45" r="4" fill="#FFC95C" stroke="#221D2E" stroke-width="2"/>
+  </g>
+  <line x1="19" y1="42" x2="12" y2="48" stroke="#221D2E" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="11" cy="49" r="3" fill="#FF5C7A" stroke="#221D2E" stroke-width="1.5"/>
+  <g class="wave">
+    <line x1="45" y1="42" x2="52" y2="34" stroke="#221D2E" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="53" cy="33" r="3" fill="#FF5C7A" stroke="#221D2E" stroke-width="1.5"/>
+  </g>
+  <rect x="23" y="53" width="7" height="5" rx="2" fill="#221D2E"/>
+  <rect x="34" y="53" width="7" height="5" rx="2" fill="#221D2E"/>
+</svg>

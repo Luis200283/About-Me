@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 /* ==========================================================================
    Playground tokens — frozen in W2 (docs/design/TOKENS.md)
    Every component references these; no loose hex values anywhere.
@@ -15,6 +17,7 @@
   --color-mint: #3fc7a9;
   --color-muted: #574e63;
   --color-line: oklch(0.32 0.06 320 / 0.16);
+  --color-shad: #b9afc7;
 
   /* --- contrast-safe text colours -------------------------------------
      The bright palette (coral/violet/mint/sun) is used as FILL. On those
@@ -55,8 +58,8 @@
   --color-ink: #f4ede4;
   --color-muted: #b9afc7;
   --color-line: oklch(0.9 0.02 90 / 0.18);
-  --shadow-hard-sm: 3px 3px 0 #000000;
-  --shadow-hard: 6px 6px 0 #000000;
+  --shadow-hard-sm: 3px 3px 0 var(--color-ink);
+  --shadow-hard: 6px 6px 0 var(--color-ink);
 
   /* In dark mode the paper is dark, so accent TEXT flips to the brights
      (AA on #17141c: coral 6.13, violet 8.76, mint 11.37). */

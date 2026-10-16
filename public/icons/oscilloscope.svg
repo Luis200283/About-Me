@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <style>
+    .scope { animation: scope-in 3.4s cubic-bezier(.22,1,.36,1) infinite; transform-origin: 32px 32px; }
+    @keyframes scope-in {
+      0%, 100% { transform: rotate(-1.5deg) scale(1); }
+      50% { transform: rotate(-1.5deg) scale(1.02); }
+    }
+    .sine { stroke-dasharray: 100; stroke-dashoffset: 100; animation: sine-draw 3.4s cubic-bezier(.22,1,.36,1) infinite; }
+    @keyframes sine-draw {
+      0% { stroke-dashoffset: 100; }
+      55% { stroke-dashoffset: 0; }
+      85% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: 100; }
+    }
+    .led { animation: led-blink 1.6s steps(1) infinite; }
+    @keyframes led-blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .25; }
+    }
+    .needle { animation: knob-turn 3.4s cubic-bezier(.22,1,.36,1) infinite; transform-origin: 28px 46px; }
+    @keyframes knob-turn {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(20deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .scope, .sine, .led, .needle { animation: none !important; }
+      .sine { stroke-dashoffset: 0; }
+    }
+  </style>
+  <g class="scope">
+    <rect x="11" y="11" width="44" height="44" rx="14" fill="#221D2E"/>
+    <rect x="8" y="8" width="44" height="44" rx="14" fill="#FFFFFF" stroke="#221D2E" stroke-width="1.5"/>
+    <rect x="14" y="14" width="36" height="26" rx="4" fill="#221D2E"/>
+    <g stroke="#574E63" stroke-width="0.75" stroke-dasharray="2 2">
+      <line x1="19" y1="14" x2="19" y2="40"/>
+      <line x1="24" y1="14" x2="24" y2="40"/>
+      <line x1="29" y1="14" x2="29" y2="40"/>
+      <line x1="34" y1="14" x2="34" y2="40"/>
+      <line x1="39" y1="14" x2="39" y2="40"/>
+      <line x1="44" y1="14" x2="44" y2="40"/>
+      <line x1="14" y1="19" x2="50" y2="19"/>
+      <line x1="14" y1="24" x2="50" y2="24"/>
+      <line x1="14" y1="29" x2="50" y2="29"/>
+      <line x1="14" y1="34" x2="50" y2="34"/>
+    </g>
+    <path class="sine" pathLength="100" d="M15.0,27.0 L15.5,25.3 L16.0,23.7 L16.5,22.3 L17.0,20.9 L17.5,19.8 L18.0,18.9 L18.5,18.3 L19.0,18.0 L19.5,18.0 L20.0,18.3 L20.5,18.9 L21.0,19.8 L21.5,20.9 L22.0,22.3 L22.5,23.7 L23.0,25.3 L23.5,27.0 L24.0,28.7 L24.5,30.3 L25.0,31.7 L25.5,33.1 L26.0,34.2 L26.5,35.1 L27.0,35.7 L27.5,36.0 L28.0,36.0 L28.5,35.7 L29.0,35.1 L29.5,34.2 L30.0,33.1 L30.5,31.7 L31.0,30.3 L31.5,28.7 L32.0,27.0 L32.5,25.3 L33.0,23.7 L33.5,22.3 L34.0,20.9 L34.5,19.8 L35.0,18.9 L35.5,18.3 L36.0,18.0 L36.5,18.0 L37.0,18.3 L37.5,18.9 L38.0,19.8 L38.5,20.9 L39.0,22.3 L39.5,23.7 L40.0,25.3 L40.5,27.0 L41.0,28.7 L41.5,30.3 L42.0,31.7 L42.5,33.1 L43.0,34.2 L43.5,35.1 L44.0,35.7 L44.5,36.0 L45.0,36.0 L45.5,35.7 L46.0,35.1 L46.5,34.2 L47.0,33.1 L47.5,31.7 L48.0,30.3 L48.5,28.7 L49.0,27.0" stroke="#FFC95C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle class="led" cx="18" cy="46" r="2" fill="#FF5C7A" stroke="#221D2E" stroke-width="1"/>
+    <circle cx="28" cy="46" r="3" fill="#3FC7A9" stroke="#221D2E" stroke-width="1.5"/>
+    <g class="needle">
+      <line x1="28" y1="46" x2="28" y2="43.5" stroke="#221D2E" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+    <circle cx="36" cy="46" r="3" fill="#8B7CFF" stroke="#221D2E" stroke-width="1.5"/>
+    <circle cx="44" cy="46" r="3" fill="#FFC95C" stroke="#221D2E" stroke-width="1.5"/>
+  </g>
+</svg>

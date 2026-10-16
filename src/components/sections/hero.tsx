@@ -127,7 +127,7 @@ export function Hero() {
                 <span key={i} className="relative mx-[0.1em] inline-block">
                   <span
                     aria-hidden="true"
-                    className="absolute inset-x-[-0.18em] bottom-[0.06em] z-0 h-[42%] -rotate-1 bg-sun"
+                    className="absolute inset-x-[-0.18em] bottom-[0.06em] z-0 h-[42%] -rotate-1 bg-sun dark:bg-violet dark:opacity-40"
                   />
                   <span className="relative z-10 font-semibold text-ink">
                     {run.text}
@@ -203,7 +203,7 @@ export function Hero() {
             color="var(--color-sun)"
           />
 
-          <div className="relative rotate-[-1deg] rounded-[14px] border-[1.5px] border-ink bg-terminal p-0 shadow-[6px_6px_0_var(--color-ink)]">
+          <div className="relative rotate-[-1deg] rounded-[14px] border-[1.5px] border-ink bg-terminal p-0 shadow-[6px_6px_0_var(--color-line)] dark:shadow-[6px_6px_0_var(--color-ink)]">
             <div className="flex items-center gap-2 border-b border-terminal-dim/25 px-4 py-3">
               <span
                 className="h-2.5 w-2.5 rounded-full bg-coral"

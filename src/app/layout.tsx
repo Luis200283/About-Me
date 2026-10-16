@@ -26,11 +26,20 @@ export const metadata: Metadata = {
     description: site.tagline,
     siteName: site.name,
     locale: "en_US",
+    images: [
+      {
+        url: "/og.svg",
+        width: 1200,
+        height: 630,
+        alt: `${site.name} — ${site.tagline}`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name} — ${site.role}`,
     description: site.tagline,
+    images: ["/og.svg"],
   },
   robots: { index: true, follow: true },
 };

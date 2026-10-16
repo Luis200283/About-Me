@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Industrial control panel with gauge, buttons, switch and blinking indicator lights">
+  <style>
+    .needle { transform-origin: 24px 24px; animation: needle-swing 3s cubic-bezier(.22,1,.36,1) infinite; }
+    @keyframes needle-swing {
+      0%, 100% { transform: rotate(-28deg); }
+      50% { transform: rotate(28deg); }
+    }
+    .led { animation: chase 3s linear infinite; }
+    .led.l2 { animation-delay: -1s; }
+    .led.l3 { animation-delay: -2s; }
+    @keyframes chase {
+      0%, 26% { opacity: 1; }
+      34%, 100% { opacity: .2; }
+    }
+    .btn-press { transform-box: fill-box; transform-origin: center; animation: btn-press 2s cubic-bezier(.22,1,.36,1) infinite; }
+    @keyframes btn-press {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(.8); }
+    }
+    .knob { animation: switch 2.4s cubic-bezier(.22,1,.36,1) infinite; }
+    @keyframes switch {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(3.5px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .needle, .led, .btn-press, .knob { animation: none; }
+    }
+  </style>
+  <rect x="4.5" y="4.5" width="61" height="61" rx="14" fill="#221D2E"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="14" fill="#FFF6EC" stroke="#221D2E" stroke-width="1.5"/>
+  <g transform="rotate(-2 32 32)">
+    <rect x="13" y="12" width="44" height="46" rx="10" fill="#221D2E"/>
+    <rect x="10" y="9" width="44" height="46" rx="10" fill="#FFFFFF" stroke="#221D2E" stroke-width="2"/>
+    <circle cx="14" cy="13" r="1.2" fill="#574E63"/>
+    <circle cx="50" cy="13" r="1.2" fill="#574E63"/>
+    <circle cx="14" cy="51" r="1.2" fill="#574E63"/>
+    <circle cx="50" cy="51" r="1.2" fill="#574E63"/>
+    <circle cx="24" cy="24" r="9" fill="#FFF6EC" stroke="#221D2E" stroke-width="2"/>
+    <line x1="24" y1="16.5" x2="24" y2="18.5" stroke="#221D2E" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="31.5" y1="24" x2="29.5" y2="24" stroke="#221D2E" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="24" y1="31.5" x2="24" y2="29.5" stroke="#221D2E" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="16.5" y1="24" x2="18.5" y2="24" stroke="#221D2E" stroke-width="1.5" stroke-linecap="round"/>
+    <line class="needle" x1="24" y1="24" x2="24" y2="18" stroke="#FF5C7A" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="24" cy="24" r="1.8" fill="#221D2E"/>
+    <rect x="15" y="36" width="12" height="2.5" rx="1.25" fill="#574E63"/>
+    <circle class="led l1" cx="38" cy="17" r="2.3" fill="#FF5C7A" stroke="#221D2E" stroke-width="1.2"/>
+    <circle class="led l2" cx="44" cy="17" r="2.3" fill="#3FC7A9" stroke="#221D2E" stroke-width="1.2"/>
+    <circle class="led l3" cx="50" cy="17" r="2.3" fill="#FFC95C" stroke="#221D2E" stroke-width="1.2"/>
+    <circle cx="18" cy="46" r="3.5" fill="#FF5C7A" stroke="#221D2E" stroke-width="1.5"/>
+    <circle class="btn-press" cx="27" cy="46" r="3.5" fill="#FFC95C" stroke="#221D2E" stroke-width="1.5"/>
+    <circle cx="36" cy="46" r="3.5" fill="#3FC7A9" stroke="#221D2E" stroke-width="1.5"/>
+    <rect x="43" y="42.5" width="11" height="7" rx="3.5" fill="#FFF6EC" stroke="#221D2E" stroke-width="1.5"/>
+    <circle class="knob" cx="46" cy="46" r="2.2" fill="#8B7CFF" stroke="#221D2E" stroke-width="1.2"/>
+    <path d="M53 26 C 50 30, 47 32, 43 34" fill="none" stroke="#574E63" stroke-width="1.5" stroke-dasharray="3 3" stroke-linecap="round"/>
+    <path d="M43 34 L46 33.2 L44.6 35.4" fill="none" stroke="#574E63" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <style>
+    .win { animation: bob 3.2s cubic-bezier(.22,1,.36,1) infinite; transform-origin: 32px 32px; }
+    @keyframes bob {
+      0%,100% { transform: rotate(-2deg) translateY(0); }
+      50% { transform: rotate(-2deg) translateY(-3px); }
+    }
+    .dot { animation: blink-dot 2.4s steps(1) infinite; }
+    .dot.d2 { animation-delay: .4s; }
+    .dot.d3 { animation-delay: .8s; }
+    @keyframes blink-dot {
+      0%,100% { opacity: 1; }
+      50% { opacity: .35; }
+    }
+    .char { display: inline; }
+    .typed-1 { animation: t1 8s steps(1) infinite; }
+    .typed-2 { animation: t2 8s steps(1) infinite; }
+    .typed-3 { animation: t3 8s steps(1) infinite; }
+    .typed-4 { animation: t4 8s steps(1) infinite; }
+    .typed-5 { animation: t5 8s steps(1) infinite; }
+    .typed-6 { animation: t6 8s steps(1) infinite; }
+    .typed-7 { animation: t7 8s steps(1) infinite; }
+    @keyframes t1 { 0%,15.9%,100% { opacity: 0; } 16%,92% { opacity: 1; } }
+    @keyframes t2 { 0%,20.9%,100% { opacity: 0; } 21%,92% { opacity: 1; } }
+    @keyframes t3 { 0%,25.9%,100% { opacity: 0; } 26%,92% { opacity: 1; } }
+    @keyframes t4 { 0%,30.9%,100% { opacity: 0; } 31%,92% { opacity: 1; } }
+    @keyframes t5 { 0%,35.9%,100% { opacity: 0; } 36%,92% { opacity: 1; } }
+    @keyframes t6 { 0%,40.9%,100% { opacity: 0; } 41%,92% { opacity: 1; } }
+    @keyframes t7 { 0%,45.9%,100% { opacity: 0; } 46%,92% { opacity: 1; } }
+    .caret { animation: caret-blink 1s steps(1) infinite; }
+    @keyframes caret-blink {
+      0%,49% { opacity: 1; }
+      50%,100% { opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .win, .dot, .typed-1, .typed-2, .typed-3, .typed-4,
+      .typed-5, .typed-6, .typed-7, .caret { animation: none !important; }
+      .typed-1, .typed-2, .typed-3, .typed-4,
+      .typed-5, .typed-6, .typed-7 { opacity: 1; }
+      .caret { opacity: 1; }
+    }
+  </style>
+  <g class="win">
+    <rect x="6" y="10" width="52" height="46" rx="14" fill="#FFFFFF" stroke="#221D2E" stroke-width="1.5"/>
+    <rect x="9" y="13" width="46" height="40" rx="12" fill="#FFF6EC" stroke="#221D2E" stroke-width="1.5"/>
+    <circle class="dot d1" cx="17" cy="20" r="2.5" fill="#FF5C7A" stroke="#221D2E" stroke-width="1"/>
+    <circle class="dot d2" cx="26" cy="20" r="2.5" fill="#FFC95C" stroke="#221D2E" stroke-width="1"/>
+    <circle class="dot d3" cx="35" cy="20" r="2.5" fill="#3FC7A9" stroke="#221D2E" stroke-width="1"/>
+    <g font-family="'JetBrains Mono', monospace" font-size="7" font-weight="500">
+      <text x="16" y="33" fill="#3FC7A9">&gt;</text>
+      <text class="typed-1" x="26" y="33" fill="#221D2E">c</text>
+      <text class="typed-2" x="30" y="33" fill="#221D2E">o</text>
+      <text class="typed-3" x="34" y="33" fill="#221D2E">n</text>
+      <text class="typed-4" x="38" y="33" fill="#221D2E">s</text>
+      <text class="typed-5" x="42" y="33" fill="#221D2E">o</text>
+      <text class="typed-6" x="46" y="33" fill="#221D2E">l</text>
+      <text class="typed-7" x="50" y="33" fill="#8B7CFF">;</text>
+      <rect class="caret" x="16" y="38" width="3" height="9" rx="1" fill="#FF5C7A"/>
+    </g>
+  </g>
+  <path d="M14 60q4-4 8 0" stroke="#3FC7A9" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+  <path d="M44 8q4-4 8 0" stroke="#FF5C7A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+  <text x="53" y="14" font-family="'JetBrains Mono', monospace" font-size="9" fill="#FFC95C" stroke="#221D2E" stroke-width="0.8">&#10022;</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Triangular prism refracting light into rainbow spectrum">
+  <style>
+    .prism { transform-box: fill-box; transform-origin: center; animation: prism-bob 4s cubic-bezier(.22,1,.36,1) infinite; }
+    @keyframes prism-bob {
+      0%, 100% { transform: rotate(-2deg) translateY(0); }
+      50% { transform: rotate(-2deg) translateY(-2px); }
+    }
+    .ray { stroke-dasharray: 8 5; animation: ray-flow 1.2s linear infinite; }
+    @keyframes ray-flow {
+      to { stroke-dashoffset: -26; }
+    }
+    .spectrum { transform-box: fill-box; transform-origin: left center; animation: spectrum-spread 3s ease-in-out infinite; }
+    @keyframes spectrum-spread {
+      0%, 100% { transform: scaleX(1); opacity: .85; }
+      50% { transform: scaleX(1.15); opacity: 1; }
+    }
+    .glint { transform-box: fill-box; transform-origin: center; animation: glint 2.4s ease-in-out infinite; }
+    @keyframes glint {
+      0%, 100% { opacity: 0; transform: scale(.5); }
+      50% { opacity: 1; transform: scale(1); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .prism, .ray, .spectrum, .glint { animation: none; }
+    }
+  </style>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="14" fill="#FFF6EC" stroke="#221D2E" stroke-width="1.5"/>
+  <line x1="4" y1="28" x2="22" y2="36" stroke="#FFC95C" stroke-width="3" stroke-linecap="round"/>
+  <g class="prism">
+    <path d="M 26 12 L 44 34 L 26 56 Z" fill="#FFFFFF" stroke="#221D2E" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M 26 12 L 44 34 L 26 56 Z" fill="none" stroke="#8B7CFF" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+  </g>
+  <g class="spectrum">
+    <path d="M 44 34 L 56 30" stroke="#FF5C7A" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 44 34 L 57 32" stroke="#FFC95C" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 44 34 L 57 35" stroke="#3FC7A9" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 44 34 L 56 38" stroke="#8B7CFF" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <path class="ray" d="M 10 24 L 24 33" stroke="#FFC95C" stroke-width="2" stroke-linecap="round"/>
+  <path class="glint" d="M 52 10 L 53.2 12.8 L 56 14 L 53.2 15.3 L 52 18 L 50.8 15.3 L 48 14 L 50.8 12.8 Z" fill="#FFC95C" stroke="#221D2E" stroke-width="1"/>
+  <path d="M 10 58 Q 20 55, 30 58 T 50 58" fill="none" stroke="#3FC7A9" stroke-width="2" stroke-linecap="round"/>
+</svg>
