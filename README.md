@@ -99,17 +99,19 @@ Yo actúo como **orquestador**: defino contratos y acepto trabajo; los subagente
 | W0 | Reconocimiento + decisiones | — |
 | W1 | Research (R1) + 3 propuestas de diseño | R1 ∥ Orquestador |
 | W1.5 | 5 variaciones de la dirección Playground (V1–V5) | 5 subagentes ∥ (4 modelos distintos) |
-| W2 | Fundaciones: scaffold, tokens, contenido, UI base | Orquestador (tocado: tokens críticos) |
-| W3 | 4 mezclas V1+V2+V3 en UNA página scrollable | 4 subagentes ∥ (4 modelos distintos) |
-| W4 | Secciones/pulido sobre la mezcla ganadora | hasta 6 ∥ |
-| W5 | Validación: a11y, performance, responsive, copy edit | 4 ∥ |
+| W1.5b | 5 mezclas V1+V2+V3 en UNA página scrollable | 4 subagentes ∥ (4 modelos distintos) |
+| W2 | Fundaciones: scaffold, tokens, contenido, UI base | Orquestador |
+| W3 | **V1 Terminal-first** construido en el proyecto real | Orquestador (MCP inestable → se construyó directo) |
+| W4 | Verificación en navegador + corrección de bugs | Orquestador |
+| W5 | Validación: a11y, contraste, performance, assets | Orquestador |
 | W6 | Integración final, limpieza, README, deploy Vercel | Orquestador |
 
 Cada tarea delegada incluye: **archivos de propiedad exclusiva**, criterios de aceptación y evidencia obligatoria (lint/typecheck + captura o medición). Quien construye **no valida su propio trabajo**: la validación es una ola independiente.
 
-**Lecciones aplicadas de W1.5 (por qué el workflow debe cambiar):**
+**Lecciones aplicadas (por qué el workflow debe cambiar):**
 1. Los subagentes de diseño se interrumpieron con frecuencia por el límite de 12 KB: el brief de diseño debe bajar el listón de tamaño y priorizar terminación sobre complejidad.
 2. Para exponer los mockups hubo que montar un servidor local + navegador colaborativo: se documenta el procedimiento reutilizable en `docs/PLAYBOOK.md`.
+3. **La MCP de delegación y el navegador de preview son inestables en este entorno** (errores "Unable to connect", "Missing key", snapshots que timeoutean). Cuando fallan, el orquestador construye directo y verifica con `curl` + `preview_evaluate` + build de producción.
 
 ---
 
@@ -143,12 +145,11 @@ Verificaciones disponibles: `pnpm typecheck`, `pnpm lint`, `pnpm build`.
 - [x] W1.5b — 5 mezclas V1+V2+V3 en UNA página scrollable (MIX 1–5), 10/10 verificadas
 - [x] W2 — Scaffold + tokens + secciones (Hero, About, Skills, Work, Contact) + nav + 404 + robots/sitemap, todo con build/typecheck/lint verdes
 - [x] W3 — Lenguaje **V1 Terminal-first** construido en el proyecto real (terminal viva, squiggle, stickers, confetti, sonido)
-- [x] W5 (parcial) — Auditoría a11y del sitio real + 3 defectos corregidos (contraste, targets táctiles, glifo en H3)
+- [x] W5 (parcial) — Auditoría a11y del sitio real: targets táctiles < 24px en nav/footer/contacto (ahora `py-3`/`py-2`) y glifo `✦` dentro de un `<h3>` (ahora SVG `aria-hidden`)
 - [x] W5b — **Auditoría de contraste en ambos temas** con medidor propio (Oklab→sRGB, AA 4.5/3.0). 3 defectos reales más: la terminal se invertía en dark (`bg-ink` → 1.43:1, ahora `--color-terminal` no tematizado), texto heredado sobre amarillo en dark (1.31:1 → `text-on-accent`), y texto `sr-only` invisible. **Resultado: 0 fallos en claro y 0 en oscuro**
-- [ ] **Tu decisión: mezcla ganadora** (MIX 1–5) ← único bloqueo real
-- [ ] W4 — Aplicar la mezcla ganadora + cinemática (timing, resortes, marquee, tilt)
-- [ ] W4b — Contenido real pendiente: email, ubicación, LinkedIn/X, foto, detalle de File-Up-loader, stack de IA
-- [ ] W5 (resto) — Lighthouse / performance + copy edit
+- [x] W4 — **V1 aplicado y verificado en el proyecto real** (el usuario lo eligió como diseño único)
+- [ ] **Contenido real pendiente** ← único bloqueo: email, ubicación, LinkedIn/X, foto, detalle de File-Up-loader, stack de IA
+- [ ] W5 (resto) — Assets (favicon, OG) + Lighthouse / performance + copy edit
 - [ ] W6 — Deploy a Vercel + bio de GitHub
 
 ---
