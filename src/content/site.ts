@@ -23,7 +23,7 @@ export const site = {
   name: "Luis Hernández Castillo",
   handle: "luis.dev",
   role: "Fullstack Engineer",
-  roleSecondary: "IA Engineer",
+  roleSecondary: "AI Engineer",
   tagline: "I build for the internet — and I sweat the small stuff.",
   url: "https://luishswe.com",
   email: "luisdevr122@gmail.com",
@@ -46,7 +46,7 @@ export const site = {
     headlineAfter: ".",
     /** Rendered as runs of text; `highlight` uses the sun marker, `underline` draws the ink rule. */
     intro: [
-      { text: "Fullstack & IA engineer, tinkerer, and unapologetic " },
+      { text: "Fullstack & AI engineer, tinkerer, and unapologetic " },
       { text: "detail nerd", highlight: true },
       { text: ". I build for the internet — and sweat the " },
       { text: "small stuff", underline: true },
@@ -60,7 +60,7 @@ export const site = {
       commands: [
         {
           cmd: "whoami",
-          out: "Luis — fullstack & IA engineer. I make interfaces with personality.",
+          out: "Luis — fullstack & AI engineer. I make interfaces with personality.",
         },
         {
           cmd: "ls skills/",
@@ -156,7 +156,7 @@ export const site = {
   meta: {
     keywords: [
       "Fullstack Engineer",
-      "IA Engineer",
+      "AI Engineer",
       "Software Developer",
       "Next.js",
       "React",

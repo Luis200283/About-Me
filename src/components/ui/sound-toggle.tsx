@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 const SWITCH_BASE = cn(
-  "relative block h-4 w-9 rounded-full border-[1.5px] border-ink transition-colors duration-200",
+  "relative flex h-4 w-9 items-center justify-center rounded-full border-[1.5px] border-ink bg-ink transition-colors duration-200",
 );
 
 /**
@@ -61,18 +61,11 @@ export function SoundToggle({ label }: { label: string }) {
   }, [enabled, blip]);
 
   const knob = (
-    <span
-      aria-hidden="true"
-      className={cn(
-        SWITCH_BASE,
-        "absolute right-0 bottom-0",
-        enabled ? "bg-mint" : "bg-surface",
-      )}
-    >
+    <span aria-hidden="true" className={SWITCH_BASE}>
       <span
         className={cn(
-          "absolute top-[1px] h-[11px] w-[11px] rounded-full border-[1.5px] border-ink bg-surface transition-all duration-200 ease-[cubic-bezier(.22,1,.36,1)]",
-          enabled ? "left-[17px]" : "left-[1px]",
+          "absolute h-3 w-3 rounded-full border-[1.5px] border-ink shadow-[2px_2px_0_var(--color-ink)] transition-colors duration-200",
+          enabled ? "bg-violet right-0.5" : "bg-muted left-0.5",
         )}
       />
     </span>
@@ -95,7 +88,7 @@ export function SoundToggle({ label }: { label: string }) {
       )}
     >
       <span>{label}</span>
-      <span className="relative block h-4 w-9">{knob}</span>
+      {knob}
       <span className="sr-only">{enabled ? "on" : "off"}</span>
     </button>
   );
