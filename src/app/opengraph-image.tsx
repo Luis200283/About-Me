@@ -60,7 +60,7 @@ export default function OpengraphImage() {
               boxShadow: "4px 4px 0 #221D2E",
             }}
           >
-            <span style={{ color: "#FF5C7A" }}>➜</span> {site.handle}
+            <span style={{ color: "#FF5C7A" }}>{"➜"}</span> {site.handle}
           </div>
           <div
             style={{
@@ -79,6 +79,7 @@ export default function OpengraphImage() {
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
           <div
             style={{
+              display: "flex",
               fontFamily: "Bricolage Grotesque, serif",
               fontSize: 108,
               fontWeight: 700,
@@ -89,19 +90,13 @@ export default function OpengraphImage() {
             }}
           >
             I make the web feel{" "}
-            <span style={{ position: "relative", display: "block" }}>
+            <span
+              style={{
+                borderBottom: "20px solid #FFC95C",
+                lineHeight: 0.85,
+              }}
+            >
               human
-              <span
-                style={{
-                  position: "absolute",
-                  left: -8,
-                  right: -8,
-                  bottom: 2,
-                  height: 20,
-                  background: "#FFC95C",
-                  transform: "rotate(-1.2deg)",
-                }}
-              />
             </span>
             .
           </div>
@@ -139,7 +134,7 @@ export default function OpengraphImage() {
             <span style={{ width: 12, height: 12, borderRadius: "50%", background: "#FFC95C" }} />
             <span style={{ width: 12, height: 12, borderRadius: "50%", background: "#3FC7A9" }} />
           </span>
-          <span style={{ color: "#3FC7A9" }}>➜</span>
+            <span style={{ color: "#3FC7A9" }}>{"➜"}</span>
           <span style={{ color: "#FFC95C" }}>luis.dev</span>
           <span style={{ color: "#B9AFC7" }}>whoami</span>
           <span style={{ color: "#F4EDE4", opacity: 0.55 }}>— Luis, fullstack &amp; IA engineer</span>
