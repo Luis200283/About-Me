@@ -19,6 +19,9 @@ export type TerminalCommand =
   | { cmd: string; out: string }
   | { cmd: string; chips: readonly string[] };
 
+/** Work-card icon ids; mapped to inline SVGs in src/components/sections/work.tsx. */
+export type WorkIcon = "book" | "upload" | "chat" | "cart";
+
 export const site = {
   name: "Luis Hernández Castillo",
   handle: "luis.dev",
@@ -111,6 +114,7 @@ export const site = {
         tags: ["Next.js", "Hono", "Zod", "Better Auth"],
         repo: "https://github.com/Luis200283/Lateral-Thinking",
         live: "https://blog.luishswe.com",
+        icon: "book",
       },
       {
         name: "File-Up-loader",
@@ -119,6 +123,7 @@ export const site = {
         tags: ["Node", "Express"],
         repo: "https://github.com/Luis200283/File-Up-loader",
         live: "https://file-up-loader.onrender.com/",
+        icon: "upload",
       },
       {
         name: "Members-Only",
@@ -126,6 +131,7 @@ export const site = {
         tags: ["Express", "Passport.js", "EJS"],
         repo: "https://github.com/Luis200283/Members-Only",
         live: "https://members-only-20yz.onrender.com/",
+        icon: "chat",
       },
       {
         name: "Shoping-Cart",
@@ -134,6 +140,7 @@ export const site = {
         tags: ["React", "Vite", "React Router", "Tailwind CSS"],
         repo: "https://github.com/Luis200283/Shoping-Cart",
         live: "https://shoping-cart-r21v.vercel.app/",
+        icon: "cart",
       },
     ],
   },
