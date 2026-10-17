@@ -60,10 +60,11 @@ export default function OpengraphImage() {
               boxShadow: "4px 4px 0 #221D2E",
             }}
           >
-            <span style={{ color: "#FF5C7A" }}>{"➜"}</span> {site.handle}
+            <span style={{ color: "#FF5C7A" }}>&gt;</span> {site.handle}
           </div>
           <div
             style={{
+              display: "flex",
               fontFamily: "JetBrains Mono, monospace",
               fontSize: 22,
               color: "#574E63",
@@ -77,7 +78,7 @@ export default function OpengraphImage() {
 
         {/* headline */}
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-          <div
+          <span
             style={{
               display: "flex",
               fontFamily: "Bricolage Grotesque, serif",
@@ -89,19 +90,11 @@ export default function OpengraphImage() {
               maxWidth: 900,
             }}
           >
-            I make the web feel{" "}
-            <span
-              style={{
-                borderBottom: "20px solid #FFC95C",
-                lineHeight: 0.85,
-              }}
-            >
-              human
-            </span>
-            .
-          </div>
+            I make the web feel human.
+          </span>
           <div
             style={{
+              display: "flex",
               fontFamily: "Inter, sans-serif",
               fontSize: 34,
               color: "#574E63",
@@ -134,7 +127,7 @@ export default function OpengraphImage() {
             <span style={{ width: 12, height: 12, borderRadius: "50%", background: "#FFC95C" }} />
             <span style={{ width: 12, height: 12, borderRadius: "50%", background: "#3FC7A9" }} />
           </span>
-            <span style={{ color: "#3FC7A9" }}>{"➜"}</span>
+             <span style={{ color: "#3FC7A9" }}>&gt;</span>
           <span style={{ color: "#FFC95C" }}>luis.dev</span>
           <span style={{ color: "#B9AFC7" }}>whoami</span>
           <span style={{ color: "#F4EDE4", opacity: 0.55 }}>— Luis, fullstack &amp; IA engineer</span>
