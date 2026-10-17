@@ -105,19 +105,20 @@ export const site = {
     blurb: "Every project here solved a problem I actually had. That's the rule.",
     items: [
       {
+        name: "Lateral Thinking",
+        blurb:
+          "My personal blog — Next.js + Hono monorepo with a CMS, Zod-validated APIs and tracker-free reading analytics.",
+        tags: ["Next.js", "Hono", "Zod", "Better Auth"],
+        repo: "https://github.com/Luis200283/Lateral-Thinking",
+        live: "https://blog.luishswe.com",
+      },
+      {
         name: "File-Up-loader",
         blurb:
           "File uploads that behave — progress, validation and error handling that users can actually understand.",
         tags: ["Node", "Express"],
         repo: "https://github.com/Luis200283/File-Up-loader",
         live: "https://file-up-loader.onrender.com/",
-      },
-      {
-        name: "blogr-nextjs-prisma",
-        blurb: "Next.js + Prisma blog platform. TypeScript end to end, deployed on Vercel.",
-        tags: ["Next.js", "Prisma", "PostgreSQL"],
-        repo: "https://github.com/Luis200283/blogr-nextjs-prisma",
-        live: "https://blogr-nextjs-prisma-omega-sooty.vercel.app",
       },
       {
         name: "Members-Only",
