@@ -127,7 +127,7 @@ export function Work() {
                       target="_blank"
                       rel="noreferrer noopener"
                     >
-                      Live demo
+                      Visit site
                     </Button>
                   )}
                 </div>
