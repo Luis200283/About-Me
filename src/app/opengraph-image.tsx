@@ -89,7 +89,7 @@ export default function OpengraphImage() {
             }}
           >
             I make the web feel{" "}
-            <span style={{ position: "relative", display: "inline-block" }}>
+            <span style={{ position: "relative", display: "block" }}>
               human
               <span
                 style={{
@@ -100,7 +100,6 @@ export default function OpengraphImage() {
                   height: 20,
                   background: "#FFC95C",
                   transform: "rotate(-1.2deg)",
-                  zIndex: -1,
                 }}
               />
             </span>
