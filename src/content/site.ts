@@ -14,8 +14,8 @@ export type IntroRun =
   | { text: string; highlight: true }
   | { text: string; underline: true };
 
-/** A single line of the hero terminal; either a chip list or plain output. */
-export type TerminalCommand =
+/** A single line of the hero terminal intro; either a chip list or plain output. */
+export type TerminalIntroLine =
   | { cmd: string; out: string }
   | { cmd: string; chips: readonly string[] };
 
@@ -71,7 +71,8 @@ export const site = {
         },
         { cmd: "cat motto.txt", out: '"Ship small, ship often, make it feel alive."' },
         { cmd: "open contact", out: "Opening the good part…" },
-      ] as TerminalCommand[],
+      ] as TerminalIntroLine[],
+      hint: 'type "help" and hit enter',
     },
     sound: { label: "Sound", defaultOn: false },
     stickers: ["TypeScript", "React", "Node", "ESP32", "CSS wizard"],

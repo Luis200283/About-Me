@@ -144,17 +144,6 @@ body {
   }
 }
 
-@keyframes confetti-burst {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(var(--tx), var(--ty)) rotate(var(--rot));
-    opacity: 0;
-  }
-}
-
 /* The Playground design is motion-forward; honour the escape hatch globally. */
 @media (prefers-reduced-motion: reduce) {
   *,

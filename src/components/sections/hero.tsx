@@ -1,11 +1,22 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Confetti, fireConfetti } from "@/components/motion/confetti";
+import {
+  Confetti,
+  fireConfetti,
+  runEffect,
+} from "@/components/motion/confetti";
 import { SoundToggle } from "@/components/ui/sound-toggle";
+import {
+  Terminal,
+  type TerminalActions,
+} from "@/components/ui/terminal";
+import { terminalCommands } from "@/content/commands";
 import { site } from "@/content/site";
 import { cn } from "@/lib/utils";
-import type { ReactNode } from "react";
+import { useLenis } from "lenis/react";
+import { useTheme } from "next-themes";
+import { useMemo, type ReactNode } from "react";
 
 function Squiggle({ className }: { className?: string }) {
   return (
@@ -96,6 +107,29 @@ function SocialIcon({
 
 export function Hero() {
   const { hero } = site;
+  const lenis = useLenis();
+  const { setTheme } = useTheme();
+
+  const actions = useMemo<TerminalActions>(
+    () => ({
+      navigate: (target) => {
+        if (lenis) {
+          lenis.scrollTo(`#${target}`);
+          return;
+        }
+        document.getElementById(target)?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      },
+      runEffect: (name) => runEffect(name),
+      toggleTheme: () => {
+        const isDark = document.documentElement.dataset.theme === "dark";
+        setTheme(isDark ? "light" : "dark");
+      },
+    }),
+    [lenis, setTheme],
+  );
 
   return (
     <section
@@ -203,61 +237,13 @@ export function Hero() {
             color="var(--color-sun)"
           />
 
-          <div className="relative rotate-[-1deg] rounded-[14px] border-[1.5px] border-ink bg-terminal p-0 shadow-[6px_6px_0_var(--color-line)] dark:shadow-[6px_6px_0_var(--color-ink)]">
-            <div className="flex items-center gap-2 border-b border-terminal-dim/25 px-4 py-3">
-              <span
-                className="h-2.5 w-2.5 rounded-full bg-coral"
-                aria-hidden="true"
-              />
-              <span
-                className="h-2.5 w-2.5 rounded-full bg-sun"
-                aria-hidden="true"
-              />
-              <span
-                className="h-2.5 w-2.5 rounded-full bg-mint"
-                aria-hidden="true"
-              />
-              <span className="ml-2 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-terminal-dim">
-                {hero.terminal.title}
-              </span>
-            </div>
-
-            <div className="px-5 py-5 font-mono text-[0.8125rem] leading-[1.9] text-terminal-text">
-              {hero.terminal.commands.map((command) => (
-                <div key={command.cmd}>
-                  <p>
-                    <span className="text-mint">➜</span> luis.dev{" "}
-                    <span className="text-sun">{command.cmd}</span>
-                  </p>
-                  {"chips" in command ? (
-                    <ul className="mt-1.5 flex flex-wrap gap-2">
-                      {command.chips.map((chip) => (
-                        <li
-                          key={chip}
-                          className="rounded-full bg-mint px-2.5 py-1 font-mono text-[0.6875rem] text-on-accent"
-                        >
-                          {chip}
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="text-terminal-dim">{command.out}</p>
-                  )}
-                </div>
-              ))}
-              <p className="mt-1">
-                <span className="text-mint">➜</span> luis.dev{" "}
-                <span className="text-sun">open contact</span>
-                <span
-                  aria-hidden="true"
-                  className="ml-1 inline-block text-sun"
-                  style={{ animation: "caret-blink 1.1s steps(1) infinite" }}
-                >
-                  ▍
-                </span>
-              </p>
-            </div>
-          </div>
+          <Terminal
+            title={hero.terminal.title}
+            intro={hero.terminal.commands}
+            commands={terminalCommands}
+            actions={actions}
+            hint={hero.terminal.hint}
+          />
 
           <div className="mt-6 flex justify-between items-center">
             <button

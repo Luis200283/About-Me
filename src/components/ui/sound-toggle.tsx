@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import { playUiClick, setSfxEnabled } from "@/lib/sfx";
 import { cn } from "@/lib/utils";
 
 const SWITCH_BASE = cn(
@@ -8,45 +9,13 @@ const SWITCH_BASE = cn(
 );
 
 /**
- * Honest opt-in sound: a short Web Audio blip on interaction.
+ * Honest opt-in sound: real samples from the shared sfx layer.
  * Always starts OFF — sound is never autoplayed and never the only feedback.
  * The preference is intentionally not persisted: every visit opts in again.
+ * Enabling it also unlocks the sound layer of the terminal effects (sfx module).
  */
 export function SoundToggle({ label }: { label: string }) {
   const [enabled, setEnabled] = useState(false);
-  const ctxRef = useRef<AudioContext | null>(null);
-
-  const ensureContext = useCallback(() => {
-    if (ctxRef.current) return ctxRef.current;
-    const w = window as unknown as {
-      AudioContext?: typeof AudioContext;
-      webkitAudioContext?: typeof AudioContext;
-    };
-    const Ctor = w.AudioContext ?? w.webkitAudioContext;
-    if (!Ctor) return null;
-    ctxRef.current = new Ctor();
-    return ctxRef.current;
-  }, []);
-
-  const blip = useCallback(
-    (frequency: number) => {
-      const ctx = ensureContext();
-      if (!ctx) return;
-      if (ctx.state === "suspended") void ctx.resume();
-
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.type = "triangle";
-      osc.frequency.value = frequency;
-      gain.gain.setValueAtTime(0.0001, ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.06, ctx.currentTime + 0.008);
-      gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.09);
-      osc.connect(gain).connect(ctx.destination);
-      osc.start();
-      osc.stop(ctx.currentTime + 0.1);
-    },
-    [ensureContext],
-  );
 
   // Subscribing to a real DOM event — a legitimate effect.
   useEffect(() => {
@@ -54,11 +23,11 @@ export function SoundToggle({ label }: { label: string }) {
     const onClick = (event: MouseEvent) => {
       const el = event.target as HTMLElement | null;
       if (!el?.closest("a, button")) return;
-      blip(660);
+      playUiClick();
     };
     window.addEventListener("click", onClick);
     return () => window.removeEventListener("click", onClick);
-  }, [enabled, blip]);
+  }, [enabled]);
 
   const knob = (
     <span aria-hidden="true" className={SWITCH_BASE}>
@@ -77,7 +46,8 @@ export function SoundToggle({ label }: { label: string }) {
       onClick={() => {
         const next = !enabled;
         setEnabled(next);
-        if (next) blip(880);
+        setSfxEnabled(next);
+        if (next) playUiClick();
       }}
       aria-pressed={enabled}
       className={cn(
