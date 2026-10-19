@@ -7,15 +7,13 @@
  * Every play function is a no-op while disabled.
  */
 
-type SoundName = "pop" | "launch" | "boom" | "finale" | "cheer" | "party";
+type SoundName = "pop" | "boom" | "finale" | "cheer";
 
 const SOUNDS: Record<SoundName, string> = {
   pop: "/sounds/confetti-pop.mp3",
-  launch: "/sounds/firework-whistle.mp3",
   boom: "/sounds/firework-boom.mp3",
   finale: "/sounds/firework-finale.mp3",
   cheer: "/sounds/crowd-cheer.mp3",
-  party: "/sounds/party-launch.mp3",
 };
 
 let enabled = false;
@@ -105,9 +103,9 @@ function jitter(spread = 0.06): number {
   return 1 - spread / 2 + Math.random() * spread;
 }
 
-/** Tactile click for interface buttons (short popper transient). */
+/** Soft pop for interface buttons. */
 export function playUiClick(): void {
-  play("pop", { gain: 0.22, rate: 1.35 });
+  play("pop", { gain: 0.18, rate: 1.08 });
 }
 
 /** Confetti cannon pops. */
@@ -115,23 +113,13 @@ export function playPop(): void {
   play("pop", { gain: 0.85, rate: jitter(0.12) });
 }
 
-/** Rocket whistle as a shell climbs. */
-export function playLaunch(): void {
-  play("launch", { gain: 0.55, rate: jitter(0.1) });
-}
-
 /** Single firework explosion. */
 export function playBurst(): void {
-  play("boom", { gain: 0.9, rate: jitter(0.14) });
+  play("boom", { gain: 0.95, rate: jitter(0.1) });
 }
 
-/** Layered finale: rolling explosions plus the crowd losing it. */
+/** Finale: rolling explosions plus a short crowd cheer. */
 export function playFinale(): void {
-  play("finale", { gain: 0.75 });
-  play("cheer", { gain: 0.6, delay: 0.35 });
-}
-
-/** Party opener: shells launching with people cheering. */
-export function playParty(): void {
-  play("party", { gain: 0.7 });
+  play("finale", { gain: 0.7 });
+  play("cheer", { gain: 0.5, delay: 0.25 });
 }

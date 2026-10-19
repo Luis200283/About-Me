@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import confetti from "canvas-confetti";
-import { playBurst, playFinale, playLaunch, playParty, playPop } from "@/lib/sfx";
+import { playBurst, playFinale, playPop } from "@/lib/sfx";
 
 const COLORS = ["#FF5C7A", "#FFC95C", "#8B7CFF", "#3FC7A9", "#221D2E"];
 const BASE = {
@@ -26,10 +26,10 @@ const FIREWORK_BASE = {
 };
 
 const BURST_GUARD_MS = 400;
-const FIREWORKS_LAUNCH_MS = 4600;
-const FIREWORKS_SHOW_MS = 6200;
-const PARTY_RAIN_MS = 5200;
-const PARTY_SHOW_MS = 7600;
+const FIREWORKS_LAUNCH_MS = 2200;
+const FIREWORKS_SHOW_MS = 3400;
+const PARTY_RAIN_MS = 2400;
+const PARTY_SHOW_MS = 4400;
 const MOBILE_BREAKPOINT = 640;
 const MOBILE_SCALE = 0.6;
 
@@ -101,7 +101,6 @@ function fireworkLaunch(x: number, y: number): void {
     shapes: ["circle"],
     origin: { x, y: 1 },
   });
-  playLaunch();
   window.setTimeout(() => {
     fireworkBurst(x, y, 110, 0.75);
     playBurst();
@@ -122,18 +121,18 @@ function launchFireworksShow(): void {
 
     fireworkLaunch(x, y);
 
-    window.setTimeout(launch, randomBetween(550, 900));
+    window.setTimeout(launch, randomBetween(450, 650));
   };
 
   const finale = () => {
     playFinale();
-    for (let i = 0; i < 6; i += 1) {
+    for (let i = 0; i < 5; i += 1) {
       window.setTimeout(() => {
         const x = randomBetween(0.15, 0.85);
         const y = randomBetween(0.25, 0.65);
         fireworkBurst(x, y, 80, 0.95);
         if (i % 2 === 0) playBurst();
-      }, i * 140);
+      }, i * 120);
     }
   };
 
@@ -220,7 +219,7 @@ export function fireParty(): void {
     window.setTimeout(rain, randomBetween(180, 360));
   };
 
-  playParty();
+  playPop();
   const sideEnd = now + PARTY_RAIN_MS;
   const side = () => {
     if (Date.now() > sideEnd) return;
@@ -243,7 +242,7 @@ export function fireParty(): void {
         origin: { x: 1, y: 0.75 },
       });
     }, 120);
-    window.setTimeout(side, randomBetween(700, 1200));
+    window.setTimeout(side, randomBetween(600, 850));
   };
 
   rain();
@@ -255,7 +254,7 @@ export function fireParty(): void {
       activeShowUntil.fireworks = t + FIREWORKS_SHOW_MS;
       launchFireworksShow();
     }
-  }, 1000);
+  }, 700);
 }
 
 export function runEffect(name: EffectName): void {
