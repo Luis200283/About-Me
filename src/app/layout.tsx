@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/og.png",
+        url: "/social/linkedin-1200x627.png",
         width: 1200,
-        height: 630,
+        height: 627,
         alt: `${site.name} — ${site.tagline}`,
       },
     ],
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${site.name} — ${site.role}`,
     description: site.tagline,
-    images: ["/og.svg"],
+    images: ["/social/linkedin-1200x627.png"],
   },
   robots: { index: true, follow: true },
 };
