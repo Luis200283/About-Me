@@ -69,7 +69,7 @@ export const site = {
           cmd: "ls skills/",
           chips: ["TypeScript", "React", "Next.js", "Node", "Prisma", "PostgreSQL"],
         },
-        { cmd: "cat motto.txt", out: '"Ship small, ship often, make it feel alive."' },
+        { cmd: "fireworks", out: "Small wins deserve big noise. Look up." },
         { cmd: "open contact", out: "Opening the good part…" },
       ] as TerminalIntroLine[],
       hint: 'type "help" and hit enter',
